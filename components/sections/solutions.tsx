@@ -38,7 +38,7 @@ const Solutions = () => {
   };
 
   return (
-    <div className="bg-gray-50 px-6 md:px-20 xl:px-48">
+    <div className="bg-gray-50">
       <div className="bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70 shadow-lg p-[1px] rounded-3xl">
         <Card className="bg-white/85 backdrop-blur-md p-8 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
           <CardContent className="p-0">
