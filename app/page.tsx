@@ -7,6 +7,7 @@ import MarqueSection from "@/components/sections/marque";
 import Skydeck from "@/components/sections/skydeck";
 import Solutions from "@/components/sections/solutions";
 import WorkflowComparison from "@/components/sections/workflow-comparison";
+import Footer from "@/components/sections/footer";
 
 export default function Home() {
   return (
@@ -25,6 +26,9 @@ export default function Home() {
         <Faq />
         <DemoFeatures />
       </div>
+
+      <Footer />
+
     </div>
   );
 }
