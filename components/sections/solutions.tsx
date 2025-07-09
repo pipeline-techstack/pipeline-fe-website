@@ -39,7 +39,7 @@ const Solutions = () => {
 
   return (
     <div className="bg-gray-50">
-      <div className="bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70 shadow-lg p-[1px] rounded-3xl">
+      <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
         <Card className="bg-white/85 backdrop-blur-md p-8 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
           <CardContent className="p-0">
             {/* Header */}
@@ -72,7 +72,7 @@ const Solutions = () => {
                   <div
                     key={index}
                     onClick={() => toggleCard(index)}
-                    className="space-y-4 bg-secondary/20 hover:bg-secondary/30 p-4 border border-secondary/25 rounded-lg transition cursor-pointer"
+                    className="space-y-4 bg-white/90 p-4 border border-secondary rounded-lg transition cursor-pointer"
                   >
                     {/* Icon */}
                     <div className="flex justify-center items-center size-8">

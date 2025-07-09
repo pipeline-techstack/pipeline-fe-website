@@ -10,8 +10,8 @@ import GrowthAccordion from "../custom/growth-accordion";
 const Growth = () => {
   return (
     <div className="bg-gray-50">
-      <div className="bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70 shadow-lg p-[1px] rounded-3xl">
-        <Card className="bg-white/85 backdrop-blur-md p-8 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
+      <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
+        <Card className="relative bg-white/85 backdrop-blur-md p-8 pb-0 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
           <CardContent className="p-0">
             {/* Header */}
             <div className="flex md:flex-row flex-col items-center gap-4 mb-12">
@@ -35,11 +35,15 @@ const Growth = () => {
               </div>
 
               {/* Right: Image */}
-              <div className="flex-1">
+              <div className="flex flex-1 justify-center items-center">
+                {/* Background behind the image */}
+                <div className="bottom-[-2px] z-0 absolute bg-primary/10 rounded-t-2xl w-[40%] h-72" />
+
+                {/* The image */}
                 <Image
                   src={growthImg}
                   alt="Growth Illustration"
-                  className="mx-auto w-full max-w-md"
+                  className="bottom-[-2px] z-10 absolute mx-auto w-full max-w-md"
                 />
               </div>
             </div>

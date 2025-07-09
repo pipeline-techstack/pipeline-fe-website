@@ -25,14 +25,9 @@ interface ContentItem {
 }
 
 const EffectiveSection = () => {
-  const [activeTab, setActiveTab] = useState<TabId>("enrichment");
+  const [activeTab, setActiveTab] = useState<TabId>("research");
 
   const tabs = [
-    {
-      id: "enrichment" as TabId,
-      label: "ENRICHMENT",
-      icon: <Database className="size-4" />,
-    },
     {
       id: "research" as TabId,
       label: "RESEARCH",
@@ -43,16 +38,14 @@ const EffectiveSection = () => {
       label: "ENTERPRISE",
       icon: <Building2 className="size-4" />,
     },
+    {
+      id: "enrichment" as TabId,
+      label: "ENRICHMENT",
+      icon: <Database className="size-4" />,
+    },
   ];
 
   const content: Record<TabId, ContentItem> = {
-    enrichment: {
-      title: "Best-in-class enrichment",
-      description:
-        "Our 15-provider waterfall gives you unmatched phone and email accuracy, with real-time validation at every layer.",
-      rightImage: enrichRightImage,
-      leftImage: enrichLeftImage,
-    },
     research: {
       title: "LLM-powered deep research",
       description:
@@ -71,13 +64,20 @@ const EffectiveSection = () => {
       rightImage: enterRightImage,
       leftImage: enterLeftImage,
     },
+    enrichment: {
+      title: "Best-in-class enrichment",
+      description:
+        "Our 15-provider waterfall gives you unmatched phone and email accuracy, with real-time validation at every layer.",
+      rightImage: enrichRightImage,
+      leftImage: enrichLeftImage,
+    },
   };
 
   const current = content[activeTab];
 
   return (
     <div className="bg-gray-50">
-      <div className="bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70 shadow-lg p-[1px] rounded-3xl">
+      <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
         <Card className="bg-white/85 backdrop-blur-md border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
           <CardContent className="p-8 md:p-12">
             {/* Header */}
@@ -106,8 +106,8 @@ const EffectiveSection = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                     activeTab === tab.id
-                      ? "bg-primary/10 text-primary shadow"
-                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      ? "bg-primary text-white shadow"
+                      : "bg-white/80 text-gray-600 hover:bg-gray-200 border"
                   }`}
                 >
                   {tab.icon}
@@ -120,7 +120,7 @@ const EffectiveSection = () => {
             <div className="items-start gap-8 grid lg:grid-cols-12">
               {/* Left Content – span 4 out of 12 columns */}
               <div className="lg:col-span-4">
-                <div className="bg-secondary/40 p-6 rounded-2xl">
+                <div className="bg-white/70 p-6 border rounded-2xl">
                   <span className="flex items-center">
                     {tabs.find((tab) => tab.id === activeTab)?.icon}
                   </span>

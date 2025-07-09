@@ -11,7 +11,7 @@ const DemoFeature = () => {
     <div className="bg-gray-50">
       <div className="mx-auto max-w-6xl">
         {/* Gradient wrapper for border */}
-        <div className="bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70 shadow-lg p-[1px] rounded-3xl">
+        <div className="rounded-3xl">
           <Card
             className="relative bg-white/85 backdrop-blur-md p-12 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)] overflow-hidden"
             style={{

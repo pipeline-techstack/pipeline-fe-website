@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Linkedin, Youtube, Instagram } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import footerLogo from "../../assets/footer-logo.png";
 
 const Footer = () => {
@@ -29,19 +29,13 @@ const Footer = () => {
         <div className="flex flex-col items-center md:items-end text-center md:text-right">
           <p className="mb-3 font-medium text-white">Follow us on</p>
           <div className="flex gap-4">
-            <a href="#" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/company/add-pipeline-ai/"
+              aria-label="LinkedIn"
+              target="_blank"
+            >
               <div className="bg-[#606BCE] hover:bg-[#7a83e1] p-2 rounded-full text-white">
                 <Linkedin className="w-5 h-5" />
-              </div>
-            </a>
-            <a href="#" aria-label="YouTube">
-              <div className="bg-[#606BCE] hover:bg-[#7a83e1] p-2 rounded-full text-white">
-                <Youtube className="w-5 h-5" />
-              </div>
-            </a>
-            <a href="#" aria-label="Instagram">
-              <div className="bg-[#606BCE] hover:bg-[#7a83e1] p-2 rounded-full text-white">
-                <Instagram className="w-5 h-5" />
               </div>
             </a>
           </div>

@@ -64,9 +64,9 @@ const WorkflowComparison = () => {
           {workflows.map((workflow, index) => (
             <div
               key={index}
-              className={`rounded-3xl shadow-lg p-[1px] ${
+              className={`rounded-3xl p-[1px] ${
                 index === 0
-                  ? "bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70"
+                  ? "bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary"
                   : "bg-primary/70"
               }`}
             >
