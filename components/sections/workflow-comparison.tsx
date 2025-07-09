@@ -1,57 +1,118 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import fragmentedImage from "../../assets/fragmented-icons.png";
 import unifiedImage from "../../assets/unified-icons.png";
-import { GitBranchPlus, GitBranch } from "lucide-react";
+import { GitBranch, GitMerge } from "lucide-react";
+
+type BadgeVariant = "secondary" | "outline" | "default" | "destructive";
+
+interface WorkflowItem {
+  badge: {
+    icon: React.ReactNode;
+    text: string;
+    variant: BadgeVariant;
+  };
+  title: string;
+  subtitle: string;
+  description: string;
+  image: StaticImageData;
+  bgColor: string;
+  textColor: string;
+  subtitleColor: string;
+}
+
+const workflows: WorkflowItem[] = [
+  {
+    badge: {
+      icon: <GitBranch className="w-3 h-3" />,
+      text: "DETACHED",
+      variant: "secondary",
+    },
+    title: "Fragmented",
+    subtitle: "workflow",
+    description:
+      "Manual research, scattered data, and constant app-switching drag down productivity.",
+    image: fragmentedImage,
+    bgColor: "bg-white",
+    textColor: "text-blue-600",
+    subtitleColor: "text-[#4c4d4e]",
+  },
+  {
+    badge: {
+      icon: <GitMerge className="w-3 h-3" />,
+      text: "ATTACHED",
+      variant: "outline",
+    },
+    title: "Unified by",
+    subtitle: "Pipeline",
+    description:
+      "Automate research, validate contacts, and deliver personalized outreach — all in one streamlined platform.",
+    image: unifiedImage,
+    bgColor: "bg-[#4741A6]",
+    textColor: "text-white",
+    subtitleColor: "text-[#D6D4FF]",
+  },
+];
 
 const WorkflowComparison = () => {
   return (
-    <div className="px-4 py-16 bg-[#F9FAFF]">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-stretch">
-        {/* Fragmented Workflow */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#E5E7EB] h-full flex flex-col">
-          <div className="mb-4">
-            <span className="text-[10px] font-medium text-[#6B7280] bg-[#F3F4F6] border border-[#E5E7EB] px-3 py-1 rounded-full tracking-wide">
-              <GitBranch className="inline-block mr-2 w-4 h-4" />
-              DETACHED
-            </span>
-          </div>
-          <h3 className="text-3xl font-bold text-blue-600 leading-tight mb-3">
-            Fragmented <span className="font-bold text-[#4c4d4e]">workflow</span>
-          </h3>
-          <p className="text-sm text-[#6B7280] leading-relaxed mb-8">
-            Manual research, scattered data, and constant app-switching drag down productivity.
-          </p>
-          <div className="w-full flex-1 flex items-center justify-center">
-            <Image
-              src={fragmentedImage}
-              alt="Fragmented Workflow"
-              className="mx-auto max-w-full h-auto"
-            />
-          </div>
-        </div>
+    <div className="bg-[#F9FAFF] px-4 py-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-6 items-stretch">
+          {workflows.map((workflow, index) => (
+            <Card
+              key={index}
+              className={`${workflow.bgColor} border-[#E5E7EB] shadow-sm h-full`}
+            >
+              <CardContent className="p-6 h-full flex flex-col">
+                {/* Badge */}
+                <div className="mb-4">
+                  <Badge
+                    variant={workflow.badge.variant}
+                    className={`${
+                      index === 0
+                        ? "bg-[#F3F4F6] border-[#E5E7EB] text-[#6B7280]"
+                        : "bg-white border-[#E0E7FF] text-[#4741A6]"
+                    } px-3 py-1 rounded-full text-[10px] font-medium tracking-wide flex items-center`}
+                  >
+                    {workflow.badge.icon}
+                    <span className="ml-1">{workflow.badge.text}</span>
+                  </Badge>
+                </div>
 
-        {/* Unified by Pipeline */}
-        <div className="bg-[#4741A6] rounded-2xl p-8 text-white shadow-sm h-full flex flex-col">
-          <div className="mb-4">
-            <span className="text-[10px] font-medium text-[#4741A6] bg-white border border-[#E0E7FF] px-3 py-1 rounded-full tracking-wide">
-              <GitBranchPlus className="inline-block mr-2 w-4 h-4 text-[#4741A6]" />
-              ATTACHED
-            </span>
-          </div>
-          <h3 className="text-3xl font-bold leading-tight mb-3">
-            Unified by <span className="text-[#D6D4FF] font-bold">Pipeline</span>
-          </h3>
-          <p className="text-sm text-[#E4E2FF] leading-relaxed mb-8">
-            Automate research, validate contacts, and deliver personalized outreach — all in one streamlined platform.
-          </p>
-          <div className="w-full flex-1 flex items-center justify-center">
-            <Image
-              src={unifiedImage}
-              alt="Unified Workflow"
-              className="mx-auto max-w-full h-auto"
-            />
-          </div>
+                {/* Title */}
+                <h3
+                  className={`text-3xl font-bold leading-tight mb-3 ${workflow.textColor}`}
+                >
+                  {workflow.title}{" "}
+                  <span className={`font-bold ${workflow.subtitleColor}`}>
+                    {workflow.subtitle}
+                  </span>
+                </h3>
+
+                {/* Description */}
+                <p
+                  className={`text-sm leading-relaxed mb-8 ${
+                    index === 0 ? "text-[#6B7280]" : "text-[#E4E2FF]"
+                  }`}
+                >
+                  {workflow.description}
+                </p>
+
+                {/* Image */}
+                <div className="w-full flex-1 flex items-center justify-center">
+                  <Image
+                    src={workflow.image}
+                    alt={`${workflow.title} ${workflow.subtitle}`}
+                    className="mx-auto w-full max-w-[400px] h-auto object-contain"
+                  />
+
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </div>
