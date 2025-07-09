@@ -26,14 +26,15 @@ const logos = [
 
 const MarqueeSection = () => {
   return (
-    <div className="bg-gray-50 dark:bg-black mt-96 pt-24 pb-0 w-full overflow-hidden">
+    <div className="bg-gray-50 dark:bg-black pt-24 pb-0 w-full overflow-hidden">
       <div className="relative">
         <Marquee
-          speed={40}
+          speed={100}
           pauseOnHover={true}
           className="gap-2"
           gradient={true}
           gradientWidth={100}
+          gradientColor="rgb(249, 250, 255)"
         >
           {logos.map((logo, idx) => (
             <div

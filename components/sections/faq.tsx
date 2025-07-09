@@ -47,7 +47,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="bg-gray-50 px-4">
+    <div className="bg-gray-50">
       <div className="mx-auto max-w-6xl">
         {/* Gradient wrapper for glass border */}
         <div className="bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70 shadow-lg p-[1px] rounded-3xl">
