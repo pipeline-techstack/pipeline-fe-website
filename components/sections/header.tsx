@@ -1,15 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Navbar from "../custom/navbar";
-import headerBg from "../../assets/header-bg.jpg";
-import wave from "../../assets/wave.png";
+import headerBg from "../../assets/header-bg.png";
 import heroImage from "../../assets/hero-image.png";
 import HeaderText from "../custom/header-text";
 import { Eye } from "lucide-react";
 
 const Header = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen">
       {/* Background image */}
       <div className="-z-10 absolute inset-0">
         <Image
@@ -19,7 +18,7 @@ const Header = () => {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+        {/* <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" /> */}
       </div>
 
       {/* Main content */}
@@ -39,14 +38,14 @@ const Header = () => {
           </button>
 
           {/* Hero Image */}
-          <div className="relative flex flex-1 justify-center items-start mt-10 pb-32 w-full max-w-5xl">
+          <div className="z-30 relative flex flex-1 justify-center items-start mt-10 pb-32 w-full max-w-6xl">
             {/* Glowing background gradient */}
-            <div className="-z-10 absolute inset-0">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#b1c4ff]/30 via-[#c9bfff]/30 to-[#b0f0ff]/20 blur-3xl rounded-3xl scale-[1.2]" />
+            <div className="top-0 -z-10 absolute inset-x-0 h-[90%]">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#b1c4ff]/20 via-[#c9bfff]/20 to-[#b0f0ff]/10 blur-xl rounded-xl scale-105" />
             </div>
 
             {/* Glass panel & image */}
-            <div className="relative shadow-xl backdrop-blur-xl border border-primary/10 rounded-2xl overflow-hidden">
+            <div className="relative shadow-xl backdrop-blur-xl border border-primary/10 rounded-3xl overflow-hidden">
               <Image
                 src={heroImage}
                 alt="Hero Image"
@@ -55,12 +54,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Curved Bottom Overlay */}
-      <div className="right-0 bottom-0 left-0 z-30 absolute">
-        <Image src={wave} alt="wave Background" width={400} height={50} />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent blur-sm" />
       </div>
     </div>
   );
