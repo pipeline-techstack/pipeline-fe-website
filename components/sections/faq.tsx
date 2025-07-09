@@ -52,7 +52,7 @@ const Faq = () => {
         {/* Gradient wrapper for glass border */}
         <div className="bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70 shadow-lg p-[1px] rounded-3xl">
           <Card className="bg-white/85 backdrop-blur-md p-8 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
-            <CardContent className="items-start gap-3 lg:gap-16 grid lg:grid-cols-3 p-0">
+            <CardContent className="items-start gap-3 lg:gap-6 grid lg:grid-cols-2 p-0">
               {/* Left Column */}
               <div className="lg:top-8 lg:sticky">
                 <Badge
