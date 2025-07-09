@@ -1,5 +1,6 @@
 import Header from "@/components/sections/header";
 import MarqueSection from "@/components/sections/marque";
+import Skydeck from "@/components/sections/skydeck";
 import Solutions from "@/components/sections/solutions";
 import WorkflowComparison from "@/components/sections/workflow-comparison";
 
@@ -11,6 +12,7 @@ export default function Home() {
         <MarqueSection />
         <Solutions />
         <WorkflowComparison />
+        <Skydeck />
       </div>
     </div>
   );
