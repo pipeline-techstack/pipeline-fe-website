@@ -1,4 +1,5 @@
 import Faq from "@/components/sections/faq";
+import Growth from "@/components/sections/growth";
 import Header from "@/components/sections/header";
 import MarqueSection from "@/components/sections/marque";
 import Skydeck from "@/components/sections/skydeck";
@@ -9,9 +10,10 @@ export default function Home() {
   return (
     <div className="overflow-y-auto">
       <Header />
-      <div className="bg-gray-50 py-12">
+      <div className="flex flex-col gap-32 bg-gray-50 py-12">
         <MarqueSection />
         <Solutions />
+        <Growth />
         <WorkflowComparison />
         <Skydeck />
         <Faq />

@@ -3,12 +3,12 @@ import Image from "next/image";
 import skydeckImage from "../../assets/Skydec.png";
 const Skydeck = () => {
   return (
-    <div className="bg-[#F9FAFF] px-4 py-16">
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-gray-50 px-4">
+      <div className="mx-auto max-w-6xl">
         <Image
           src={skydeckImage}
           alt="Backed by Berkeley SkyDeck"
-          className="w-full h-auto rounded-lg object-cover"
+          className="rounded-2xl w-full h-auto object-cover"
           priority
         />
       </div>

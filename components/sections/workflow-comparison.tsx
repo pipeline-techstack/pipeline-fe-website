@@ -36,8 +36,8 @@ const workflows: WorkflowItem[] = [
       "Manual research, scattered data, and constant app-switching drag down productivity.",
     image: fragmentedImage,
     bgColor: "bg-white",
-    textColor: "text-blue-600",
-    subtitleColor: "text-[#4c4d4e]",
+    textColor: "text-primary",
+    subtitleColor: "text-gray-700",
   },
   {
     badge: {
@@ -50,68 +50,75 @@ const workflows: WorkflowItem[] = [
     description:
       "Automate research, validate contacts, and deliver personalized outreach — all in one streamlined platform.",
     image: unifiedImage,
-    bgColor: "bg-[#4741A6]",
+    bgColor: "bg-primary",
     textColor: "text-white",
-    subtitleColor: "text-[#D6D4FF]",
+    subtitleColor: "text-white",
   },
 ];
 
 const WorkflowComparison = () => {
   return (
-    <div className="bg-[#F9FAFF] px-4 py-16">
+    <div className="bg-gray-50 px-4">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-6 items-stretch">
+        <div className="items-stretch gap-6 grid md:grid-cols-2">
           {workflows.map((workflow, index) => (
-            <Card
+            <div
               key={index}
-              className={`${workflow.bgColor} border-[#E5E7EB] shadow-sm h-full`}
+              className={`rounded-3xl shadow-lg p-[1px] ${
+                index === 0
+                  ? "bg-gradient-to-br from-gray-300/70 via-secondary to-primary/70"
+                  : "bg-primary/70"
+              }`}
             >
-              <CardContent className="p-6 h-full flex flex-col">
-                {/* Badge */}
-                <div className="mb-4">
-                  <Badge
-                    variant={workflow.badge.variant}
-                    className={`${
-                      index === 0
-                        ? "bg-[#F3F4F6] border-[#E5E7EB] text-[#6B7280]"
-                        : "bg-white border-[#E0E7FF] text-[#4741A6]"
-                    } px-3 py-1 rounded-full text-[10px] font-medium tracking-wide flex items-center`}
+              <Card
+                className={`${
+                  index === 0
+                    ? "bg-white/85 backdrop-blur-md border border-white/10"
+                    : "bg-primary/70 text-white border-none"
+                } p-6 h-full rounded-[calc(theme(borderRadius.3xl)-3px)]`}
+              >
+                <CardContent className="flex flex-col p-0 h-full">
+                  {/* Badge */}
+                  <div className="mb-4">
+                    <Badge
+                      variant="outline"
+                      className="bg-white mb-6 px-4 py-2 border-primary/40 rounded-full font-medium text-primary uppercase"
+                    >
+                      {workflow.badge.icon}
+                      <span className="ml-1">{workflow.badge.text}</span>
+                    </Badge>
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className={`text-4xl font-bold leading-tight mb-3 ${workflow.textColor}`}
                   >
-                    {workflow.badge.icon}
-                    <span className="ml-1">{workflow.badge.text}</span>
-                  </Badge>
-                </div>
+                    {workflow.title}{" "}
+                    <span className={`font-bold ${workflow.subtitleColor}`}>
+                      {workflow.subtitle}
+                    </span>
+                  </h3>
 
-                {/* Title */}
-                <h3
-                  className={`text-3xl font-bold leading-tight mb-3 ${workflow.textColor}`}
-                >
-                  {workflow.title}{" "}
-                  <span className={`font-bold ${workflow.subtitleColor}`}>
-                    {workflow.subtitle}
-                  </span>
-                </h3>
+                  {/* Description */}
+                  <p
+                    className={`leading-relaxed mb-8 ${
+                      index === 0 ? "text-gray-600" : "text-white"
+                    }`}
+                  >
+                    {workflow.description}
+                  </p>
 
-                {/* Description */}
-                <p
-                  className={`text-sm leading-relaxed mb-8 ${
-                    index === 0 ? "text-[#6B7280]" : "text-[#E4E2FF]"
-                  }`}
-                >
-                  {workflow.description}
-                </p>
-
-                {/* Image */}
-                <div className="w-full flex-1 flex items-center justify-center">
-                  <Image
-                    src={workflow.image}
-                    alt={`${workflow.title} ${workflow.subtitle}`}
-                    className="mx-auto w-full max-w-[400px] h-auto object-contain"
-                  />
-
-                </div>
-              </CardContent>
-            </Card>
+                  {/* Image */}
+                  <div className="flex flex-1 justify-center items-center w-full">
+                    <Image
+                      src={workflow.image}
+                      alt={`${workflow.title} ${workflow.subtitle}`}
+                      className="mx-auto w-full max-w-[350px] h-auto object-contain"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
       </div>

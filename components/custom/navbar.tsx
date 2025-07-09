@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 import { Button } from "../ui/button";
 const Navbar = () => {
   const handleRedirect = () => {
-    window.location.href = "https://sales.addpipeline.ai/";
+    window.open("https://sales.addpipeline.ai/", "_blank");
   };
   return (
     <div className="flex justify-between items-center">
@@ -20,7 +20,7 @@ const Navbar = () => {
           <Button
             variant="secondary"
             onClick={handleRedirect}
-            className="border border-white"
+            className="border border-white cursor-pointer"
           >
             Sign in
           </Button>
