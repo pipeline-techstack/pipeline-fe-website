@@ -3,10 +3,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import demoImg from "../../assets/hero-image.png";
-import bgImage from "../../assets/demo-bg.png"; 
-import Image from "next/image";
-import { Play } from "lucide-react";
+import bgImage from "../../assets/demo-bg.png";
+import { CirclePlay } from "lucide-react";
 
 const DemoFeature = () => {
   return (
@@ -22,43 +20,38 @@ const DemoFeature = () => {
               backgroundPosition: "center",
             }}
           >
-            <CardContent className="p-0 relative z-10">
-              <div className="flex md:flex-row flex-col items-center gap-12 relative">
+            <CardContent className="z-10 relative p-0">
+              <div className="relative flex md:flex-row flex-col items-center gap-12">
                 {/* Left Text */}
-                <div className="flex-1 text-white max-w-lg">
-                  <h2 className="text-5xl font-bold mb-8 leading-tight">
+                <div className="flex-1 max-w-lg text-white">
+                  <h2 className="mb-8 font-bold text-4xl leading-tight">
                     Ready to supercharge your{" "}
                     <span className="text-white">sales team?</span>
                   </h2>
 
-                  <div className="text-white/90 space-y-6 text-xl mb-10 leading-relaxed">
+                  <div className="space-y-6 mb-10 text-white/90 leading-relaxed">
                     <p className="flex items-start">
-                      <span className="text-white/70 mr-3">→</span>
-                      Put outbound research, enrichment, and messaging on autopilot.
+                      <span className="mr-3 text-white/70">→</span>
+                      Put outbound research, enrichment, and messaging on
+                      autopilot.
                     </p>
                     <p className="flex items-start">
-                      <span className="text-white/70 mr-3">→</span>
-                      Book a 15-minute strategy call with our team — and see what Pipeline can do for you.
+                      <span className="mr-3 text-white/70">→</span>
+                      Book a 15-minute strategy call with our team — and see
+                      what Pipeline can do for you.
                     </p>
                   </div>
 
-                  <Button className="bg-white text-indigo-600 hover:bg-white/90 font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <Play className="inline-block mr-1 w-5 h-5" />
-                    Get a demo
+                  <Button className="relative bg-white/10 backdrop-blur-md px-8 py-4 border border-white/20 hover:border-white/40 rounded-full overflow-hidden font-semibold text-white text-lg hover:scale-105 transition-all duration-300 transform">
+                    {/* Gradient overlay */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-white via-white to-primary opacity-30 rounded-full pointer-events-none"></span>
+
+                    {/* Button Content */}
+                    <span className="z-10 relative flex items-center">
+                      <CirclePlay className="inline-block mr-2 size-4" />
+                      Get a demo
+                    </span>
                   </Button>
-                </div>
-
-                {/* Right Image */}
-                <div className="flex-1 relative">
-                  <div className="relative transform rotate-[10deg] scale-110 hover:rotate-[3deg] transition-all duration-500">
-                    {/* Optional glow behind image */}
-                    <div className="absolute inset-0 bg-indigo-300/30 rounded-2xl blur-xl scale-110 opacity-60 z-0" />
-                    <Image
-                      src={demoImg}
-                      alt="Pipeline Demo Interface"
-                      className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl relative z-10"
-                    />
-                  </div>
                 </div>
               </div>
             </CardContent>

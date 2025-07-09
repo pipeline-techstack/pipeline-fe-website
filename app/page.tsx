@@ -26,9 +26,9 @@ export default function Home() {
         <Faq />
         <DemoFeatures />
       </div>
-
-      <Footer />
-
+      <div className="bg-gray-50 pt-12 md:pt-40 xl:pt-48">
+        <Footer />
+      </div>
     </div>
   );
 }
