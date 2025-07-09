@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import fragmentedImage from "../../assets/fragmented-icons.png";
 import unifiedImage from "../../assets/unified-icons.png";
-import { GitBranch, GitMerge } from "lucide-react";
+import { GitBranch, GitBranchPlus } from "lucide-react";
 
 type BadgeVariant = "secondary" | "outline" | "default" | "destructive";
 
@@ -41,7 +41,7 @@ const workflows: WorkflowItem[] = [
   },
   {
     badge: {
-      icon: <GitMerge className="w-3 h-3" />,
+      icon: <GitBranchPlus className="w-3 h-3" />,
       text: "ATTACHED",
       variant: "outline",
     },
