@@ -38,7 +38,7 @@ const MarqueeSection = () => {
           {logos.map((logo, idx) => (
             <div
               key={idx}
-              className="relative opacity-70 hover:opacity-100 mx-8 w-24 h-16 transition duration-300"
+              className="relative opacity-90 hover:opacity-100 mx-8 w-24 h-16 transition duration-300"
             >
               <Image
                 src={logo}

@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center">
       <div className="bg-gradient-to-b from-primary/40 via-transparent to-primary/40 shadow-inner p-[1px] rounded-full">
-        <div className="bg-white/70 px-2 py-1 rounded-full">
+        <div className="bg-white/70 px-3 py-2 rounded-full">
           <Image src={logo} alt="logo" width={140} height={140} />
         </div>
       </div>

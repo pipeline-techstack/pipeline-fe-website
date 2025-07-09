@@ -1,12 +1,21 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Navbar from "../custom/navbar";
 import headerBg from "../../assets/header-bg.png";
-import heroImage from "../../assets/hero-image.png";
+// import heroImage from "../../assets/hero-image.png";
 import HeaderText from "../custom/header-text";
 import { Eye } from "lucide-react";
 
 const Header = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 2.0;
+    }
+  }, []);
+
   return (
     <div className="relative w-full h-screen">
       {/* Background image */}
@@ -32,7 +41,7 @@ const Header = () => {
         <div className="flex flex-col items-center mt-8 px-4 text-center">
           <HeaderText />
 
-          <button className="flex items-center bg-white shadow mt-6 px-6 py-2 rounded-full font-semibold text-sm uppercase hover:scale-105 transition">
+          <button className="flex items-center bg-white shadow mt-6 px-6 py-2 rounded-full font-semibold text-sm uppercase">
             <Eye className="inline-block mr-2 w-4 h-4" />
             Preview
           </button>
@@ -45,11 +54,15 @@ const Header = () => {
             </div>
 
             {/* Glass panel & image */}
-            <div className="relative shadow-xl backdrop-blur-xl border border-primary/10 rounded-3xl overflow-hidden">
-              <Image
-                src={heroImage}
-                alt="Hero Image"
-                className="rounded-2xl max-h-full object-contain"
+            <div className="relative bg-white/20 shadow-xl backdrop-blur-xl p-4 border border-primary/10 rounded-3xl overflow-hidden">
+              <video
+                ref={videoRef}
+                src="/videos/product-demo.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="rounded-2xl w-full h-auto object-contain"
               />
             </div>
           </div>
