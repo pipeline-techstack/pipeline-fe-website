@@ -2,8 +2,8 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import fragmentedImage from "../../assets/fragmented-icons.png";
-import unifiedImage from "../../assets/unified-icons.png";
+import fragmentedImage from "../../assets/workflow-comparison/fragmented-icons.png";
+import unifiedImage from "../../assets/workflow-comparison/unified-icons.png";
 import { GitBranch, GitBranchPlus } from "lucide-react";
 
 type BadgeVariant = "secondary" | "outline" | "default" | "destructive";

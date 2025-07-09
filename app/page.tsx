@@ -1,3 +1,5 @@
+import DemoFeatures from "@/components/sections/demo-features";
+import EffectiveSection from "@/components/sections/effective";
 import Faq from "@/components/sections/faq";
 import Growth from "@/components/sections/growth";
 import Header from "@/components/sections/header";
@@ -17,9 +19,11 @@ export default function Home() {
       <div className="flex flex-col gap-12 md:gap-40 xl:gap-48 bg-gray-50 px-6 md:px-20 xl:px-48 py-12">
         <Solutions />
         <Growth />
+        <EffectiveSection />
         <WorkflowComparison />
         <Skydeck />
         <Faq />
+        <DemoFeatures />
       </div>
     </div>
   );
