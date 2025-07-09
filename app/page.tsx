@@ -1,3 +1,4 @@
+import Faq from "@/components/sections/faq";
 import Header from "@/components/sections/header";
 import MarqueSection from "@/components/sections/marque";
 import Skydeck from "@/components/sections/skydeck";
@@ -13,6 +14,7 @@ export default function Home() {
         <Solutions />
         <WorkflowComparison />
         <Skydeck />
+        <Faq />
       </div>
     </div>
   );
