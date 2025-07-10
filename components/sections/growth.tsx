@@ -9,12 +9,12 @@ import GrowthAccordion from "../custom/growth-accordion";
 
 const Growth = () => {
   return (
-    <div className="bg-gray-50 px-4 sm:px-6 lg:px-10 py-16 sm:py-20">
+    <div className="bg-gray-50">
       <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
         <Card className="relative bg-white/85 backdrop-blur-md px-4 sm:px-6 lg:px-10 py-10 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
           <CardContent className="p-0">
             {/* Content Row */}
-            <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10">
+            <div className="flex md:flex-row flex-col-reverse items-center gap-8 md:gap-10">
               {/* Left: Text Section */}
               <div className="w-full md:w-1/2">
                 <Badge
@@ -36,15 +36,15 @@ const Growth = () => {
               </div>
 
               {/* Right: Image */}
-              <div className="w-full md:w-1/2 relative flex justify-center items-center">
+              <div className="relative flex justify-center items-center w-full md:w-1/2">
                 {/* Background behind the image */}
-                <div className="absolute bottom-0 bg-primary/10 rounded-t-2xl w-[60%] h-56 sm:h-64 md:h-72 z-0" />
+                <div className="bottom-0 z-0 absolute bg-primary/10 rounded-t-2xl w-[60%] h-56 sm:h-64 md:h-72" />
 
                 {/* Foreground Image */}
                 <Image
                   src={growthImg}
                   alt="Growth Illustration"
-                  className="relative z-10 w-full max-w-xs sm:max-w-sm md:max-w-md object-contain"
+                  className="z-10 relative w-full max-w-xs sm:max-w-sm md:max-w-md object-contain"
                 />
               </div>
             </div>

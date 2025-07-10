@@ -26,7 +26,7 @@ const logos = [
 
 const MarqueeSection = () => {
   return (
-    <div className="bg-gray-50 dark:bg-black pt-16 sm:pt-20 md:pt-24 pb-0 w-full overflow-hidden">
+    <div className="bg-gray-50 dark:bg-black pb-0 w-full overflow-hidden">
       <div className="relative">
         <Marquee
           speed={100}

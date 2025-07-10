@@ -73,7 +73,7 @@ const EffectiveSection = () => {
   const current = content[activeTab];
 
   return (
-    <div className="bg-gray-50 px-4 sm:px-6 lg:px-10 py-12 sm:py-20">
+    <div className="bg-gray-50">
       <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
         <Card className="bg-white/85 backdrop-blur-md border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
           <CardContent className="p-4 sm:p-6 lg:p-12">
@@ -90,7 +90,8 @@ const EffectiveSection = () => {
                 What makes this <span className="text-primary">effective?</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-gray-600 text-sm sm:text-base">
-                Automated enrichment, AI-driven insights, and seamless delivery for smarter outreach.
+                Automated enrichment, AI-driven insights, and seamless delivery
+                for smarter outreach.
               </p>
             </div>
 
@@ -113,7 +114,7 @@ const EffectiveSection = () => {
             </div>
 
             {/* Main Grid */}
-            <div className="grid gap-6 sm:gap-8 lg:grid-cols-12">
+            <div className="gap-6 sm:gap-8 grid lg:grid-cols-12">
               {/* Left Column */}
               <div className="lg:col-span-4 w-full">
                 <div className="bg-white/70 p-4 sm:p-6 border rounded-2xl">
@@ -127,7 +128,7 @@ const EffectiveSection = () => {
                     {current.description}
                   </p>
                   {activeTab === "research" && current.quote && (
-                    <p className="text-gray-700 italic text-sm sm:text-base">
+                    <p className="text-gray-700 text-sm sm:text-base italic">
                       &ldquo;{current.quote}&rdquo;
                     </p>
                   )}

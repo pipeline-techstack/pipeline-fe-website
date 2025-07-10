@@ -12,35 +12,36 @@ const DemoFeature = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-12 sm:py-16 px-4 sm:px-6 lg:px-10">
+    <div className="bg-gray-50">
       <div className="mx-auto max-w-6xl">
-        <div className="rounded-3xl relative overflow-hidden">
+        <div className="relative rounded-3xl overflow-hidden">
           {/* Background Image */}
           <div
-            className="absolute inset-0 z-0 bg-cover bg-center"
+            className="z-0 absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url(${bgImage.src})`,
             }}
           />
           {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="z-10 absolute inset-0 bg-black/40" />
 
-          <Card className="relative z-20 bg-transparent border-none shadow-none rounded-3xl">
+          <Card className="z-20 relative bg-transparent shadow-none border-none rounded-3xl">
             <CardContent className="relative p-6 sm:p-10 md:p-12">
-              <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+              <div className="flex md:flex-row flex-col items-center gap-10 md:gap-16">
                 {/* Text Section */}
-                <div className="flex-1 max-w-xl text-white text-center md:text-left">
+                <div className="flex-1 max-w-xl text-white md:text-left text-center">
                   <h2 className="mb-6 font-bold text-2xl sm:text-3xl lg:text-4xl leading-tight">
                     Ready to supercharge your{" "}
                     <span className="text-white">sales team?</span>
                   </h2>
 
                   <div className="space-y-4 mb-8 text-white/90 text-sm sm:text-base leading-relaxed">
-                    <p className="flex items-start justify-center md:justify-start">
+                    <p className="flex justify-center md:justify-start items-start">
                       <span className="mr-2 text-white/70">→</span>
-                      Put outbound research, enrichment, and messaging on autopilot.
+                      Put outbound research, enrichment, and messaging on
+                      autopilot.
                     </p>
-                    <p className="flex items-start justify-center md:justify-start">
+                    <p className="flex justify-center md:justify-start items-start">
                       <span className="mr-2 text-white/70">→</span>
                       Signup to check what Pipeline has to offer for your team.
                     </p>

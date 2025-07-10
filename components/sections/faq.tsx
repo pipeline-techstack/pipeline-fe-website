@@ -25,36 +25,31 @@ const faqs = [
     answer:
       "Live hiring, tech stack adoption, job posts, funding, leadership moves, and sales tools being used.",
   },
-  {
-    question: "How long does it take to go live?",
-    answer: "Setup takes less than 72 hours. Many teams are live in 1-2 days.",
-  },
 ];
 
 const Faq = () => {
   const [openItems, setOpenItems] = useState(new Set([0]));
 
-const toggleIndex = (index: number) => {
-  setOpenItems((prev) => {
-    const newSet = new Set(prev);
-    if (newSet.has(index)) {
-      newSet.delete(index);
-    } else {
-      newSet.add(index);
-    }
-    return newSet;
-  });
-};
-
+  const toggleIndex = (index: number) => {
+    setOpenItems((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
 
   return (
-    <div className="bg-gray-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-10">
+    <div className="bg-gray-50">
       <div className="mx-auto max-w-6xl">
         <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
           <Card className="bg-white/85 backdrop-blur-md border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
-            <CardContent className="p-6 sm:p-8 grid gap-8 md:grid-cols-2">
+            <CardContent className="gap-8 grid md:grid-cols-2 p-6 sm:p-8">
               {/* Left Column */}
-              <div className="sticky top-8 self-start">
+              <div className="top-8 sticky self-start">
                 <Badge
                   variant="outline"
                   className="bg-white mb-6 px-4 py-2 border-primary/40 rounded-full font-medium text-primary uppercase"

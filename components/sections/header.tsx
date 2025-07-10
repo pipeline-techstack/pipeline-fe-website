@@ -52,7 +52,7 @@ const Header = () => {
             </div>
 
             {/* Glass panel & image */}
-            <div className="relative bg-white/20 shadow-xl backdrop-blur-xl p-2 sm:p-3 md:p-4 border border-primary/10 rounded-3xl overflow-hidden w-full max-w-4xl">
+            <div className="relative bg-white/20 shadow-xl backdrop-blur-xl p-2 sm:p-3 md:p-4 border border-primary/10 rounded-3xl w-full max-w-4xl overflow-hidden">
               <video
                 ref={videoRef}
                 src="/videos/product-demo.mp4"
