@@ -11,12 +11,12 @@ const Growth = () => {
   return (
     <div className="bg-gray-50">
       <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
-        <Card className="relative bg-white/85 backdrop-blur-md p-8 pb-0 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
+        <Card className="relative bg-white/85 backdrop-blur-md px-4 sm:px-6 lg:px-10 py-10 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
           <CardContent className="p-0">
-            {/* Header */}
-            <div className="flex md:flex-row flex-col items-center gap-4 mb-12">
+            {/* Content Row */}
+            <div className="flex md:flex-row flex-col-reverse items-center gap-8 md:gap-10">
               {/* Left: Text Section */}
-              <div className="flex-1">
+              <div className="w-full md:w-1/2">
                 <Badge
                   variant="outline"
                   className="bg-white mb-6 px-4 py-2 border-primary/40 rounded-full font-medium text-primary uppercase"
@@ -24,7 +24,8 @@ const Growth = () => {
                   <ChartNoAxesCombined className="mr-1 size-4" />
                   <span>Growth</span>
                 </Badge>
-                <h2 className="mb-4 font-bold text-4xl">
+
+                <h2 className="mb-4 font-bold text-2xl sm:text-3xl lg:text-4xl leading-tight">
                   <span className="text-gray-900">
                     See how Pipeline accelerates your{" "}
                   </span>
@@ -35,15 +36,15 @@ const Growth = () => {
               </div>
 
               {/* Right: Image */}
-              <div className="flex flex-1 justify-center items-center">
+              <div className="relative flex justify-center items-center w-full md:w-1/2">
                 {/* Background behind the image */}
-                <div className="bottom-[-2px] z-0 absolute bg-primary/10 rounded-t-2xl w-[40%] h-72" />
+                <div className="bottom-0 z-0 absolute bg-primary/10 rounded-t-2xl w-[60%] h-56 sm:h-64 md:h-72" />
 
-                {/* The image */}
+                {/* Foreground Image */}
                 <Image
                   src={growthImg}
                   alt="Growth Illustration"
-                  className="bottom-[-2px] z-10 absolute mx-auto w-full max-w-md"
+                  className="z-10 relative w-full max-w-xs sm:max-w-sm md:max-w-md object-contain"
                 />
               </div>
             </div>

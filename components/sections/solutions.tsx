@@ -40,22 +40,22 @@ const Solutions = () => {
   return (
     <div className="bg-gray-50">
       <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
-        <Card className="bg-white/85 backdrop-blur-md p-8 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
+        <Card className="bg-white/85 backdrop-blur-md px-4 sm:px-6 lg:px-10 py-8 border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
           <CardContent className="p-0">
             {/* Header */}
-            <div className="mb-12">
+            <div className="mb-12 text-center">
               <Badge
                 variant="outline"
                 className="bg-white mb-6 px-4 py-2 border-primary/40 rounded-full font-medium text-primary uppercase"
               >
                 <Navigation className="mr-1 size-4" />
-                <span> ACCELERATE</span>
+                <span>ACCELERATE</span>
               </Badge>
-              <h2 className="mb-2 font-bold text-4xl">
+              <h2 className="mb-2 font-bold text-3xl sm:text-4xl">
                 <span className="text-primary">Solutions</span>{" "}
                 <span className="text-gray-900">we provide</span>
               </h2>
-              <p className="max-w-3xl text-gray-600 text-lg">
+              <p className="mx-auto max-w-4xl text-gray-600 text-base sm:text-lg">
                 The product automates research, qualification, and personalized
                 outreach so sales teams can focus on closing deals — not busy
                 work.
@@ -63,7 +63,7 @@ const Solutions = () => {
             </div>
 
             {/* Solutions Grid */}
-            <div className="gap-8 grid md:grid-cols-3">
+            <div className="gap-6 sm:gap-8 grid sm:grid-cols-2 lg:grid-cols-3">
               {solutions.map((solution, index) => {
                 const isOpen = openIndex === index;
                 const shortText = solution.description.slice(0, 100);
@@ -72,7 +72,7 @@ const Solutions = () => {
                   <div
                     key={index}
                     onClick={() => toggleCard(index)}
-                    className="space-y-4 bg-white/90 p-4 border border-secondary rounded-lg transition cursor-pointer"
+                    className="space-y-4 bg-white/90 hover:shadow-md p-4 sm:p-5 border border-secondary rounded-lg transition cursor-pointer"
                   >
                     {/* Icon */}
                     <div className="flex justify-center items-center size-8">
@@ -80,16 +80,16 @@ const Solutions = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-medium text-gray-900 text-xl">
+                    <h3 className="font-semibold text-gray-900 text-lg sm:text-xl">
                       {solution.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {isOpen ? solution.description : `${shortText}...`}
                     </p>
 
-                    <span className="font-medium text-primary text-sm">
+                    <span className="font-medium text-primary text-sm sm:text-base">
                       {isOpen ? "Show less" : "Read more"}
                     </span>
                   </div>

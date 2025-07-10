@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <div className="overflow-y-auto">
       <Header />
-      <div className="bg-gray-50 px-6 md:px-12 xl:px-24 py-12 pt-24 md:pt-96 2xl:pt-96">
+      <div className="bg-gray-50 px-6 md:px-12 xl:px-24 py-12">
         <MarqueSection />
       </div>
 
-      <div className="flex flex-col gap-12 md:gap-40 xl:gap-48 bg-gray-50 px-6 md:px-20 xl:px-48 py-12">
+      <div className="flex flex-col gap-12 md:gap-40 xl:gap-48 bg-gray-50 px-3 md:px-20 xl:px-48 py-12">
         <Solutions />
         <Growth />
         <EffectiveSection />

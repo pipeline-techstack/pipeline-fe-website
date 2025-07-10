@@ -18,7 +18,6 @@ type TabId = "enrichment" | "research" | "enterprise";
 interface ContentItem {
   title: string;
   description: string;
-  // features: string[];
   rightImage: StaticImageData;
   leftImage: StaticImageData;
   quote?: string;
@@ -52,7 +51,6 @@ const EffectiveSection = () => {
         "Inspired by Perplexity and OpenAI's Retrieval-Augmented Generation (RAG), Pipeline performs reasoning across live public data to derive non-obvious insights like:",
       quote:
         "This company recently hired a Director of RevOps with Outreach experience, suggesting a motion shift from Salesloft to Outreach.",
-      // features: ["Signal fetch", "AI model", "Data Generation"],
       rightImage: researchRightImage,
       leftImage: researchLeftImage,
     },
@@ -60,7 +58,6 @@ const EffectiveSection = () => {
       title: "Enterprise ready delivery",
       description:
         "Output is formatted and delivered into your existing systems—Outreach, Gong Engage, Salesforce—ready for action.",
-      // features: ["CRM integrate", "AI process shown", "Real time update"],
       rightImage: enterRightImage,
       leftImage: enterLeftImage,
     },
@@ -79,9 +76,9 @@ const EffectiveSection = () => {
     <div className="bg-gray-50">
       <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
         <Card className="bg-white/85 backdrop-blur-md border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
-          <CardContent className="p-8 md:p-12">
+          <CardContent className="p-4 sm:p-6 lg:p-12">
             {/* Header */}
-            <div className="mb-12 text-center">
+            <div className="mb-10 sm:mb-12 text-center">
               <Badge
                 variant="outline"
                 className="bg-white mb-6 px-4 py-2 border-primary/40 rounded-full font-medium text-primary uppercase"
@@ -89,22 +86,22 @@ const EffectiveSection = () => {
                 <FastForward className="mr-2 size-6" />
                 <span> Precision</span>
               </Badge>
-              <h2 className="font-bold text-gray-900 text-4xl">
+              <h2 className="font-bold text-gray-900 text-2xl sm:text-3xl lg:text-4xl">
                 What makes this <span className="text-primary">effective?</span>
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-gray-600">
+              <p className="mx-auto mt-4 max-w-2xl text-gray-600 text-sm sm:text-base">
                 Automated enrichment, AI-driven insights, and seamless delivery
                 for smarter outreach.
               </p>
             </div>
 
             {/* Tabs */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <div className="flex flex-wrap justify-center gap-3 mb-10 sm:mb-12">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                  className={`flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all ${
                     activeTab === tab.id
                       ? "bg-primary text-white shadow"
                       : "bg-white/80 text-gray-600 hover:bg-gray-200 border"
@@ -117,21 +114,21 @@ const EffectiveSection = () => {
             </div>
 
             {/* Main Grid */}
-            <div className="items-start gap-8 grid lg:grid-cols-12">
-              {/* Left Content – span 4 out of 12 columns */}
-              <div className="lg:col-span-4">
-                <div className="bg-white/70 p-6 border rounded-2xl">
+            <div className="gap-6 sm:gap-8 grid lg:grid-cols-12">
+              {/* Left Column */}
+              <div className="lg:col-span-4 w-full">
+                <div className="bg-white/70 p-4 sm:p-6 border rounded-2xl">
                   <span className="flex items-center">
                     {tabs.find((tab) => tab.id === activeTab)?.icon}
                   </span>
-                  <h3 className="my-4 font-semibold text-gray-900 text-2xl">
+                  <h3 className="my-3 sm:my-4 font-semibold text-gray-900 text-xl sm:text-2xl">
                     {current.title}
                   </h3>
-                  <p className="mb-4 text-gray-600 leading-relaxed">
+                  <p className="mb-3 sm:mb-4 text-gray-600 text-sm sm:text-base leading-relaxed">
                     {current.description}
                   </p>
                   {activeTab === "research" && current.quote && (
-                    <p className="text-gray-700 italic">
+                    <p className="text-gray-700 text-sm sm:text-base italic">
                       &ldquo;{current.quote}&rdquo;
                     </p>
                   )}
@@ -140,18 +137,18 @@ const EffectiveSection = () => {
                 <Image
                   src={current.leftImage}
                   alt={`${current.title} process`}
-                  className="my-4 rounded-xl w-full"
+                  className="my-4 rounded-xl w-full object-contain"
                   width={500}
                   height={300}
                 />
               </div>
 
-              {/* Right Image – span 8 out of 12 columns */}
+              {/* Right Column */}
               <div className="lg:col-span-8 w-full">
                 <Image
                   src={current.rightImage}
                   alt={`${current.title} screenshot`}
-                  className="rounded-xl w-full"
+                  className="rounded-xl w-full object-contain"
                   width={1200}
                   height={800}
                 />

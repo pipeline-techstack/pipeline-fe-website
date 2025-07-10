@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import skydeckImage from "../../assets/Skydec.png";
+
 const Skydeck = () => {
   return (
     <div className="bg-gray-50">

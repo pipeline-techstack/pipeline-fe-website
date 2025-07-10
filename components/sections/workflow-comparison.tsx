@@ -1,10 +1,13 @@
+"use client";
+
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { GitBranch, GitBranchPlus } from "lucide-react";
+
 import fragmentedImage from "../../assets/workflow-comparison/fragmented-icons.png";
 import unifiedImage from "../../assets/workflow-comparison/unified-icons.png";
-import { GitBranch, GitBranchPlus } from "lucide-react";
 
 type BadgeVariant = "secondary" | "outline" | "default" | "destructive";
 
@@ -59,8 +62,8 @@ const workflows: WorkflowItem[] = [
 const WorkflowComparison = () => {
   return (
     <div className="bg-gray-50">
-      <div className="mx-auto max-w-6xl">
-        <div className="items-stretch gap-6 grid md:grid-cols-2">
+      <div className="mx-auto max-w-7xl">
+        <div className="gap-6 sm:gap-8 grid md:grid-cols-2">
           {workflows.map((workflow, index) => (
             <div
               key={index}
@@ -75,14 +78,14 @@ const WorkflowComparison = () => {
                   index === 0
                     ? "bg-white/85 backdrop-blur-md border border-white/10"
                     : "bg-primary/70 text-white border-none"
-                } p-6 h-full rounded-[calc(theme(borderRadius.3xl)-3px)]`}
+                } p-6 sm:p-8 h-full rounded-[calc(theme(borderRadius.3xl)-3px)]`}
               >
                 <CardContent className="flex flex-col p-0 h-full">
                   {/* Badge */}
                   <div className="mb-4">
                     <Badge
                       variant="outline"
-                      className="bg-white mb-6 px-4 py-2 border-primary/40 rounded-full font-medium text-primary uppercase"
+                      className="bg-white mb-4 px-4 py-2 border-primary/40 rounded-full font-medium text-primary uppercase"
                     >
                       {workflow.badge.icon}
                       <span className="ml-1">{workflow.badge.text}</span>
@@ -91,7 +94,7 @@ const WorkflowComparison = () => {
 
                   {/* Title */}
                   <h3
-                    className={`text-4xl font-bold leading-tight mb-3 ${workflow.textColor}`}
+                    className={`text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3 ${workflow.textColor}`}
                   >
                     {workflow.title}{" "}
                     <span className={`font-bold ${workflow.subtitleColor}`}>
@@ -101,7 +104,7 @@ const WorkflowComparison = () => {
 
                   {/* Description */}
                   <p
-                    className={`leading-relaxed mb-8 ${
+                    className={`leading-relaxed mb-6 text-sm sm:text-base ${
                       index === 0 ? "text-gray-600" : "text-white"
                     }`}
                   >
@@ -113,7 +116,7 @@ const WorkflowComparison = () => {
                     <Image
                       src={workflow.image}
                       alt={`${workflow.title} ${workflow.subtitle}`}
-                      className="mx-auto w-full max-w-[350px] h-auto object-contain"
+                      className="mx-auto w-full max-w-[300px] sm:max-w-[350px] h-auto object-contain"
                     />
                   </div>
                 </CardContent>
