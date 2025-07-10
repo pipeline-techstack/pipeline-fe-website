@@ -7,6 +7,10 @@ import bgImage from "../../assets/demo-bg.png";
 import { CirclePlay } from "lucide-react";
 
 const DemoFeature = () => {
+  const handleRedirect = () => {
+    window.open("https://sales.addpipeline.ai/signup", "_blank");
+  };
+
   return (
     <div className="bg-gray-50">
       <div className="mx-auto max-w-6xl">
@@ -37,19 +41,22 @@ const DemoFeature = () => {
                     </p>
                     <p className="flex items-start">
                       <span className="mr-3 text-white/70">→</span>
-                      Book a 15-minute strategy call with our team — and see
-                      what Pipeline can do for you.
+                      Signup to to check what pipeline has to offer for your
+                      team.
                     </p>
                   </div>
 
-                  <Button className="relative bg-white/10 backdrop-blur-md px-8 py-4 border border-white/20 hover:border-white/40 rounded-full overflow-hidden font-semibold text-white text-lg hover:scale-105 transition-all duration-300 transform">
+                  <Button
+                    onClick={handleRedirect}
+                    className="relative bg-white/10 backdrop-blur-md px-8 py-4 border border-white/20 hover:border-white/40 rounded-full overflow-hidden font-semibold text-white text-lg hover:scale-105 transition-all duration-300 transform"
+                  >
                     {/* Gradient overlay */}
                     <span className="absolute inset-0 bg-gradient-to-r from-white via-white to-primary opacity-30 rounded-full pointer-events-none"></span>
 
                     {/* Button Content */}
                     <span className="z-10 relative flex items-center">
                       <CirclePlay className="inline-block mr-2 size-4" />
-                      Get a demo
+                      Sign up
                     </span>
                   </Button>
                 </div>

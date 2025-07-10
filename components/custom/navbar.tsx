@@ -24,9 +24,9 @@ const Navbar = () => {
           >
             Sign in
           </Button>
-          <Button variant="ghost" className="hover:bg-transparent">
+          {/* <Button variant="ghost" className="hover:bg-transparent">
             Get a demo
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>
