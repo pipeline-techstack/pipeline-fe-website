@@ -1,20 +1,30 @@
 "use client";
+
 import Image from "next/image";
 import React from "react";
 import logo from "../../assets/logo.png";
 import { Button } from "../ui/button";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+
 const Navbar = () => {
   const handleRedirect = () => {
     window.open("https://sales.addpipeline.ai/", "_blank");
   };
+
   return (
     <div className="flex justify-between items-center">
+      {/* Logo */}
       <div className="bg-gradient-to-b from-primary/40 via-transparent to-primary/40 shadow-inner p-[1px] rounded-full">
-        <div className="bg-white/70 px-3 py-2 rounded-full">
+        <div
+          className="bg-white/70 px-3 py-2 rounded-full"
+          onClick={() => redirect("/")}
+        >
           <Image src={logo} alt="logo" width={140} height={140} />
         </div>
       </div>
 
+      {/* Buttons */}
       <div className="bg-gradient-to-b from-primary/40 via-transparent to-primary/40 shadow-inner p-[1px] rounded-full">
         <div className="flex items-center gap-2 bg-white/70 p-1 rounded-full">
           <Button
@@ -24,9 +34,15 @@ const Navbar = () => {
           >
             Sign in
           </Button>
-          {/* <Button variant="ghost" className="hover:bg-transparent">
-            Get a demo
-          </Button> */}
+
+          <Link href="/demo">
+            <Button
+              variant="outline"
+              className="bg-transparent shadow-none border-none cursor-pointer"
+            >
+              Get a demo
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

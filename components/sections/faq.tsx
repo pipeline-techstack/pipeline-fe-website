@@ -7,23 +7,35 @@ import { Badge } from "../ui/badge";
 
 const faqs = [
   {
+    question: "Does Pipeline integrate with our existing sales tools?",
+    answer:
+      "Yes. We integrate directly with platforms like Outreach, salesloft, Gong Engage, Salesforce, and others — no workflow changes needed.",
+  },
+  {
+    question: "Do you require access to our internal systems or CRM?",
+    answer:
+      " No. Pipeline operates independently and does not require access to your internal systems. We enrich and deliver everything externally.",
+  },
+  {
+    question: "How is this different from ZoomInfo or Clay?",
+    answer:
+      " ZoomInfo gives you static data. Clay requires complex setup. Pipeline delivers live research, scoring, and personalized messaging — all in one click.",
+  },
+  {
+    question: "What kind of insights does your platform provide?",
+    answer:
+      " We surface strategic signals — like hiring trends, tech shifts, funding events, and GTM priorities — tied to real buying intent.",
+  },
+
+  {
     question: "How accurate is your contact data?",
     answer:
-      "Our enrichment engine outperforms ZoomInfo by up to 40%, using a 15-source waterfall with fallback logic and real-time validation.",
+      " We use a 15-source waterfall with real-time validation to ensure top-tier accuracy across emails and phone numbers.",
   },
   {
-    question: "What sales tools do you integrate with?",
-    answer: "Outreach, Gong Engage, Salesforce, and more on the way.",
-  },
-  {
-    question: "How do you personalize outreach?",
+    question: "Is this secure and compliant for enterprise use?",
     answer:
-      "Each message is generated based on the contact's company size, tech stack, recent hiring activity, leadership shifts, and job descriptions.",
-  },
-  {
-    question: "What signals does Pipeline track?",
-    answer:
-      "Live hiring, tech stack adoption, job posts, funding, leadership moves, and sales tools being used.",
+      " Yes. We follow enterprise-grade data handling practices and never store or access your internal systems or customer data.",
   },
 ];
 
@@ -63,7 +75,7 @@ const Faq = () => {
               </div>
 
               {/* Right Column */}
-              <div className="space-y-4 md:col-span-1 w-full">
+              <div className="space-y-4 md:col-span-2 w-full">
                 {faqs.map((faq, index) => {
                   const isOpen = openItems.has(index);
                   return (
