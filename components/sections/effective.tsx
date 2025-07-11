@@ -48,7 +48,7 @@ const EffectiveSection = () => {
     research: {
       title: "LLM-powered deep research",
       description:
-        "Inspired by Perplexity and OpenAI's Retrieval-Augmented Generation (RAG), Pipeline performs reasoning across live public data to derive non-obvious insights like:",
+        "Pipeline uses advanced LLM reasoning, inspired by Perplexity and OpenAI’s RAG framework, to analyze public signals and surface strategic, non-obvious insights that help reps lead with relevance.",
       quote:
         "This company recently hired a Director of RevOps with Outreach experience, suggesting a motion shift from Salesloft to Outreach.",
       rightImage: researchRightImage,
@@ -57,14 +57,14 @@ const EffectiveSection = () => {
     enterprise: {
       title: "Enterprise ready delivery",
       description:
-        "Output is formatted and delivered into your existing systems—Outreach, Gong Engage, Salesforce—ready for action.",
+        "Every insight, contact, and personalized message is formatted and pushed directly into your existing systems — including Outreach,salesloft, Gong Engage, and Salesforce. No copy-paste. No workflow disruption. Just execution-ready content where your reps already work.",
       rightImage: enterRightImage,
       leftImage: enterLeftImage,
     },
     enrichment: {
       title: "Best-in-class enrichment",
       description:
-        "Our 15-provider waterfall gives you unmatched phone and email accuracy, with real-time validation at every layer.",
+        "Our 15-source enrichment waterfall provides unmatched accuracy across emails and phone numbers, validated in real time at every layer. This leads to higher connect rates, fewer bounces, and more coverage — especially on leads other tools miss.",
       rightImage: enrichRightImage,
       leftImage: enrichLeftImage,
     },

@@ -14,22 +14,22 @@ const Solutions = () => {
 
   const solutions = [
     {
-      icon: <SquareUser className="size-6 text-primary/54" />,
-      title: "Contact enrichment",
-      description:
-        "We use a 15-provider waterfall to surface the most accurate contact information—emails and phone numbers—for your target buyers. That means fewer bounces, more connects, and better results than static databases like ZoomInfo.",
-    },
-    {
       icon: <WandSparkles className="size-6 text-primary/54" />,
-      title: "Deep research & scoring",
+      title: "Deep Research & Intelligent Scoring",
       description:
-        "Pipeline scrapes job boards, LinkedIn, and company sites to uncover live buying signals—hiring activity, tech stack usage, budget shifts, go-to-market changes—and scores every account and contact based on fit and intent. You get a prioritized list with AI-generated insight summaries that would take hours to compile manually.",
+        "Pipeline scrapes job boards, LinkedIn, company websites, and other public data sources to uncover buying signals — including hiring activity, tech stack usage, team changes, product launches, GTM shifts, and funding events. Accounts and contacts are scored by fit and intent, giving your team a prioritized list with AI-generated insight summaries that would take hours to compile manually.",
     },
     {
       icon: <MessageSquare className="size-6 text-primary/54" />,
-      title: "Personalized messaging",
+      title: "Personalized Multi-Channel Messaging",
       description:
-        "Pipeline auto-generates outreach tailored to the contact’s live context—tech stack, team changes, job postings—and pushes it directly into your existing engagement platforms like Outreach, Gong Engage, or Salesforce. Reps stay focused, and outreach stays relevant.",
+        "Pipeline auto-generates personalized outreach based on each prospect’s live context — like job changes, tech stack, or team expansion and pushes it directly into your sales engagement platform, such as Outreach, Gong Engage, or Salesforce. Messaging stays relevant, and reps stay focused on high-intent selling.",
+    },
+    {
+      icon: <SquareUser className="size-6 text-primary/54" />,
+      title: "Contact Enrichment",
+      description:
+        "We use a 15-source waterfall to deliver verified emails and phone numbers for your key prospects — giving you more connects, fewer bounces, and better coverage than legacy databases like ZoomInfo.",
     },
   ];
 
@@ -56,9 +56,10 @@ const Solutions = () => {
                 <span className="text-gray-900">we provide</span>
               </h2>
               <p className="mx-auto max-w-4xl text-gray-600 text-base sm:text-lg">
-                The product automates research, qualification, and personalized
-                outreach so sales teams can focus on closing deals — not busy
-                work.
+                Our platform handles account research, qualifies prospects, and
+                delivers multi-touch personalized outreach all in one
+                streamlined workflow, so your team can focus on high-intent
+                selling.
               </p>
             </div>
 

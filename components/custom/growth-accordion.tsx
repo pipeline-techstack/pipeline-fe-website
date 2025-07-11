@@ -2,19 +2,20 @@ import React, { useState } from "react";
 
 const growthSections = [
   {
-    title: "40% more contact coverage than Zoominfo",
+    title: "75% reduction in research time per lead",
     description:
-      "Our 15-source contact waterfall finds valid emails and phone numbers other tools miss.",
+      "Reps save 35–45 minutes per account by letting Pipeline handle deep research, intent scoring, and insight summarization — freeing them to focus on qualified conversations.",
   },
   {
-    title: "Push-ready personalization into your sales stack",
+    title: " Push-ready personalization inside your sales stack",
     description:
-      "Outreach-ready messages are automatically loaded into tools like Outreach and Gong Engage.",
+      "Pipeline auto-generates personalized, context-rich messages and loads them directly into sales engagement platforms like Outreach, Salesloft, and Gong Engage — no manual input needed.",
   },
+
   {
-    title: "75% reduction in research time",
+    title: " 40% more contact coverage than ZoomInfo",
     description:
-      "Reps save 30–45 minutes per lead by letting Pipeline handle deep research and scoring.",
+      " Our 15-source contact waterfall finds accurate emails and phone numbers others miss — boosting connect rates and reducing bounce risk across your entire lead list.",
   },
 ];
 

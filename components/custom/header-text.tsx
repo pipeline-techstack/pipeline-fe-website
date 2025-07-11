@@ -8,9 +8,10 @@ const HeaderText = () => {
         Targeted <span className="text-primary">Outreach</span>
       </h1>
       <p className="mt-4 text-gray-700 text-lg">
-        AI that instantly scores and qualifies accounts, crafts personalized
-        outreach, and leverages fresher, context-rich data to connect you with
-        buyers who close.
+        AI that delivers real-time account insights, scores and qualifies leads,
+        and writes personalized outreach powered by dynamic, intent-driven data
+        to help enterprise teams engage the right decision-makers at high-intent
+        accounts.
       </p>
     </div>
   );
