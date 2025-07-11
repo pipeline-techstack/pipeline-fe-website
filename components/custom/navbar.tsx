@@ -5,6 +5,7 @@ import React from "react";
 import logo from "../../assets/logo.png";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const Navbar = () => {
   const handleRedirect = () => {
@@ -15,7 +16,10 @@ const Navbar = () => {
     <div className="flex justify-between items-center">
       {/* Logo */}
       <div className="bg-gradient-to-b from-primary/40 via-transparent to-primary/40 shadow-inner p-[1px] rounded-full">
-        <div className="bg-white/70 px-3 py-2 rounded-full">
+        <div
+          className="bg-white/70 px-3 py-2 rounded-full"
+          onClick={() => redirect("/")}
+        >
           <Image src={logo} alt="logo" width={140} height={140} />
         </div>
       </div>
@@ -32,7 +36,10 @@ const Navbar = () => {
           </Button>
 
           <Link href="/demo">
-            <Button variant="outline" className="border border-white cursor-pointer">
+            <Button
+              variant="outline"
+              className="bg-transparent shadow-none border-none cursor-pointer"
+            >
               Get a demo
             </Button>
           </Link>
