@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import logo from "../../assets/logo.png";
 import { Button } from "../ui/button";
-import GetDemoModal from "../modals/get-demo-modal";
+import Link from "next/link";
 
 const Navbar = () => {
   const handleRedirect = () => {
@@ -31,11 +31,11 @@ const Navbar = () => {
             Sign in
           </Button>
 
-          <GetDemoModal>
+          <Link href="/demo">
             <Button variant="outline" className="border border-white cursor-pointer">
               Get a demo
             </Button>
-          </GetDemoModal>
+          </Link>
         </div>
       </div>
     </div>

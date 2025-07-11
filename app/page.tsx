@@ -1,4 +1,4 @@
-import DemoFeatures from "@/components/sections/demo-features";
+// import DemoFeatures from "@/components/sections/demo-features";
 import EffectiveSection from "@/components/sections/effective";
 import Faq from "@/components/sections/faq";
 import Growth from "@/components/sections/growth";
@@ -24,7 +24,7 @@ export default function Home() {
         <WorkflowComparison />
         <Skydeck />
         <Faq />
-        <DemoFeatures />
+        {/* <DemoFeatures /> */}
       </div>
       <div className="bg-gray-50 pt-12 md:pt-40 xl:pt-48">
         <Footer />
