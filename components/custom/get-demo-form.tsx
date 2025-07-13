@@ -103,18 +103,18 @@ const GetDemoForm = () => {
     <div className="space-y-2">
       <label
         htmlFor={name}
-        className="block font-semibold text-gray-800 text-sm"
+        className="block font-semibold text-gray-800 text-sm md:text-base"
       >
         {label} {required && <span className="text-red-500">*</span>}
       </label>
-      {subtext && <p className="text-gray-500 text-xs">{subtext}</p>}
+      {subtext && <p className="text-gray-500 text-xs md:text-sm">{subtext}</p>}
       <div className="relative">
         <select
           id={name}
           name={name}
           value={form[name]}
           onChange={handleChange}
-          className="bg-white px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 w-full text-sm transition-all duration-200 appearance-none cursor-pointer"
+          className="bg-white px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 w-full text-sm md:text-base transition-all duration-200 appearance-none cursor-pointer"
         >
           <option value="">Please select</option>
           {options.map((opt) => (
@@ -140,7 +140,7 @@ const GetDemoForm = () => {
         </div>
       </div>
       {errors[name] && (
-        <p className="flex items-center gap-1 text-red-500 text-xs">
+        <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
           <AlertCircle className="w-3 h-3" />
           {errors[name]}
         </p>
@@ -149,12 +149,15 @@ const GetDemoForm = () => {
   );
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full space-y-6"
+    >
       {/* Email */}
       <div className="space-y-2">
         <label
           htmlFor="email"
-          className="block font-semibold text-gray-800 text-sm"
+          className="block font-semibold text-gray-800 text-sm md:text-base"
         >
           Work email <span className="text-red-500">*</span>
         </label>
@@ -165,41 +168,44 @@ const GetDemoForm = () => {
           value={form.email}
           onChange={handleChange}
           placeholder="What is your work email?"
-          className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm transition-all duration-200"
+          className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
         />
         {errors.email && (
-          <p className="flex items-center gap-1 text-red-500 text-xs">
+          <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
             <AlertCircle className="w-3 h-3" />
             {errors.email}
           </p>
         )}
       </div>
 
-      {renderSelect("Seniority", "seniority", seniorityOptions, true)}
-      {renderSelect(
-        "How big is your company?",
-        "companySize",
-        companySizeOptions,
-        true
-      )}
-      {renderSelect(
-        "How big is your sales team?",
-        "salesTeamSize",
-        salesTeamSizeOptions,
-        false,
-        "AE/SDR/AM/CSM etc."
-      )}
-      {renderSelect(
-        "How did you hear about us?",
-        "hearAboutUs",
-        hearAboutUsOptions
-      )}
+      {/* Responsive grid for selects */}
+<div className="grid grid-cols-1 gap-4 md:gap-6">
+  {renderSelect("Seniority", "seniority", seniorityOptions, true)}
+  {renderSelect(
+    "How big is your company?",
+    "companySize",
+    companySizeOptions,
+    true
+  )}
+  {renderSelect(
+    "How big is your sales team?",
+    "salesTeamSize",
+    salesTeamSizeOptions,
+    false,
+  )}
+  {renderSelect(
+    "How did you hear about us?",
+    "hearAboutUs",
+    hearAboutUsOptions
+  )}
+</div>
+
 
       {/* Message field */}
       <div className="space-y-2">
         <label
           htmlFor="message"
-          className="block font-semibold text-gray-800 text-sm"
+          className="block font-semibold text-gray-800 text-sm md:text-base"
         >
           Message <span className="text-red-500">*</span>
         </label>
@@ -209,11 +215,11 @@ const GetDemoForm = () => {
           value={form.message}
           onChange={handleChange}
           placeholder="Briefly describe your needs or goals..."
-          className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm transition-all duration-200"
+          className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
           rows={4}
         />
         {errors.message && (
-          <p className="flex items-center gap-1 text-red-500 text-xs">
+          <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
             <AlertCircle className="w-3 h-3" />
             {errors.message}
           </p>
