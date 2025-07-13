@@ -5,14 +5,25 @@ import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleRedirect = () => {
     window.open("https://sales.addpipeline.ai/", "_blank");
   };
+
+  // Classes for the "Get a demo" button
+  const getDemoClasses = (active: boolean) =>
+    [
+      "cursor-pointer transition font-semibold",
+      active
+        ? "bg-primary text-white shadow"
+        : "bg-transparent text-primary hover:bg-primary hover:text-white",
+      "focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2"
+    ].join(" ");
 
   return (
     <nav className="w-full px-4 py-2 bg-transparent">
@@ -33,14 +44,14 @@ const Navbar = () => {
             <Button
               variant="secondary"
               onClick={handleRedirect}
-              className="border border-white cursor-pointer"
+              className="border border-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2"
             >
               Sign in
             </Button>
             <Link href="/demo">
               <Button
                 variant="outline"
-                className="bg-transparent shadow-none border-none cursor-pointer"
+                className={getDemoClasses(pathname === "/demo")}
               >
                 Get a demo
               </Button>
@@ -78,14 +89,14 @@ const Navbar = () => {
           <Button
             variant="secondary"
             onClick={handleRedirect}
-            className="border border-white cursor-pointer w-full"
+            className="border border-white cursor-pointer w-full focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2"
           >
             Sign in
           </Button>
           <Link href="/demo" className="w-full">
             <Button
               variant="outline"
-              className="bg-transparent shadow-none border-none cursor-pointer w-full"
+              className={getDemoClasses(pathname === "/demo") + " w-full"}
             >
               Get a demo
             </Button>
