@@ -35,13 +35,8 @@ const Header = () => {
           <Navbar />
         </div>
 
-<<<<<<< HEAD
-        {/* Text + Button + Image */}
-        <div className="flex flex-col items-center mt-6 sm:mt-8 px-4 text-center">
-=======
         {/* Text + Button + Video */}
         <div className="flex flex-col items-center flex-1 mt-6 sm:mt-8 px-4 text-center">
->>>>>>> dev
           <HeaderText />
 
           <button className="flex items-center bg-white shadow mt-4 sm:mt-6 px-4 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm uppercase">
@@ -49,25 +44,15 @@ const Header = () => {
             Preview
           </button>
 
-<<<<<<< HEAD
-          {/* Hero Image */}
-          <div className="z-30 relative flex flex-1 justify-center items-start mt-6 sm:mt-10 pb-20 sm:pb-32 w-full max-w-7xl">
-=======
           {/* Hero Video */}
           <div className="z-30 relative flex flex-1 justify-center items-start mt-6 sm:mt-10 pb-16 sm:pb-24 w-full max-w-7xl">
->>>>>>> dev
             {/* Glowing background gradient */}
             <div className="top-0 -z-10 absolute inset-x-0 h-[80%] sm:h-[90%]">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#b1c4ff]/20 via-[#c9bfff]/20 to-[#b0f0ff]/10 blur-xl rounded-xl scale-105" />
             </div>
 
-<<<<<<< HEAD
-            {/* Glass panel & image */}
-            <div className="relative bg-white/20 shadow-xl backdrop-blur-xl p-2 sm:p-3 md:p-4 border border-primary/10 rounded-3xl w-full max-w-4xl overflow-hidden">
-=======
             {/* Glass panel & video */}
             <div className="relative bg-white/20 shadow-xl backdrop-blur-xl p-1.5 xs:p-2 sm:p-3 md:p-4 border border-primary/10 rounded-3xl w-full max-w-lg sm:max-w-2xl md:max-w-3xl lg:max-w-4xl overflow-hidden">
->>>>>>> dev
               <video
                 ref={videoRef}
                 src="/videos/product-demo.mp4"

@@ -7,25 +7,15 @@ const growthSections = [
       "Reps save 35–45 minutes per account by letting Pipeline handle deep research, intent scoring, and insight summarization — freeing them to focus on qualified conversations.",
   },
   {
-<<<<<<< HEAD
-    title: " Push-ready personalization inside your sales stack",
-=======
     title: "Push-ready personalization inside your sales stack",
->>>>>>> dev
     description:
       "Pipeline auto-generates personalized, context-rich messages and loads them directly into sales engagement platforms like Outreach, Salesloft, and Gong Engage — no manual input needed.",
   },
 
   {
-<<<<<<< HEAD
-    title: " 40% more contact coverage than ZoomInfo",
-    description:
-      " Our 15-source contact waterfall finds accurate emails and phone numbers others miss — boosting connect rates and reducing bounce risk across your entire lead list.",
-=======
     title: "40% more contact coverage than ZoomInfo",
     description:
       "Our 15-source contact waterfall finds accurate emails and phone numbers others miss — boosting connect rates and reducing bounce risk across your entire lead list.",
->>>>>>> dev
   },
 ];
 
