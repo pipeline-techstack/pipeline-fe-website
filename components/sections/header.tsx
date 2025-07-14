@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import Navbar from "../custom/navbar";
 import headerBg from "../../assets/header-bg.png";
@@ -7,13 +7,13 @@ import HeaderText from "../custom/header-text";
 import { Eye } from "lucide-react";
 
 const Header = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  // const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 2.0;
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (videoRef.current) {
+  //     videoRef.current.playbackRate = 2.0;
+  //   }
+  // }, []);
 
   return (
     <div className="relative w-full min-h-screen">
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
 
         {/* Text + Button + Video */}
-        <div className="flex flex-col items-center flex-1 mt-6 sm:mt-8 px-4 text-center">
+        <div className="flex flex-col flex-1 items-center mt-6 sm:mt-8 px-4 text-center">
           <HeaderText />
 
           <button className="flex items-center bg-white shadow mt-4 sm:mt-6 px-4 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm uppercase">
@@ -54,13 +54,14 @@ const Header = () => {
             {/* Glass panel & video */}
             <div className="relative bg-white/20 shadow-xl backdrop-blur-xl p-1.5 xs:p-2 sm:p-3 md:p-4 border border-primary/10 rounded-3xl w-full max-w-lg sm:max-w-2xl md:max-w-3xl lg:max-w-4xl overflow-hidden">
               <video
-                ref={videoRef}
+                // ref={videoRef}
                 src="/videos/product-demo.mp4"
                 autoPlay
-                loop
                 muted
+                loop
                 playsInline
                 className="rounded-2xl w-full h-auto object-contain aspect-video"
+                controls
               />
             </div>
           </div>
