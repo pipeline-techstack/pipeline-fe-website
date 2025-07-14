@@ -17,7 +17,7 @@ export default function DemoPage() {
             <h1 className="font-extrabold text-primary text-4xl lg:text-4xl md:text-5xl leading-tight">
               Book a meeting with a GTM expert
             </h1>
-            <p className="mx-auto lg:mx-0 max-w-xl text-primary text-base md:text-lg">
+            <p className="lg:mx-0 max-w-xl text-primary text-base md:text-lg">
               Pipeline helps you identify and connect with your highest-value
               prospects — instantly.
             </p>
