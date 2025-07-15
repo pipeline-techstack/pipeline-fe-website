@@ -2,7 +2,7 @@ import React from "react";
 
 const HeaderText = () => {
   return (
-    <div className="max-w-4xl w-full px-4 mx-auto">
+    <div className="mx-auto px-4 w-full max-w-4xl">
       <h1 className="font-bold text-gray-900 text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight md:leading-[78.6px] tracking-[-0.04em]">
         Real-time AI Insights & <br className="hidden sm:block" />
         Targeted <span className="text-primary">Outreach</span>

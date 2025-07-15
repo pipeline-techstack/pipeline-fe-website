@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "../custom/navbar";
 import headerBg from "../../assets/header-bg.png";
 import HeaderText from "../custom/header-text";
-import { Eye } from "lucide-react";
+// import { Eye } from "lucide-react";
 
 const Header = () => {
   // const videoRef = useRef<HTMLVideoElement>(null);
@@ -39,10 +39,10 @@ const Header = () => {
         <div className="flex flex-col flex-1 items-center mt-6 sm:mt-8 px-4 text-center">
           <HeaderText />
 
-          <button className="flex items-center bg-white shadow mt-4 sm:mt-6 px-4 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm uppercase">
+          {/* <button className="flex items-center bg-white shadow mt-4 sm:mt-6 px-4 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm uppercase">
             <Eye className="inline-block mr-2 w-4 h-4" />
             Preview
-          </button>
+          </button> */}
 
           {/* Hero Video */}
           <div className="z-30 relative flex flex-1 justify-center items-start mt-6 sm:mt-10 pb-16 sm:pb-24 w-full max-w-7xl">
