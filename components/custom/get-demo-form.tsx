@@ -149,10 +149,7 @@ const GetDemoForm = () => {
   );
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="w-full space-y-6"
-    >
+    <form onSubmit={handleSubmit} className="space-y-6 w-full">
       {/* Email */}
       <div className="space-y-2">
         <label
@@ -168,7 +165,7 @@ const GetDemoForm = () => {
           value={form.email}
           onChange={handleChange}
           placeholder="What is your work email?"
-          className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
+          className="px-4 py-5 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
         />
         {errors.email && (
           <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
@@ -179,27 +176,26 @@ const GetDemoForm = () => {
       </div>
 
       {/* Responsive grid for selects */}
-<div className="grid grid-cols-1 gap-4 md:gap-6">
-  {renderSelect("Seniority", "seniority", seniorityOptions, true)}
-  {renderSelect(
-    "How big is your company?",
-    "companySize",
-    companySizeOptions,
-    true
-  )}
-  {renderSelect(
-    "How big is your sales team?",
-    "salesTeamSize",
-    salesTeamSizeOptions,
-    false,
-  )}
-  {renderSelect(
-    "How did you hear about us?",
-    "hearAboutUs",
-    hearAboutUsOptions
-  )}
-</div>
-
+      <div className="gap-4 md:gap-6 grid grid-cols-1">
+        {renderSelect("Seniority", "seniority", seniorityOptions, true)}
+        {renderSelect(
+          "How big is your company?",
+          "companySize",
+          companySizeOptions,
+          true
+        )}
+        {renderSelect(
+          "How big is your sales team?",
+          "salesTeamSize",
+          salesTeamSizeOptions,
+          false
+        )}
+        {renderSelect(
+          "How did you hear about us?",
+          "hearAboutUs",
+          hearAboutUsOptions
+        )}
+      </div>
 
       {/* Message field */}
       <div className="space-y-2">

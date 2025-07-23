@@ -55,8 +55,8 @@ const Faq = () => {
   };
 
   return (
-    <div className="bg-gray-50">
-      <div className="mx-auto max-w-6xl">
+    <div className="bg-gray-50 w-full">
+      <div className="mx-auto">
         <div className="bg-gradient-to-br from-gray-300 via-purple-500/40 to-primary p-[1px] rounded-3xl">
           <Card className="bg-white/85 backdrop-blur-md border border-white/10 rounded-[calc(theme(borderRadius.3xl)-3px)]">
             <CardContent className="gap-8 grid md:grid-cols-2 p-6 sm:p-8">

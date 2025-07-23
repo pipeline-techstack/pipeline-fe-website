@@ -4,8 +4,8 @@ import skydeckImage from "../../assets/Skydec.png";
 
 const Skydeck = () => {
   return (
-    <div className="bg-gray-50">
-      <div className="mx-auto max-w-6xl">
+    <div className="bg-gray-50 w-full">
+      <div className="mx-auto">
         <Image
           src={skydeckImage}
           alt="Backed by Berkeley SkyDeck"

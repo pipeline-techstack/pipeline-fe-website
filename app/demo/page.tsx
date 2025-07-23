@@ -11,19 +11,34 @@ export default function DemoPage() {
 
       {/* Demo Section */}
       <div className="flex flex-1 items-center px-4 md:px-8 py-8">
-        <div className="items-center gap-12 lg:gap-16 grid grid-cols-1 lg:grid-cols-2 mx-auto w-full max-w-7xl">
+        <div className="gap-12 lg:gap-16 grid grid-cols-1 lg:grid-cols-2 mx-auto w-full max-w-7xl">
           {/* Left Content */}
-          <div className="space-y-2 text-indigo-950 lg:text-left">
-            <h1 className="font-extrabold text-primary text-4xl lg:text-4xl md:text-5xl leading-tight">
-              Book a meeting with a GTM expert
-            </h1>
-            <p className="lg:mx-0 max-w-xl text-primary text-base md:text-lg">
-              Pipeline helps you identify and connect with your highest-value
-              prospects — instantly.
-            </p>
-            <p className="text-primary text-base">
-              Ready to grow? Let’s talk 👉
-            </p>
+          <div className="flex flex-col justify-evenly space-y-2 text-indigo-950 lg:text-left">
+            <div>
+              <h1 className="font-extrabold text-gray-900 text-4xl lg:text-4xl md:text-5xl leading-tight">
+                Book a meeting with a GTM expert
+              </h1>
+              <p className="lg:mx-0 max-w-xl text-gray-700 text-base md:text-lg">
+                Pipeline helps you identify and connect with your highest-value
+                prospects — instantly.
+              </p>
+              <p className="text-gray-700 text-base">
+                Ready to grow? Let’s talk 👉
+              </p>
+            </div>
+
+            {/* Glass panel & video */}
+            <div className="relative bg-white/20 shadow-xl backdrop-blur-xl p-1.5 xs:p-2 sm:p-3 md:p-4 border border-primary/10 rounded-3xl w-full max-w-lg sm:max-w-2xl md:max-w-3xl lg:max-w-4xl overflow-hidden">
+              <video
+                src="/videos/long-demo.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="rounded-2xl w-full h-auto object-contain aspect-video"
+                controls
+              />
+            </div>
           </div>
 
           {/* Right Form Card */}

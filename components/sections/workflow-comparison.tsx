@@ -61,8 +61,8 @@ const workflows: WorkflowItem[] = [
 
 const WorkflowComparison = () => {
   return (
-    <div className="bg-gray-50">
-      <div className="mx-auto max-w-7xl">
+    <div className="bg-gray-50 w-full">
+      <div className="mx-auto">
         <div className="gap-6 sm:gap-8 grid md:grid-cols-2">
           {workflows.map((workflow, index) => (
             <div
