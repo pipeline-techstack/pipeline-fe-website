@@ -31,7 +31,7 @@ const GrowthAccordion = () => {
           <div
             key={index}
             onClick={() => setOpenIndex(index === openIndex ? null : index)}
-            className={`group rounded-xl bg-white/80 hover:bg-primary/10 transition cursor-pointer px-3 py-2 sm:px-5 sm:py-4 shadow-sm`}
+            className={`group rounded-xl bg-white/80 hover:bg-[#F9FAFF]/80 backdrop-blur-sm transition cursor-pointer px-3 py-2 sm:px-5 sm:py-4 shadow-sm`}
           >
             <div className="flex items-start gap-3 sm:gap-5">
               {/* Animated vertical line */}
