@@ -27,6 +27,7 @@ const hearAboutUsOptions = [
 
 const GetDemoForm = () => {
   const [form, setForm] = useState({
+    name: "",
     email: "",
     seniority: "",
     companySize: "",
@@ -41,6 +42,8 @@ const GetDemoForm = () => {
 
   const validate = () => {
     const newErrors: typeof errors = {};
+    if (!form.name.trim()) newErrors.name = "Name is required";
+
     if (!form.email.trim()) newErrors.email = "Email is required";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       newErrors.email = "Invalid email";
@@ -79,6 +82,7 @@ const GetDemoForm = () => {
       if (!res.ok) throw new Error();
       setStatus("success");
       setForm({
+        name: "",
         email: "",
         seniority: "",
         companySize: "",
@@ -153,6 +157,31 @@ const GetDemoForm = () => {
       onSubmit={handleSubmit}
       className="w-full space-y-6"
     >
+      {/* Name */}
+<div className="space-y-2">
+  <label
+    htmlFor="name"
+    className="block font-semibold text-gray-800 text-sm md:text-base"
+  >
+    Full name <span className="text-red-500">*</span>
+  </label>
+  <Input
+    id="name"
+    type="text"
+    name="name"
+    value={form.name}
+    onChange={handleChange}
+    placeholder="eg. John Doe"
+    className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
+  />
+  {errors.name && (
+    <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
+      <AlertCircle className="w-3 h-3" />
+      {errors.name}
+    </p>
+  )}
+</div>
+
       {/* Email */}
       <div className="space-y-2">
         <label
