@@ -12,6 +12,11 @@ import docusign from "../../assets/companyLogos/docusign.png";
 import elastic from "../../assets/companyLogos/elastic.png";
 import gartner from "../../assets/companyLogos/gatner.png";
 import harris from "../../assets/companyLogos/hails.png";
+import hubspot from "../../assets/companyLogos/hubspot.png";
+import intuit from "../../assets/companyLogos/intuit.png";
+import nutanix from "../../assets/companyLogos/nutanix.png";
+import oracle from "../../assets/companyLogos/oracle.png";
+import salesforce from "../../assets/companyLogos/salesforce.png";
 
 const logos = [
   adobe,
@@ -22,6 +27,11 @@ const logos = [
   elastic,
   gartner,
   harris,
+  hubspot,
+  intuit,
+  nutanix,
+  oracle,
+  salesforce,
 ];
 
 const MarqueeSection = () => {
@@ -34,7 +44,7 @@ const MarqueeSection = () => {
           className="gap-2"
           gradient={true}
           gradientWidth={60}
-          gradientColor="rgb(249,250,255)" 
+          gradientColor="rgb(249,250,255)"
         >
           {logos.map((logo, idx) => (
             <div
@@ -46,7 +56,7 @@ const MarqueeSection = () => {
                 alt="Company Logo"
                 width={110}
                 height={48}
-                className="object-contain w-20 sm:w-24 md:w-28 h-12 sm:h-14 md:h-16"
+                className="w-20 sm:w-24 md:w-28 h-12 sm:h-14 md:h-16 object-contain"
                 sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
                 priority={idx < 4}
               />
