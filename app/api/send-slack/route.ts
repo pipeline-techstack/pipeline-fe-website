@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 interface DemoRequestBody {
+  name: string;
   email: string;
   seniority: string;
   companySize: string;
@@ -25,12 +26,12 @@ export async function POST(req: Request) {
     }
 
     const body: DemoRequestBody = await req.json();
-    const { email, seniority, companySize, salesTeamSize, hearAboutUs, message } = body;
+    const { name, email, seniority, companySize, salesTeamSize, hearAboutUs, message } = body;
 
     // Validate required fields
-    if (!email?.trim() || !seniority || !companySize || !message?.trim()) {
+    if (!name?.trim() || !email?.trim() || !seniority || !companySize || !message?.trim()) {
       return NextResponse.json(
-        { error: "Missing required fields: email, seniority, companySize, and message are required" },
+        { error: "Missing required fields: name, email, seniority, companySize, and message are required" },
         { status: 400 }
       );
     }
@@ -53,6 +54,7 @@ export async function POST(req: Request) {
     }
 
     // Sanitize input
+    const sanitizedName = name.trim();
     const sanitizedEmail = email.trim();
     const sanitizedMessage = message.trim();
 
@@ -60,6 +62,7 @@ export async function POST(req: Request) {
     const payload: SlackPayload = {
       text:
         `🚀 *New Demo Request Received!*\n\n` +
+        `👤 *Name:* ${sanitizedName}\n` +
         `📧 *Email:* ${sanitizedEmail}\n` +
         `🧑‍💼 *Seniority:* ${seniority}\n` +
         `🏢 *Company Size:* ${companySize}\n` +
