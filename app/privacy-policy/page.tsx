@@ -1,24 +1,23 @@
-// app/(auth)/privacy-policy/page.tsx
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="flex flex-col bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 h-screen">
+    <div className="flex flex-col bg-white min-h-screen text-gray-900">
       {/* Header */}
-      <div className="mb-8 text-center">
+      <div className="mb-6 px-4 py-3 border-gray-200 border-b">
         <Link
           href="https://sales.addpipeline.ai/signup"
-          className="inline-flex items-center my-2 text-white/80 hover:text-white transition-colors"
+          className="inline-flex items-center my-2 transition-colors"
         >
           <ChevronLeft className="mr-2 size-4" />
           Back to Sign Up
         </Link>
-        <h1 className="mb-2 font-bold text-white text-4xl">Privacy Policy</h1>
+        <h1 className="mb-2 font-bold text-4xl">Privacy Policy</h1>
         <Link
           href="https://addpipeline.ai/"
           target="_blank"
-          className="text-blue-200 underline"
+          className="underline"
         >
           Pipeline AI
         </Link>
@@ -26,12 +25,10 @@ export default function PrivacyPolicy() {
 
       {/* Scrollable Content Container */}
       <div className="mb-4 overflow-hidden">
-        <div className="bg-white/10 backdrop-blur-lg mx-auto p-4 max-w-4xl h-[calc(100vh-166px)] overflow-y-auto text-white">
+        <div className="bg-white/10 backdrop-blur-lg p-4 h-[calc(100vh-166px)] overflow-y-auto">
           <div className="prose-invert max-w-none prose">
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
-                1. Introduction
-              </h2>
+              <h2 className="mb-4 font-semibold text-2xl">1. Introduction</h2>
               <p className="mb-4 leading-relaxed">
                 At Pipeline AI, we respect your privacy and are committed to
                 protecting your personal information. This Privacy Policy
@@ -42,11 +39,11 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 2. Information We Collect
               </h2>
               <div className="space-y-4">
-                <h3 className="font-medium text-blue-300 text-xl">
+                <h3 className="font-medium text-xl">
                   2.1 Information You Provide
                 </h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
@@ -68,7 +65,7 @@ export default function PrivacyPolicy() {
                   </li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
+                <h3 className="font-medium text-xl">
                   2.2 Information We Collect Automatically
                 </h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
@@ -90,7 +87,7 @@ export default function PrivacyPolicy() {
                   </li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
+                <h3 className="font-medium text-xl">
                   2.3 Information from Third Parties
                 </h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
@@ -111,13 +108,11 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 3. How We Use Your Information
               </h2>
               <div className="space-y-4">
-                <h3 className="font-medium text-blue-300 text-xl">
-                  3.1 Service Provision
-                </h3>
+                <h3 className="font-medium text-xl">3.1 Service Provision</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>Provide and maintain our platform</li>
                   <li>Process transactions and manage accounts</li>
@@ -125,9 +120,7 @@ export default function PrivacyPolicy() {
                   <li>Generate AI-powered insights and recommendations</li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  3.2 Communication
-                </h3>
+                <h3 className="font-medium text-xl">3.2 Communication</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>Send service-related notifications</li>
                   <li>Provide customer support</li>
@@ -135,7 +128,7 @@ export default function PrivacyPolicy() {
                   <li>Conduct surveys and gather feedback</li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
+                <h3 className="font-medium text-xl">
                   3.3 Improvement and Analytics
                 </h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
@@ -145,9 +138,7 @@ export default function PrivacyPolicy() {
                   <li>Ensure security and fraud prevention</li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  3.4 Legal and Business
-                </h3>
+                <h3 className="font-medium text-xl">3.4 Legal and Business</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>Comply with legal obligations</li>
                   <li>Protect our rights and interests</li>
@@ -158,7 +149,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 4. Legal Basis for Processing (GDPR)
               </h2>
               <p className="mb-4 leading-relaxed">
@@ -182,11 +173,11 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 5. Information Sharing and Disclosure
               </h2>
               <div className="space-y-4">
-                <h3 className="font-medium text-blue-300 text-xl">
+                <h3 className="font-medium text-xl">
                   5.1 We Do Not Sell Your Data
                 </h3>
                 <p className="leading-relaxed">
@@ -194,9 +185,7 @@ export default function PrivacyPolicy() {
                   third parties.
                 </p>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  5.2 Service Providers
-                </h3>
+                <h3 className="font-medium text-xl">5.2 Service Providers</h3>
                 <p className="leading-relaxed">
                   We share data with trusted service providers who help us
                   operate our platform:
@@ -209,25 +198,19 @@ export default function PrivacyPolicy() {
                   <li>Customer support tools</li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  5.3 Business Transfers
-                </h3>
+                <h3 className="font-medium text-xl">5.3 Business Transfers</h3>
                 <p className="leading-relaxed">
                   Information may be transferred in connection with mergers,
                   acquisitions, or business sales.
                 </p>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  5.4 Legal Requirements
-                </h3>
+                <h3 className="font-medium text-xl">5.4 Legal Requirements</h3>
                 <p className="leading-relaxed">
                   We may disclose information when required by law or to protect
                   our rights and safety.
                 </p>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  5.5 With Your Consent
-                </h3>
+                <h3 className="font-medium text-xl">5.5 With Your Consent</h3>
                 <p className="leading-relaxed">
                   We may share information for other purposes with your explicit
                   consent.
@@ -236,13 +219,9 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
-                6. Data Security
-              </h2>
+              <h2 className="mb-4 font-semibold text-2xl">6. Data Security</h2>
               <div className="space-y-4">
-                <h3 className="font-medium text-blue-300 text-xl">
-                  6.1 Security Measures
-                </h3>
+                <h3 className="font-medium text-xl">6.1 Security Measures</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>Encryption in transit and at rest</li>
                   <li>Access controls and authentication</li>
@@ -250,9 +229,7 @@ export default function PrivacyPolicy() {
                   <li>Incident response procedures</li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  6.2 Data Retention
-                </h3>
+                <h3 className="font-medium text-xl">6.2 Data Retention</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>
                     We retain data as long as necessary for service provision
@@ -266,11 +243,11 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 7. Your Rights and Controls
               </h2>
               <div className="space-y-4">
-                <h3 className="font-medium text-blue-300 text-xl">
+                <h3 className="font-medium text-xl">
                   7.1 Access and Portability
                 </h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
@@ -278,7 +255,7 @@ export default function PrivacyPolicy() {
                   <li>Receive data in a portable format</li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
+                <h3 className="font-medium text-xl">
                   7.2 Correction and Deletion
                 </h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
@@ -286,18 +263,14 @@ export default function PrivacyPolicy() {
                   <li>Request deletion of your data</li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  7.3 Processing Controls
-                </h3>
+                <h3 className="font-medium text-xl">7.3 Processing Controls</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>Object to processing for direct marketing</li>
                   <li>Restrict processing in certain circumstances</li>
                   <li>Withdraw consent where applicable</li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  7.4 Account Settings
-                </h3>
+                <h3 className="font-medium text-xl">7.4 Account Settings</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>Update preferences and settings</li>
                   <li>Control communication preferences</li>
@@ -307,13 +280,11 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 8. Cookies and Tracking
               </h2>
               <div className="space-y-4">
-                <h3 className="font-medium text-blue-300 text-xl">
-                  8.1 Cookie Types
-                </h3>
+                <h3 className="font-medium text-xl">8.1 Cookie Types</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>
                     <strong>Essential:</strong> Required for service
@@ -331,9 +302,7 @@ export default function PrivacyPolicy() {
                   </li>
                 </ul>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  8.2 Cookie Controls
-                </h3>
+                <h3 className="font-medium text-xl">8.2 Cookie Controls</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>Manage cookie preferences in your browser</li>
                   <li>Opt out of non-essential cookies</li>
@@ -345,21 +314,17 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 9. International Data Transfers
               </h2>
               <div className="space-y-4">
-                <h3 className="font-medium text-blue-300 text-xl">
-                  9.1 Global Operations
-                </h3>
+                <h3 className="font-medium text-xl">9.1 Global Operations</h3>
                 <p className="leading-relaxed">
                   We may transfer data internationally to provide our global
                   service.
                 </p>
 
-                <h3 className="font-medium text-blue-300 text-xl">
-                  9.2 Safeguards
-                </h3>
+                <h3 className="font-medium text-xl">9.2 Safeguards</h3>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
                   <li>Standard contractual clauses</li>
                   <li>Adequacy decisions</li>
@@ -369,7 +334,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 10. Children&apos;s Privacy
               </h2>
               <p className="mb-4 leading-relaxed">
@@ -379,7 +344,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 11. California Privacy Rights (CCPA)
               </h2>
               <p className="mb-4 leading-relaxed">
@@ -396,7 +361,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="mb-8">
-              <h2 className="mb-4 font-semibold text-blue-200 text-2xl">
+              <h2 className="mb-4 font-semibold text-2xl">
                 12. Changes to This Policy
               </h2>
               <p className="mb-4 leading-relaxed">
