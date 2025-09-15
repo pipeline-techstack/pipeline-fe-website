@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 interface DemoRequestBody {
   name: string;
   email: string;
+  phone: string;
   seniority: string;
   companySize: string;
   salesTeamSize?: string;
@@ -14,109 +15,66 @@ interface SlackPayload {
   text: string;
 }
 
+function validatePhoneNumber(phone: string) {
+  if (!phone || !phone.trim()) return { isValid: false, error: "Phone number is required" };
+
+  let cleanPhone = phone.replace(/[^\d+]/g, "");
+  if (!cleanPhone.startsWith("+")) cleanPhone = "+" + cleanPhone;
+
+  const digitsOnly = cleanPhone.substring(1);
+  if (!/^\d+$/.test(digitsOnly)) return { isValid: false, error: "Phone number contains invalid characters" };
+  if (digitsOnly.length < 7) return { isValid: false, error: "Phone number is too short" };
+  if (digitsOnly.length > 15) return { isValid: false, error: "Phone number is too long" };
+  if (digitsOnly.startsWith("0")) return { isValid: false, error: "Phone number cannot start with 0 after country code" };
+
+  return { isValid: true, cleaned: cleanPhone };
+}
+
 export async function POST(req: Request) {
   try {
     const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL;
-    if (!slackWebhookUrl) {
-      console.error("SLACK_WEBHOOK_URL is not set");
-      return NextResponse.json(
-        { error: "Server configuration error" },
-        { status: 500 }
-      );
-    }
+    if (!slackWebhookUrl) return NextResponse.json({ error: "Server config error" }, { status: 500 });
 
     const body: DemoRequestBody = await req.json();
-    const { name, email, seniority, companySize, salesTeamSize, hearAboutUs, message } = body;
+    const { name, email, phone, seniority, companySize, salesTeamSize, hearAboutUs, message } = body;
 
-    // Validate required fields
-    if (!name?.trim() || !email?.trim() || !seniority || !companySize || !message?.trim()) {
-      return NextResponse.json(
-        { error: "Missing required fields: name, email, seniority, companySize, and message are required" },
-        { status: 400 }
-      );
-    }
+    if (!name?.trim() || !email?.trim() || !phone?.trim() || !seniority || !companySize || !message?.trim())
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.trim())) {
-      return NextResponse.json(
-        { error: "Invalid email format" },
-        { status: 400 }
-      );
-    }
+    // Email validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return NextResponse.json({ error: "Invalid email" }, { status: 400 });
 
-    // Validate message length
-    if (message.trim().length > 2000) {
-      return NextResponse.json(
-        { error: "Message must be under 2000 characters" },
-        { status: 400 }
-      );
-    }
+    // Phone validation
+    const phoneValidation = validatePhoneNumber(phone);
+    if (!phoneValidation.isValid) return NextResponse.json({ error: phoneValidation.error }, { status: 400 });
 
-    // Sanitize input
-    const sanitizedName = name.trim();
-    const sanitizedEmail = email.trim();
-    const sanitizedMessage = message.trim();
+    // Format for display
+    const formattedPhone = phoneValidation.cleaned;
 
-    // Construct Slack payload
+    // Slack payload
     const payload: SlackPayload = {
       text:
-        `🚀 *New Demo Request Received!*\n\n` +
-        `👤 *Name:* ${sanitizedName}\n` +
-        `📧 *Email:* ${sanitizedEmail}\n` +
+        `🚀 *New Demo Request Received!*\n` +
+        `👤 *Name:* ${name.trim()}\n` +
+        `📧 *Email:* ${email.trim().toLowerCase()}\n` +
+        `📱 *Phone:* ${formattedPhone}\n` +
         `🧑‍💼 *Seniority:* ${seniority}\n` +
         `🏢 *Company Size:* ${companySize}\n` +
         (salesTeamSize ? `👥 *Sales Team Size:* ${salesTeamSize}\n` : "") +
         (hearAboutUs ? `📣 *Heard About Us Via:* ${hearAboutUs}\n` : "") +
-        `💬 *Message:* ${sanitizedMessage}\n` +
-        `⏰ *Time:* ${new Date().toISOString()}\n` +
-        `🌐 *Source:* Website Demo Form`
+        `💬 *Message:* ${message.trim()}\n` +
+        `⏰ *Time:* ${new Date().toISOString()}`,
     };
 
-    // Send to Slack
-    const slackResponse = await fetch(slackWebhookUrl, {
+    await fetch(slackWebhookUrl, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "User-Agent": "Pipeline-Demo-Bot"
-      },
-      body: JSON.stringify(payload)
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
 
-    if (!slackResponse.ok) {
-      const errorText = await slackResponse.text();
-      console.error("Slack webhook error:", slackResponse.status, errorText);
-      return NextResponse.json(
-        { error: "Slack notification failed" },
-        { status: 500 }
-      );
-    }
-
-    console.log("Demo request sent to Slack:", {
-      email: sanitizedEmail,
-      seniority,
-      companySize,
-      salesTeamSize,
-      hearAboutUs
-    });
-
-    return NextResponse.json(
-      { success: true, message: "Demo request submitted successfully" },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error("Demo request error:", error);
-
-    if (error instanceof SyntaxError) {
-      return NextResponse.json(
-        { error: "Invalid JSON format" },
-        { status: 400 }
-      );
-    }
-
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: true, message: "Demo request submitted successfully" }, { status: 200 });
+  } catch (err) {
+    console.error("Demo request error:", err);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

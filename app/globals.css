@@ -120,3 +120,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* hide the default search icon inside the dropdown */
+.react-tel-input .search .search-emoji {
+  display: none !important;
+}
+
+.react-tel-input .form-control {
+  padding-left: 48px !important; /* enough for flag + spacing */
+  border-radius: 12px !important;
+  border: 2px solid #e5e7eb !important;
+  height: 48px !important;
+}
