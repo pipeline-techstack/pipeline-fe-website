@@ -127,7 +127,8 @@
 }
 
 .react-tel-input .form-control {
-  padding-left: 48px !important; /* enough for flag + spacing */
+  /* enough for flag + spacing */
+  padding-left: 48px !important; 
   border-radius: 12px !important;
   border: 2px solid #e5e7eb !important;
   height: 48px !important;

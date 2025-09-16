@@ -200,13 +200,13 @@ const GetDemoForm = () => {
             minHeight: "300px",
           }}
             searchStyle={{
-    width: "95%",
-    height: "36px",
-    fontSize: "14px",
-    borderRadius: "8px", 
-    border: "1px solid #d1d5db",
-    padding: "0 8px",
-  }}
+              width: "95%",
+              height: "36px",
+              fontSize: "14px",
+              borderRadius: "8px", 
+              border: "1px solid #d1d5db",
+              padding: "0 8px",
+            }}
           enableSearch={true}
           searchPlaceholder="Search countries..."
           specialLabel=""
