@@ -14,6 +14,7 @@ interface SubscribeFormData extends FormField {
   email: string;
   phone: string;
   consent: string; 
+  marketingConsent: string;
 }
 
 export default function SubscribeForm() {
@@ -22,6 +23,7 @@ export default function SubscribeForm() {
     email: "",
     phone: "",
     consent: "",
+    marketingConsent: "",
   };
 
   const validationRules = {
@@ -29,6 +31,7 @@ export default function SubscribeForm() {
     email: { required: true, email: true },
     phone: { required: true, phone: true },
     consent: { required: true },
+    marketingConsent: { required: true },
   };
 
   const {
@@ -159,15 +162,20 @@ export default function SubscribeForm() {
                       </span>
                     </summary>
                     <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
-                      By providing a telephone number, clicking this button, and
-                      submitting the form, you are consenting to be contacted by
-                      SMS text message from Signal House, LLC regarding account
-                      issues and outages (customer care), (our message frequency
-                      may vary). Message & data rates apply. Reply STOP to
-                      unsubscribe from further messaging. Reply HELP for more
-                      information. See our Privacy Policy (containing our SMS
-                      Terms) at the bottom of the page for more information.
+                      By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
+                      SMS text message from Signal House, LLC regarding account issues and outages (customer care), (our message frequency
+                      may vary). Message & data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
+                      <a
+                        href="https://addpipeline.ai/privacy-policy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-primary/80 hover:text-primary/100"
+                      >
+                        Privacy Policy
+                      </a>{" "}
+                      (containing our SMS Terms) for more information.
                     </p>
+
                   </details>
                 </div>
               </div>
@@ -180,6 +188,10 @@ export default function SubscribeForm() {
                   type="checkbox"
                   id="marketingConsent"
                   name="marketingConsent"
+                  checked={!!form.marketingConsent}
+                  onChange={(e) =>
+                    handleChange("marketingConsent", e.target.checked ? "yes" : "")
+                  }
                   className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
                 />
                 <div className="ml-3 flex-1">
@@ -187,7 +199,8 @@ export default function SubscribeForm() {
                     htmlFor="marketingConsent"
                     className="text-gray-900 text-sm font-medium cursor-pointer"
                   >
-                    I consent to receive marketing offers via SMS
+                    I consent to receive marketing offers via SMS{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <details className="mt-2">
                     <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
@@ -199,20 +212,28 @@ export default function SubscribeForm() {
                       </span>
                     </summary>
                     <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
-                      By providing a telephone number, clicking this button, and
-                      submitting the form, you are consenting to be contacted by
-                      SMS text message from Signal House, LLC regarding new
-                      offers (marketing), (our message frequency may vary).
-                      Message & data rates apply. Reply STOP to unsubscribe from
-                      further messaging. Reply HELP for more information. See our
-                      Privacy Policy (containing our SMS Terms) at the bottom of
-                      the page for more information.
+                      By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
+                      SMS text message from Signal House, LLC regarding new offers (marketing), (our message frequency may vary). Message &
+                      data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
+                      <a
+                        href="https://addpipeline.ai/privacy-policy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-primary/80 hover:text-primary/100"
+                      >
+                        Privacy Policy
+                      </a>{" "}
+                      (containing our SMS Terms) for more information.
                     </p>
+
                   </details>
                 </div>
               </div>
             </div>
 
+            {errors.marketingConsent && (
+              <p className="text-red-500 text-xs mt-2">{errors.marketingConsent}</p>
+            )}
             {errors.consent && (
               <p className="text-red-500 text-sm mt-2">{errors.consent}</p>
             )}

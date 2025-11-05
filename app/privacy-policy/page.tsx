@@ -187,33 +187,56 @@ export default function PrivacyPolicy() {
 
                 <h3 className="font-medium text-xl">5.2 Service Providers</h3>
                 <p className="leading-relaxed">
-                  We share data with trusted service providers who help us
-                  operate our platform:
+                  We may share your information with third-party vendors who
+                  provide services on our behalf, such as:
                 </p>
                 <ul className="space-y-2 ml-4 list-disc list-inside">
-                  <li>Cloud hosting and infrastructure</li>
                   <li>Payment processing</li>
+                  <li>Data analysis</li>
                   <li>Email delivery services</li>
+                  <li>Cloud hosting and infrastructure</li>
                   <li>Analytics and monitoring</li>
                   <li>Customer support tools</li>
                 </ul>
 
-                <h3 className="font-medium text-xl">5.3 Business Transfers</h3>
+                <h3 className="font-medium text-xl">5.3 Affiliates</h3>
                 <p className="leading-relaxed">
-                  Information may be transferred in connection with mergers,
-                  acquisitions, or business sales.
+                  We may share your information with our affiliates, in which
+                  case we will require them to honor this Privacy Policy.
                 </p>
 
-                <h3 className="font-medium text-xl">5.4 Legal Requirements</h3>
+                <h3 className="font-medium text-xl">5.4 Business Transfers</h3>
+                <p className="leading-relaxed">
+                  If we undergo a merger, acquisition, or asset sale, your
+                  information may be transferred.
+                </p>
+
+                <h3 className="font-medium text-xl">5.5 Legal Requirements</h3>
                 <p className="leading-relaxed">
                   We may disclose information when required by law or to protect
                   our rights and safety.
                 </p>
 
-                <h3 className="font-medium text-xl">5.5 With Your Consent</h3>
+                <h3 className="font-medium text-xl">5.6 With Your Consent</h3>
                 <p className="leading-relaxed">
                   We may share information for other purposes with your explicit
                   consent.
+                </p>
+
+                <h3 className="font-medium text-xl">
+                  5.7 Important Note on Data Sharing
+                </h3>
+                <p className="mb-2 leading-relaxed">
+                  <strong>
+                    We do not share data with third parties for
+                    marketing/promotional purposes.
+                  </strong>
+                </p>
+                <p className="leading-relaxed">
+                  All the above categories exclude text messaging originator
+                  opt-in data and consent; this information will not be shared
+                  with any third parties. Text messaging opt-in data is not
+                  being shared with third parties.
                 </p>
               </div>
             </section>
