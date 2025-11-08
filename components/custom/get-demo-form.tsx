@@ -143,68 +143,70 @@ const GetDemoForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 w-full">
-      {/* Name */}
-      <div className="space-y-2">
-        <label className="block font-semibold text-gray-800 text-sm md:text-base">Full name <span className="text-red-500">*</span></label>
-        <Input
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          placeholder="e.g. John Doe"
-          className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
-        />
-        {errors.name && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.name}</p>}
-      </div>
+      {/* Scrollable form fields container */}
+      <div className="max-h-[60vh] overflow-y-auto pr-2 space-y-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+        {/* Name */}
+        <div className="space-y-2">
+          <label className="block font-semibold text-gray-800 text-sm md:text-base">Full name <span className="text-red-500">*</span></label>
+          <Input
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="e.g. John Doe"
+            className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
+          />
+          {errors.name && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.name}</p>}
+        </div>
 
-      {/* Email */}
-      <div className="space-y-2">
-        <label className="block font-semibold text-gray-800 text-sm md:text-base">Work email <span className="text-red-500">*</span></label>
-        <Input
-          id="email"
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="What is your work email?"
-          className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
-        />
-        {errors.email && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.email}</p>}
-      </div>
+        {/* Email */}
+        <div className="space-y-2">
+          <label className="block font-semibold text-gray-800 text-sm md:text-base">Work email <span className="text-red-500">*</span></label>
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="What is your work email?"
+            className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
+          />
+          {errors.email && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.email}</p>}
+        </div>
 
-      {/* Phone */}
-      <div className="space-y-2">
-        <label className="block font-semibold text-gray-800 text-sm md:text-base">Phone number <span className="text-red-500">*</span></label>
-        <PhoneInput
-          country="us"
-          value={form.phone}
-          onChange={handlePhoneChange}
-          inputProps={{
-            name: "phone",
-            required: true,
-            placeholder: "Enter phone number",
-          }}
-          containerStyle={{ width: "100%" }}
-          inputStyle={{
-            width: "100%",
-            height: "48px",
-            fontSize: "14px",
-            fontFamily: "inherit",
-            border: "2px solid #e5e7eb",
-            borderRadius: "12px",
-            transition: "all 0.2s",
-          }}
-          buttonStyle={{
-            border: "2px solid #e5e7eb",
-            borderRadius: "12px 0 0 12px",
-            backgroundColor: "white",
-            borderRight: "none",
-          }}
-          dropdownStyle={{
-            borderRadius: "12px",
-            boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1)",
-            maxHeight: "320px",
-            minHeight: "300px",
-          }}
+        {/* Phone */}
+        <div className="space-y-2">
+          <label className="block font-semibold text-gray-800 text-sm md:text-base">Phone number <span className="text-red-500">*</span></label>
+          <PhoneInput
+            country="us"
+            value={form.phone}
+            onChange={handlePhoneChange}
+            inputProps={{
+              name: "phone",
+              required: true,
+              placeholder: "Enter phone number",
+            }}
+            containerStyle={{ width: "100%" }}
+            inputStyle={{
+              width: "100%",
+              height: "48px",
+              fontSize: "14px",
+              fontFamily: "inherit",
+              border: "2px solid #e5e7eb",
+              borderRadius: "12px",
+              transition: "all 0.2s",
+            }}
+            buttonStyle={{
+              border: "2px solid #e5e7eb",
+              borderRadius: "12px 0 0 12px",
+              backgroundColor: "white",
+              borderRight: "none",
+            }}
+            dropdownStyle={{
+              borderRadius: "12px",
+              boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1)",
+              maxHeight: "320px",
+              minHeight: "300px",
+            }}
             searchStyle={{
               width: "95%",
               height: "36px",
@@ -213,151 +215,152 @@ const GetDemoForm = () => {
               border: "1px solid #d1d5db",
               padding: "0 8px",
             }}
-          enableSearch={true}
-          searchPlaceholder="Search countries..."
-          specialLabel=""
-        />
-        {errors.phone && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.phone}</p>}
-      </div>
-
-      {/* Selects */}
-      <div className="gap-4 md:gap-6 grid grid-cols-1">
-        {renderSelect("Seniority", "seniority", seniorityOptions, true)}
-        {renderSelect("Company Size", "companySize", companySizeOptions, true)}
-        {renderSelect("Sales Team Size", "salesTeamSize", salesTeamSizeOptions)}
-        {renderSelect("How did you hear about us?", "hearAboutUs", hearAboutUsOptions)}
-      </div>
-
-      {/* Message */}
-      <div className="space-y-2">
-        <label className="block font-semibold text-gray-800 text-sm md:text-base">Message <span className="text-red-500">*</span></label>
-        <Textarea
-          name="message"
-          value={form.message}
-          onChange={handleChange}
-          placeholder="Briefly describe your needs or goals..."
-          className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
-          rows={4}
-        />
-        {errors.message && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.message}</p>}
-      </div>
-
-      {/* Communication Preferences */}
-      <div className="space-y-4">
-        <h3 className="text-gray-900 font-medium text-base md:text-lg">
-          Communication Preferences
-        </h3>
-
-        {/* Account Updates Consent */}
-        <div className="border border-gray-200 rounded-lg p-4 min-h-[80px]">
-          <div className="flex items-start">
-            <input
-              type="checkbox"
-              id="accountConsent"
-              name="accountConsent"
-              checked={!!form.consent}
-              onChange={(e) => {
-                setForm((prev) => ({ ...prev, consent: e.target.checked ? "yes" : "" }));
-                if (errors.consent) setErrors((prev) => ({ ...prev, consent: "" }));
-              }}
-              className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
-            />
-            <div className="ml-3 flex-1">
-              <label
-                htmlFor="accountConsent"
-                className="text-gray-900 text-sm font-medium cursor-pointer"
-              >
-                I consent to receive account updates via SMS{" "}
-                <span className="text-red-500">*</span>
-              </label>
-              <details className="mt-2">
-                <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
-                  <span className="inline-flex items-center">
-                    <svg className="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                    View details
-                  </span>
-                </summary>
-                <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
-                  By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
-                  SMS text message from Signal House, LLC regarding account issues and outages (customer care), (our message frequency
-                  may vary). Message & data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
-                  <a
-                    href="https://addpipeline.ai/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-primary/80 hover:text-primary/100"
-                  >
-                    Privacy Policy
-                  </a>{" "}
-                  (containing our SMS Terms) for more information.
-                </p>
-              </details>
-            </div>
-          </div>
+            enableSearch={true}
+            searchPlaceholder="Search countries..."
+            specialLabel=""
+          />
+          {errors.phone && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.phone}</p>}
         </div>
 
-        {/* Marketing Offers Consent */}
-        <div className="border border-gray-200 rounded-lg p-4 min-h-[80px]">
-          <div className="flex items-start">
-            <input
-              type="checkbox"
-              id="marketingConsent"
-              name="marketingConsent"
-              checked={!!form.marketingConsent}
-              onChange={(e) => {
-                setForm((prev) => ({ ...prev, marketingConsent: e.target.checked ? "yes" : "" }));
-                if (errors.marketingConsent) setErrors((prev) => ({ ...prev, marketingConsent: "" }));
-              }}
-              className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
-            />
-            <div className="ml-3 flex-1">
-              <label
-                htmlFor="marketingConsent"
-                className="text-gray-900 text-sm font-medium cursor-pointer"
-              >
-                I consent to receive marketing offers via SMS{" "}
-                <span className="text-red-500">*</span>
-              </label>
-              <details className="mt-2">
-                <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
-                  <span className="inline-flex items-center">
-                    <svg className="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                    View details
-                  </span>
-                </summary>
-                <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
-                  By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
-                  SMS text message from Signal House, LLC regarding new offers (marketing), (our message frequency may vary). Message &
-                  data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
-                  <a
-                    href="https://addpipeline.ai/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-primary/80 hover:text-primary/100"
-                  >
-                    Privacy Policy
-                  </a>{" "}
-                  (containing our SMS Terms) for more information.
-                </p>
-              </details>
-            </div>
-          </div>
+        {/* Selects */}
+        <div className="gap-4 md:gap-6 grid grid-cols-1">
+          {renderSelect("Seniority", "seniority", seniorityOptions, true)}
+          {renderSelect("Company Size", "companySize", companySizeOptions, true)}
+          {renderSelect("Sales Team Size", "salesTeamSize", salesTeamSizeOptions)}
+          {renderSelect("How did you hear about us?", "hearAboutUs", hearAboutUsOptions)}
         </div>
 
-        {errors.consent && (
-          <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
-            <AlertCircle className="w-3 h-3" /> {errors.consent}
-          </p>
-        )}
-        {errors.marketingConsent && (
-          <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
-            <AlertCircle className="w-3 h-3" /> {errors.marketingConsent}
-          </p>
-        )}
+        {/* Message */}
+        <div className="space-y-2">
+          <label className="block font-semibold text-gray-800 text-sm md:text-base">Message <span className="text-red-500">*</span></label>
+          <Textarea
+            name="message"
+            value={form.message}
+            onChange={handleChange}
+            placeholder="Briefly describe your needs or goals..."
+            className="px-4 py-3 border-2 border-gray-200 hover:border-primary/30 focus:border-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200 text-sm md:text-base transition-all duration-200"
+            rows={4}
+          />
+          {errors.message && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.message}</p>}
+        </div>
+
+        {/* Communication Preferences */}
+        <div className="space-y-4">
+          <h3 className="text-gray-900 font-medium text-base md:text-lg">
+            Communication Preferences
+          </h3>
+
+          {/* Account Updates Consent */}
+          <div className="border border-gray-200 rounded-lg p-4 min-h-[80px]">
+            <div className="flex items-start">
+              <input
+                type="checkbox"
+                id="accountConsent"
+                name="accountConsent"
+                checked={!!form.consent}
+                onChange={(e) => {
+                  setForm((prev) => ({ ...prev, consent: e.target.checked ? "yes" : "" }));
+                  if (errors.consent) setErrors((prev) => ({ ...prev, consent: "" }));
+                }}
+                className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
+              />
+              <div className="ml-3 flex-1">
+                <label
+                  htmlFor="accountConsent"
+                  className="text-gray-900 text-sm font-medium cursor-pointer"
+                >
+                  I consent to receive account updates via SMS{" "}
+                  <span className="text-red-500">*</span>
+                </label>
+                <details className="mt-2">
+                  <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
+                    <span className="inline-flex items-center">
+                      <svg className="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                      View details
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
+                    By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
+                    SMS text message from Signal House, LLC regarding account issues and outages (customer care), (our message frequency
+                    may vary). Message & data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
+                    <a
+                      href="https://addpipeline.ai/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-primary/80 hover:text-primary/100"
+                    >
+                      Privacy Policy
+                    </a>{" "}
+                    (containing our SMS Terms) for more information.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          {/* Marketing Offers Consent */}
+          <div className="border border-gray-200 rounded-lg p-4 min-h-[80px]">
+            <div className="flex items-start">
+              <input
+                type="checkbox"
+                id="marketingConsent"
+                name="marketingConsent"
+                checked={!!form.marketingConsent}
+                onChange={(e) => {
+                  setForm((prev) => ({ ...prev, marketingConsent: e.target.checked ? "yes" : "" }));
+                  if (errors.marketingConsent) setErrors((prev) => ({ ...prev, marketingConsent: "" }));
+                }}
+                className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
+              />
+              <div className="ml-3 flex-1">
+                <label
+                  htmlFor="marketingConsent"
+                  className="text-gray-900 text-sm font-medium cursor-pointer"
+                >
+                  I consent to receive marketing offers via SMS{" "}
+                  <span className="text-red-500">*</span>
+                </label>
+                <details className="mt-2">
+                  <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
+                    <span className="inline-flex items-center">
+                      <svg className="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                      View details
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
+                    By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
+                    SMS text message from Signal House, LLC regarding new offers (marketing), (our message frequency may vary). Message &
+                    data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
+                    <a
+                      href="https://addpipeline.ai/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-primary/80 hover:text-primary/100"
+                    >
+                      Privacy Policy
+                    </a>{" "}
+                    (containing our SMS Terms) for more information.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          {errors.consent && (
+            <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
+              <AlertCircle className="w-3 h-3" /> {errors.consent}
+            </p>
+          )}
+          {errors.marketingConsent && (
+            <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
+              <AlertCircle className="w-3 h-3" /> {errors.marketingConsent}
+            </p>
+          )}
+        </div>
       </div>
 
       {/* Status */}
