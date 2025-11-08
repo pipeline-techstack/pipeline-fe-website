@@ -10,6 +10,8 @@ interface DemoRequestBody {
   salesTeamSize?: string;
   hearAboutUs?: string;
   message: string;
+  consent: string;
+  marketingConsent: string;
 }
 
 interface SlackPayload {
@@ -84,6 +86,8 @@ export async function POST(req: Request) {
       salesTeamSize,
       hearAboutUs,
       message,
+      consent,
+      marketingConsent,
     } = body;
 
     // Input validation
@@ -94,6 +98,8 @@ export async function POST(req: Request) {
     if (!seniority) missingFields.push("seniority");
     if (!companySize) missingFields.push("companySize");
     if (!message?.trim()) missingFields.push("message");
+    if (!consent) missingFields.push("consent");
+    if (!marketingConsent) missingFields.push("marketingConsent");
 
     if (missingFields.length > 0) {
       return NextResponse.json(
@@ -135,6 +141,11 @@ export async function POST(req: Request) {
         salesTeamSize ? `👥 *Sales Team Size:* ${salesTeamSize}` : null,
         hearAboutUs ? `📣 *Heard About Us Via:* ${hearAboutUs}` : null,
         `💬 *Message:* ${message.trim()}`,
+        ``,
+        `📋 *Communication Preferences:*`,
+        `✅ *Account Updates Consent:* ${consent === "yes" ? "Yes" : "No"}`,
+        `✅ *Marketing Consent:* ${marketingConsent === "yes" ? "Yes" : "No"}`,
+        ``,
         `⏰ *Submitted:* ${new Date().toLocaleString("en-US", {
           timeZone: "UTC",
           dateStyle: "medium",

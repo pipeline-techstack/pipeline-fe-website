@@ -24,6 +24,8 @@ const GetDemoForm = () => {
     salesTeamSize: "",
     hearAboutUs: "",
     message: "",
+    consent: "",
+    marketingConsent: "",
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -47,6 +49,8 @@ const GetDemoForm = () => {
     if (!form.seniority) newErrors.seniority = "Select your seniority";
     if (!form.companySize) newErrors.companySize = "Select your company size";
     if (!form.message.trim()) newErrors.message = "Please enter a short message";
+    if (!form.consent) newErrors.consent = "Please consent to receive account updates";
+    if (!form.marketingConsent) newErrors.marketingConsent = "Please consent to receive marketing offers";
 
     return newErrors;
   };
@@ -93,6 +97,8 @@ const GetDemoForm = () => {
         salesTeamSize: "",
         hearAboutUs: "",
         message: "",
+        consent: "",
+        marketingConsent: "",
       });
       setErrors({});
     } catch {
@@ -234,6 +240,124 @@ const GetDemoForm = () => {
           rows={4}
         />
         {errors.message && <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm"><AlertCircle className="w-3 h-3" />{errors.message}</p>}
+      </div>
+
+      {/* Communication Preferences */}
+      <div className="space-y-4">
+        <h3 className="text-gray-900 font-medium text-base md:text-lg">
+          Communication Preferences
+        </h3>
+
+        {/* Account Updates Consent */}
+        <div className="border border-gray-200 rounded-lg p-4 min-h-[80px]">
+          <div className="flex items-start">
+            <input
+              type="checkbox"
+              id="accountConsent"
+              name="accountConsent"
+              checked={!!form.consent}
+              onChange={(e) => {
+                setForm((prev) => ({ ...prev, consent: e.target.checked ? "yes" : "" }));
+                if (errors.consent) setErrors((prev) => ({ ...prev, consent: "" }));
+              }}
+              className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
+            />
+            <div className="ml-3 flex-1">
+              <label
+                htmlFor="accountConsent"
+                className="text-gray-900 text-sm font-medium cursor-pointer"
+              >
+                I consent to receive account updates via SMS{" "}
+                <span className="text-red-500">*</span>
+              </label>
+              <details className="mt-2">
+                <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
+                  <span className="inline-flex items-center">
+                    <svg className="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                    View details
+                  </span>
+                </summary>
+                <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
+                  By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
+                  SMS text message from Signal House, LLC regarding account issues and outages (customer care), (our message frequency
+                  may vary). Message & data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
+                  <a
+                    href="https://addpipeline.ai/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-primary/80 hover:text-primary/100"
+                  >
+                    Privacy Policy
+                  </a>{" "}
+                  (containing our SMS Terms) for more information.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        {/* Marketing Offers Consent */}
+        <div className="border border-gray-200 rounded-lg p-4 min-h-[80px]">
+          <div className="flex items-start">
+            <input
+              type="checkbox"
+              id="marketingConsent"
+              name="marketingConsent"
+              checked={!!form.marketingConsent}
+              onChange={(e) => {
+                setForm((prev) => ({ ...prev, marketingConsent: e.target.checked ? "yes" : "" }));
+                if (errors.marketingConsent) setErrors((prev) => ({ ...prev, marketingConsent: "" }));
+              }}
+              className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
+            />
+            <div className="ml-3 flex-1">
+              <label
+                htmlFor="marketingConsent"
+                className="text-gray-900 text-sm font-medium cursor-pointer"
+              >
+                I consent to receive marketing offers via SMS{" "}
+                <span className="text-red-500">*</span>
+              </label>
+              <details className="mt-2">
+                <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
+                  <span className="inline-flex items-center">
+                    <svg className="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                    View details
+                  </span>
+                </summary>
+                <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
+                  By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
+                  SMS text message from Signal House, LLC regarding new offers (marketing), (our message frequency may vary). Message &
+                  data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
+                  <a
+                    href="https://addpipeline.ai/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-primary/80 hover:text-primary/100"
+                  >
+                    Privacy Policy
+                  </a>{" "}
+                  (containing our SMS Terms) for more information.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        {errors.consent && (
+          <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
+            <AlertCircle className="w-3 h-3" /> {errors.consent}
+          </p>
+        )}
+        {errors.marketingConsent && (
+          <p className="flex items-center gap-1 text-red-500 text-xs md:text-sm">
+            <AlertCircle className="w-3 h-3" /> {errors.marketingConsent}
+          </p>
+        )}
       </div>
 
       {/* Status */}
