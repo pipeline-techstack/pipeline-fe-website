@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { redirect, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+import Logo from "../common/logo";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,17 +25,10 @@ const Navbar = () => {
     ].join(" ");
 
   return (
-    <nav className="w-full px-4 py-2 bg-transparent">
+    <nav className="bg-transparent px-4 py-2 w-full">
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="bg-gradient-to-b from-primary/40 via-transparent to-primary/40 shadow-inner p-[1px] rounded-full">
-          <div
-            className="bg-white/70 px-3 py-2 rounded-full cursor-pointer"
-            onClick={() => redirect("/")}
-          >
-            <Image src={logo} alt="logo" width={120} height={120} />
-          </div>
-        </div>
+        <Logo />
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex bg-gradient-to-b from-primary/40 via-transparent to-primary/40 shadow-inner p-[1px] rounded-full">
@@ -44,7 +36,7 @@ const Navbar = () => {
             <Button
               variant="secondary"
               onClick={handleRedirect}
-              className="border border-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2"
+              className="border border-white focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2 cursor-pointer"
             >
               Sign in
             </Button>
@@ -85,11 +77,11 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden mt-2 flex flex-col items-end gap-2">
+        <div className="md:hidden flex flex-col items-end gap-2 mt-2">
           <Button
             variant="secondary"
             onClick={handleRedirect}
-            className="border border-white cursor-pointer w-full focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2"
+            className="border border-white focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-2 w-full cursor-pointer"
           >
             Sign in
           </Button>

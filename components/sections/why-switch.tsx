@@ -12,6 +12,7 @@ import {
 import SectionCard from "../common/sections/section-card";
 import HeaderOrIntro from "../common/header-intro";
 import SectionContainer from "../common/sections/section-container";
+import Logo from "../common/logo";
 
 const WhySwitch = () => {
   const items = [
@@ -54,10 +55,14 @@ const WhySwitch = () => {
 
           {/* Footer */}
           <div className="flex justify-center items-center mt-12 text-center">
-            <p className="font-semibold text-gray-900 text-2xl">
-              <span className="text-primary">Pipeline AI</span> fixes all three.
-            </p>
-            <WandSparkles className="mx-3 size-4 text-gray-500" />
+            <div className="flex justify-center items-center gap-2">
+              <Logo width={40} height={40} className="mb-0" />
+              <p className="ml-2 font-semibold text-gray-900 text-2xl">
+                <span className="text-primary">Pipeline AI</span> fixes all
+                three.
+              </p>
+              <WandSparkles className="mx-3 size-4 text-gray-500" />
+            </div>
           </div>
         </CardContent>
       </Card>

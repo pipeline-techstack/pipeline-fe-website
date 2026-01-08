@@ -2,6 +2,7 @@
 
 import React from "react";
 import GlassIcon from "../glasseffect/glass-icon";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface SectionCardProps {
   icon: React.ReactNode;
@@ -15,15 +16,17 @@ const SectionCard: React.FC<SectionCardProps> = ({
   description,
 }) => {
   return (
-    <div className="bg-white shadow-lg p-8 border rounded-lg">
-      <GlassIcon icon={icon} />
+    <Card>
+      <CardContent className="p-6">
+        <GlassIcon icon={icon} />
 
-      <p className="mt-6 font-medium text-gray-900 text-base">{title}</p>
+        <p className="mt-5 font-medium text-gray-900 text-base">{title}</p>
 
-      {description && (
-        <p className="mt-2 text-gray-600 text-sm">{description}</p>
-      )}
-    </div>
+        {description && (
+          <p className="mt-2 text-gray-600 text-sm">{description}</p>
+        )}
+      </CardContent>
+    </Card>
   );
 };
 

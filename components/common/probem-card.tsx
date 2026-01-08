@@ -24,12 +24,13 @@ const ProblemCard: React.FC<ProblemCardProps> = ({
   solutions,
 }) => {
   return (
-    <Card className="shadow-lg rounded-xl">
+<Card >
+
       <CardContent className="p-6">
         {/* Header */}
-        <div className="flex items-center gap-3 mb-4">
-          <GlassIcon icon={number} />
-          <h3 className="font-semibold text-gray-900 text-xl">{title}</h3>
+        <div className="flex items-center gap-3 mb-4 font-semibold">
+          <GlassIcon icon={number} iconClassName="text-xl" />
+          <h3 className="text-gray-900 text-xl">{title}</h3>
         </div>
 
         {/* Problems */}

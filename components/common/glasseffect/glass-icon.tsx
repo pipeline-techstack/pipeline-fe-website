@@ -6,15 +6,22 @@ import GlassContainer from "./glass-container";
 interface GlassIconProps {
   icon: React.ReactNode;
   size?: number;
+  iconClassName?: string;
 }
 
-const GlassIcon: React.FC<GlassIconProps> = ({ icon, size = 48 }) => {
+const GlassIcon: React.FC<GlassIconProps> = ({
+  icon,
+  size = 48,
+  iconClassName = "",
+}) => {
   return (
     <GlassContainer
-      className="flex justify-center items-center size-12"
+      className="flex justify-center items-center"
       style={{ width: size, height: size }}
     >
-      <span className="text-white">{icon}</span>
+      <span className={`text-white ${iconClassName}`}>
+        {icon}
+      </span>
     </GlassContainer>
   );
 };
