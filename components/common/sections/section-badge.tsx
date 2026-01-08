@@ -18,9 +18,13 @@ const SectionBadge: React.FC<SectionBadgeProps> = ({
     <Badge
       variant="outline"
       className={[
-        "bg-primary/10 px-4 py-2 rounded-full font-medium text-primary uppercase inline-flex items-center gap-1",
+        "px-4 py-2 rounded-full font-medium uppercase inline-flex items-center gap-1 border-none",
+        "bg-primary/10 backdrop-blur-md text-primary", // semi-transparent + blur
         className,
       ].join(" ")}
+      style={{
+        WebkitBackdropFilter: "blur(6px)", // Safari support
+      }}
     >
       {icon && <span className="size-4">{icon}</span>}
       {text}

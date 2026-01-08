@@ -18,7 +18,7 @@ export default function Home() {
         <MarqueSection />
       </div>
 
-      <div className="flex flex-col gap-6 md:gap-18 xl:gap-20 bg-white">
+      <div className="flex flex-col bg-white">
         <WhySwitch />
 
         <Growth />

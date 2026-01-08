@@ -35,7 +35,7 @@ const Growth = () => {
       />
 
       {/* Cards */}
-      <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
+      <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
         <ProblemCard
           number={1}
           title="Too much complexity"

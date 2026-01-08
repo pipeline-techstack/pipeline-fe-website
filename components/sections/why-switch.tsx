@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   AlertTriangle,
   DollarSign,
@@ -32,40 +31,37 @@ const WhySwitch = () => {
 
   return (
     <SectionContainer>
-      <Card className="shadow-none border-none">
-        <CardContent className="p-0">
-          {/* Header */}
-          <HeaderOrIntro
-            badge={{
-              text: "What's changed",
-              icon: <Globe className="size-4" />,
-            }}
-            title={{
-              text: "Why teams switch to Pipeline AI",
-              highlight: "Pipeline AI",
-            }}
-          />
+      <div>
+        {/* Header */}
+        <HeaderOrIntro
+          badge={{
+            text: "What's changed",
+            icon: <Globe className="size-4" />,
+          }}
+          title={{
+            text: "Why teams switch to Pipeline AI",
+            highlight: "Pipeline AI",
+          }}
+        />
 
-          {/* Cards */}
-          <div className="gap-6 grid grid-cols-1 lg:grid-cols-3">
-            {items.map((item, index) => (
-              <SectionCard key={index} icon={item.icon} title={item.title} />
-            ))}
-          </div>
+        {/* Cards */}
+        <div className="gap-6 grid grid-cols-1 lg:grid-cols-3">
+          {items.map((item, index) => (
+            <SectionCard key={index} icon={item.icon} title={item.title} />
+          ))}
+        </div>
 
-          {/* Footer */}
-          <div className="flex justify-center items-center mt-12 text-center">
-            <div className="flex justify-center items-center gap-2">
-              <Logo width={40} height={40} className="mb-0" />
-              <p className="ml-2 font-semibold text-gray-900 text-2xl">
-                <span className="text-primary">Pipeline AI</span> fixes all
-                three.
-              </p>
-              <WandSparkles className="mx-3 size-4 text-gray-500" />
-            </div>
+        {/* Footer */}
+        <div className="flex justify-center items-center mt-12 text-center">
+          <div className="flex justify-center items-center gap-2">
+            <Logo width={40} height={40} className="mb-0" />
+            <p className="ml-2 font-semibold text-gray-900 text-2xl">
+              <span className="text-primary">Pipeline AI</span> fixes all three.
+            </p>
+            <WandSparkles className="mx-3 size-4 text-gray-500" />
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </SectionContainer>
   );
 };
