@@ -18,7 +18,7 @@ const GlassContainer: React.FC<GlassContainerProps> = ({
       {...props}
       className={clsx(
         "relative rounded-lg overflow-hidden",
-        "bg-gradient-to-br from-blue-600 via-blue-700 to-primary",
+        "bg-gradient-to-br from-[#002B98]  to-[#0D2E93]",
         className
       )}
     >

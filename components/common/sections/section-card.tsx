@@ -16,13 +16,13 @@ const SectionCard: React.FC<SectionCardProps> = ({
   description,
 }) => {
   return (
-    <Card>
+    <Card className="shadow-md rounded-md">
       <CardContent className="p-6">
         <GlassIcon icon={icon} />
 
         <p className="mt-5 font-medium text-gray-900 text-base">{title}</p>
 
-        {description && (
+        {description && ( 
           <p className="mt-2 text-gray-600 text-sm">{description}</p>
         )}
       </CardContent>
