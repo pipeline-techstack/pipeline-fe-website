@@ -1,59 +1,75 @@
 "use client";
 
-import React from "react";
 import {
   Wrench,
   Layers,
   RefreshCcw,
-  Filter,
-  CheckCircle,
-  RotateCcw,
-  File,
   Copy,
   Clock,
+  RotateCcw,
   Workflow,
   PencilRuler,
   MoonIcon,
+  Filter,
+  CheckCircle,
   BookCheckIcon,
 } from "lucide-react";
+
 import SectionContainer from "../common/sections/section-container";
-import ProblemCard from "../common/probem-card";
 import HeaderOrIntro from "../common/header-intro";
+import ComparisonCard from "../common/cards/comparision-card";
+import VsBadge from "../common/vs-badge";
 
 const Growth = () => {
   return (
     <SectionContainer bgColor="#F5F7FF">
       <HeaderOrIntro
-        badge={{
-          text: "Friction",
-          icon: <File className="size-4" />,
-        }}
-        title={{
-          text: "The core problems with CRM enrichment",
-        }}
-        subtitle="Complex workflows and credit-heavy pricing make enrichment harder than it should be."
+        title={{ text: "How Pipeline AI Is Different", highlight: "Different" }}
+        subtitle="A simpler system that runs continuously - without the overhead."
       />
 
-      {/* Cards */}
-      <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
-        <ProblemCard
-          number={1}
-          title="Too much complexity"
-          problems={[
+      <div className="relative gap-16 grid grid-cols-1 md:grid-cols-2 mt-12">
+        {/* VS */}
+        <VsBadge />
+
+        {/* WITHOUT PIPELINE */}
+        <ComparisonCard
+          title="Enrichment platforms are too complex to manage and too expensive to scale."
+          badge="WITHOUT PIPELINE"
+          items={[
             {
-              icon: <Wrench className="size-4 text-gray-500" />,
+              icon: <Wrench className="size-4 text-gray-400" />,
               text: "Manual workflows and constant tuning",
             },
             {
-              icon: <Layers className="size-4 text-gray-500" />,
+              icon: <Layers className="size-4 text-gray-400" />,
               text: "Multiple tools stitched together",
             },
             {
-              icon: <RefreshCcw className="size-4 text-gray-500" />,
+              icon: <RefreshCcw className="size-4 text-gray-400" />,
               text: "Heavy RevOps maintenance",
             },
+            {
+              icon: <Copy className="size-4 text-gray-400" />,
+              text: "You pay for duplicates",
+            },
+            {
+              icon: <Clock className="size-4 text-gray-400" />,
+              text: "You pay for outdated records",
+            },
+            {
+              icon: <RotateCcw className="size-4 text-gray-400" />,
+              text: "You pay again when data goes stale",
+            },
           ]}
-          solutions={[
+        />
+
+        {/* WITH PIPELINE */}
+        <ComparisonCard
+          variant="right"
+          title="Pipeline solves the fragile complexity with quiet, continuous enrichment."
+          badge="WITH PIPELINE"
+          items={[
             {
               icon: <Workflow className="size-4" />,
               text: "Always-on workflows",
@@ -66,27 +82,6 @@ const Growth = () => {
               icon: <MoonIcon className="size-4" />,
               text: "Runs quietly in the background",
             },
-          ]}
-        />
-
-        <ProblemCard
-          number={2}
-          title="Too expensive at scale"
-          problems={[
-            {
-              icon: <Copy className="size-4 text-orange-600" />,
-              text: "You pay for duplicates",
-            },
-            {
-              icon: <Clock className="size-4 text-orange-600" />,
-              text: "You pay for outdated records",
-            },
-            {
-              icon: <RotateCcw className="size-4 text-orange-600" />,
-              text: "You pay again when data goes stale",
-            },
-          ]}
-          solutions={[
             {
               icon: <Filter className="size-4" />,
               text: "Validate before enriching",

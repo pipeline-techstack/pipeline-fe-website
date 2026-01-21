@@ -38,7 +38,7 @@ linear-gradient(to right, #c2c1c0 1px, transparent 1px),
 linear-gradient(to bottom, #c2c1c0 1px, transparent 1px)
 `,
             backgroundSize: "100px 70px",
-            backgroundPosition: "50px 50px",
+            backgroundPosition: "100px 50px",
             opacity: 0.3,
             filter: "blur(0.5px)",
             maskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",

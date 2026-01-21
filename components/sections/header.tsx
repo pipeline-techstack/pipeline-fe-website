@@ -1,20 +1,10 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Navbar from "../custom/navbar";
 import headerBg from "../../assets/header-bg.png";
 import HeaderText from "../custom/header-text";
-// import { Eye } from "lucide-react";
 
 const Header = () => {
-  // const videoRef = useRef<HTMLVideoElement>(null);
-
-  // useEffect(() => {
-  //   if (videoRef.current) {
-  //     videoRef.current.playbackRate = 2.0;
-  //   }
-  // }, []);
-
   return (
     <div className="relative w-full min-h-screen">
       {/* Background image */}
@@ -30,11 +20,6 @@ const Header = () => {
 
       {/* Main content */}
       <div className="z-10 relative flex flex-col w-full min-h-screen">
-        {/* Navbar */}
-        <div className="px-4 sm:px-6 md:px-12 py-4">
-          <Navbar />
-        </div>
-
         {/* Text + Button + Video */}
         <div className="flex flex-col flex-1 items-center mt-6 sm:mt-8 px-4 text-center">
           <HeaderText />

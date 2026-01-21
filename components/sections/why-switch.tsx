@@ -5,7 +5,6 @@ import {
   AlertTriangle,
   DollarSign,
   Ban,
-  Globe,
   WandSparkles,
 } from "lucide-react";
 import SectionCard from "../common/sections/section-card";
@@ -34,14 +33,11 @@ const WhySwitch = () => {
       <div>
         {/* Header */}
         <HeaderOrIntro
-          badge={{
-            text: "What's changed",
-            icon: <Globe className="size-4" />,
-          }}
           title={{
             text: "Why teams switch to Pipeline AI",
             highlight: "Pipeline AI",
           }}
+          subtitle="Most enrichment stacks weren't built for continious operation."
         />
 
         {/* Cards */}

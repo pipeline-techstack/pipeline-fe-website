@@ -37,7 +37,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       )}
     >
       {parts[0]}
-      <span className="text-primary">{highlight}</span>
+      <span className="bg-clip-text bg-gradient-to-r from-gray-900 via-gray-900/80 to-gray-900/60 text-transparent">
+        {highlight}
+      </span>
       {parts[1]}
     </h2>
   );
