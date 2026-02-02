@@ -1,3 +1,4 @@
+import IndustriesSection from "@/components/sections/industries";
 import NewHero from "@/components/ui/new-hero-section";
 import NavbarNew from "@/components/ui/new-navbar";
 import StatsSection from "@/components/ui/new-status-section";
@@ -9,6 +10,7 @@ export default function Home() {
       <NavbarNew/>
       <NewHero/>
       <StatsSection/>
+      <IndustriesSection />
     </>
   );
 }

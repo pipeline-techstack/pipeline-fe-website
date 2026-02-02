@@ -13,7 +13,7 @@ interface HeaderOrIntroProps {
     text: string;
     highlight?: string;
   };
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   className?: string;
 }
 
@@ -46,7 +46,7 @@ const HeaderOrIntro: React.FC<HeaderOrIntroProps> = ({
 
       {/* Subtitle / Intro */}
       {subtitle && (
-        <p className="max-w-2xl text-gray-600 text-sm sm:text-base">
+        <p className="max-w-2xl text-text-light text-sm sm:text-base">
           {subtitle}
         </p>
       )}
