@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
 // Load Inter font with className
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
 });
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${manrope.className} antialiased`}>{children}</body>
     </html>
   );
 }
