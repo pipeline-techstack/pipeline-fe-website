@@ -25,8 +25,8 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-10 border-b border-[#C4C4C4]">
-      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="bg-white py-10 border-[#C4C4C4]/20 border-y border-t border-b w-full">
+      <div className="mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
         <div className="grid grid-cols-1 sm:grid-cols-3">
           {stats.map((stat, index) => (
             <div
@@ -39,7 +39,7 @@ const StatsSection = () => {
               </h3>
               
               {/* Label */}
-              <p className="text-base sm:text-lg text-text-light font-normal">
+              <p className="font-normal text-text-light text-base sm:text-lg">
                 {stat.label}
               </p>
             </div>

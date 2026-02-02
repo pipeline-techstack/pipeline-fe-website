@@ -6,8 +6,8 @@ import SectionContainer from "../common/section-wrapper2";
 
 const IndustriesSection = () => {
   return (
-    <SectionContainer>
-      <div className="bg-[#FAFAFA]">
+    <div className="bg-[#FAFAFA] pb-10 sm:pb-12 lg:pb-16">
+      <SectionContainer className="bg-[#FAFAFA]" fullWidth>
         <HeaderOrIntro
           title={{
             text: "Built for CROs and RevOps Teams",
@@ -23,12 +23,10 @@ const IndustriesSection = () => {
             </>
           }
         />
+      </SectionContainer>
 
-        <div>
-          <CardCarousel />
-        </div>
-      </div>
-    </SectionContainer>
+      <CardCarousel />
+    </div>
   );
 };
 

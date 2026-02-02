@@ -11,7 +11,7 @@ interface GlassIconProps {
 
 const GlassIcon: React.FC<GlassIconProps> = ({
   icon,
-  size = 40,
+  size = 30,
   iconClassName = "",
 }) => {
   return (
