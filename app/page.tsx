@@ -1,7 +1,8 @@
 import IndustriesSection from "@/components/sections/industries";
-import NewHero from "@/components/ui/new-hero-section";
-import NavbarNew from "@/components/ui/new-navbar";
-import StatsSection from "@/components/ui/new-status-section";
+// import HowItWorksSection from "@/components/sections/how-it-works-section";
+import NewHero from "@/components/sections/new-hero-section";
+import NavbarNew from "@/components/sections/new-navbar";
+import StatsSection from "@/components/sections/new-status-section";
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <NewHero/>
       <StatsSection/>
       <IndustriesSection />
+      {/* <HowItWorksSection/> */}
     </>
   );
 }
