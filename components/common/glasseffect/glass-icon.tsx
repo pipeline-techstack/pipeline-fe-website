@@ -7,16 +7,18 @@ interface GlassIconProps {
   icon: React.ReactNode;
   size?: number;
   iconClassName?: string;
+  className?:string
 }
 
 const GlassIcon: React.FC<GlassIconProps> = ({
   icon,
   size = 30,
   iconClassName = "",
+  className = "",
 }) => {
   return (
     <GlassContainer
-      className="flex justify-center items-center"
+      className={`flex justify-center items-center ${className}`}
       style={{ width: size, height: size }}
     >
       <span className={`text-white ${iconClassName}`}>

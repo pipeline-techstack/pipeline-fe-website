@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import FeatureCard from "./feature-card";
 import {
+  ArrowLeft,
+  ArrowRight,
   BarChart,
   CalculatorIcon,
   Database,
@@ -15,6 +17,8 @@ import card3 from "../../../assets/industrites/card3.png";
 import card4 from "../../../assets/industrites/card4.png";
 import card5 from "../../../assets/industrites/card5.png";
 import card6 from "../../../assets/industrites/card6.png";
+import GlassIcon from "../glasseffect/glass-icon";
+import { Button } from "@/components/ui/button";
 
 const cards = [
   {
@@ -100,20 +104,20 @@ const CardCarousel = () => {
     <div className="">
       {/* Header + Nav */}
       <div className="flex justify-between items-center mb-6 pl-60">
-        <div className="flex gap-3">
-          <button
-            onClick={prevSlide}
-            className="flex justify-center items-center hover:bg-gray-100 border rounded-full w-9 h-9 transition"
-          >
-            ←
-          </button>
-          <button
+        <div className="flex justify-between gap-3 pr-60 w-full">
+          <Button onClick={prevSlide} disabled={activeIndex === 0} >
+            <GlassIcon
+              icon={<ArrowLeft size={16} />}
+              className="rounded-full"
+            />
+          </Button>
+
+          <Button
             onClick={nextSlide}
-            className="flex justify-center items-center hover:bg-gray-100 border rounded-full w-9 h-9 transition"
             disabled={activeIndex === cards.length / 2}
           >
-            →
-          </button>
+            <GlassIcon icon={<ArrowRight size={16} />} />
+          </Button>
         </div>
       </div>
 
