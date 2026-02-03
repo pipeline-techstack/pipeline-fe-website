@@ -1,8 +1,10 @@
 import IndustriesSection from "@/components/sections/industries";
-// import HowItWorksSection from "@/components/sections/how-it-works-section";
+import HowItWorksSection from "@/components/sections/how-it-works-section";
 import NewHero from "@/components/sections/new-hero-section";
 import NavbarNew from "@/components/sections/new-navbar";
 import StatsSection from "@/components/sections/new-status-section";
+import Footer from "@/components/sections/footer";
+import FeaturesSection from "@/components/sections/new-feature-card-section";
 
 
 export default function Home() {
@@ -12,7 +14,9 @@ export default function Home() {
       <NewHero/>
       <StatsSection/>
       <IndustriesSection />
-      {/* <HowItWorksSection/> */}
+      <HowItWorksSection/>
+      <FeaturesSection/>
+      <Footer/>
     </>
   );
 }

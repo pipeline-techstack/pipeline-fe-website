@@ -7,7 +7,7 @@ import logo from "../../assets/new/logo.png";
 function NavbarNew() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="w-full bg-white mx-auto sticky top-0 z-50 shadow-sm">
+    <nav className="w-full bg-white mx-auto sticky top-0 z-50">
       <div className="max-w-[67rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
           {/* Logo and Brand */}

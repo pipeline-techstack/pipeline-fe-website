@@ -105,7 +105,7 @@ const CardCarousel = () => {
       {/* Header + Nav */}
       <div className="flex justify-between items-center mb-6 pl-60">
         <div className="flex justify-between gap-3 pr-60 w-full">
-          <Button onClick={prevSlide} disabled={activeIndex === 0} >
+          <Button onClick={prevSlide} disabled={activeIndex === 0}>
             <GlassIcon
               icon={<ArrowLeft size={16} />}
               className="rounded-full"
@@ -123,7 +123,7 @@ const CardCarousel = () => {
 
       {/* Card */}
       <div
-        className={`transition-all duration-500 ease-out ${
+        className={`transition-[padding] duration-700 ease-in-out ${
           activeIndex === 0 ? "pl-60" : "pl-0"
         }`}
       >
@@ -132,24 +132,32 @@ const CardCarousel = () => {
             const globalIndex = (activeIndex + i) % cards.length;
             const isExpanded = expandedIndex === globalIndex;
 
-            return isExpanded ? (
-              <div className="flex-1" key={`expanded-${globalIndex}`}>
-                <ExpandedFeatureCard
-                  icon={card.icon}
-                  title={card.title}
-                  description={card.description}
-                  image={card.image}
-                />
-              </div>
-            ) : (
-              <FeatureCard
+            return (
+              <div
                 key={`card-${globalIndex}`}
-                icon={card.icon}
-                title={card.title}
-                description={card.description}
-                summary={card.summary}
-                onClick={() => handleCardClick(globalIndex)}
-              />
+                className={`flex-1 transition-all duration-500 ease-in-out transform ${
+                  isExpanded
+                    ? "scale-100 opacity-100 translate-y-0"
+                    : "scale-[0.96] opacity-100 translate-y-2 hover:scale-[0.98]"
+                }`}
+              >
+                {isExpanded ? (
+                  <ExpandedFeatureCard
+                    icon={card.icon}
+                    title={card.title}
+                    description={card.description}
+                    image={card.image}
+                  />
+                ) : (
+                  <FeatureCard
+                    icon={card.icon}
+                    title={card.title}
+                    description={card.description}
+                    summary={card.summary}
+                    onClick={() => handleCardClick(globalIndex)}
+                  />
+                )}
+              </div>
             );
           })}
         </div>
