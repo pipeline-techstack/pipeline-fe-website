@@ -162,7 +162,7 @@ const FeaturesSection = () => {
             >
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl border border-[#D4C2FF] shadow-lg overflow-hidden">
                 <div
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-8 sm:p-10 lg:p-12 ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 p-6 sm:p-8 lg:p-12 ${
                     feature.reverse ? "lg:grid-flow-dense" : ""
                   }`}
                 >
@@ -210,7 +210,7 @@ const FeaturesSection = () => {
                               style={{ backgroundColor: feature.categoryColor }}
                             />
                           </div>
-                          <span className="text-sm sm:text-base text-text-light border-b border-gray-300">
+                          <span className="text-sm sm:text-base text-text-light ">
                             {point}
                           </span>
                         </li>
@@ -220,7 +220,9 @@ const FeaturesSection = () => {
 
                   {/* Image Container */}
                   <div
-                    className={`relative ${feature.reverse ? "lg:col-start-1 lg:row-start-1" : ""}`}
+                    className={`relative hidden lg:block ${
+                      feature.reverse ? "lg:col-start-1 lg:row-start-1" : ""
+                    }`}
                   >
                     <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[4/3]">
                       <Image
@@ -243,7 +245,7 @@ const FeaturesSection = () => {
                               className="w-2 h-2 rounded-full mt-2"
                               style={{ backgroundColor: feature.categoryColor }}
                             />
-                            <span className="text-xs sm:text-sm text-text-light leading-snug border-b border-gray-200">
+                            <span className="text-xs sm:text-sm text-text-light leading-snug">
                               {point}
                             </span>
                           </li>

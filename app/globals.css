@@ -133,91 +133,145 @@
   height: 48px !important;
 }  */
 
-
- @import "tailwindcss";
+@import "tailwindcss";
 
 /* Pipeline Brand Colors - CSS Variables */
 @theme {
-  --color-purple-gradient-start: #5D5FEF;
-  --color-purple-gradient-end: #8159DF;
-  
-  --background-gradient-purple: linear-gradient(104.73deg, #5D5FEF 17.44%, #8159DF 108.81%);
-  --background-gradient-purple-hover: linear-gradient(104.73deg, #4D4FDF 17.44%, #7149CF 108.81%);
-  --background-gradient-purple-reverse: linear-gradient(104.73deg, #8159DF 17.44%, #5D5FEF 108.81%);
-  --background-gradient-purple-light: linear-gradient(104.73deg, rgba(93, 95, 239, 0.1) 17.44%, rgba(129, 89, 223, 0.1) 108.81%);
-  --background-gradient-purple-lighter: linear-gradient(104.73deg, rgba(93, 95, 239, 0.05) 17.44%, rgba(129, 89, 223, 0.05) 108.81%);
-  
+  --color-purple-gradient-start: #5d5fef;
+  --color-purple-gradient-end: #8159df;
+
+  --background-gradient-purple: linear-gradient(
+    104.73deg,
+    #5d5fef 17.44%,
+    #8159df 108.81%
+  );
+  --background-gradient-purple-hover: linear-gradient(
+    104.73deg,
+    #4d4fdf 17.44%,
+    #7149cf 108.81%
+  );
+  --background-gradient-purple-reverse: linear-gradient(
+    104.73deg,
+    #8159df 17.44%,
+    #5d5fef 108.81%
+  );
+  --background-gradient-purple-light: linear-gradient(
+    104.73deg,
+    rgba(93, 95, 239, 0.1) 17.44%,
+    rgba(129, 89, 223, 0.1) 108.81%
+  );
+  --background-gradient-purple-lighter: linear-gradient(
+    104.73deg,
+    rgba(93, 95, 239, 0.05) 17.44%,
+    rgba(129, 89, 223, 0.05) 108.81%
+  );
+
   --shadow-purple-glow: 0 10px 25px rgba(93, 95, 239, 0.3);
   --shadow-purple-glow-lg: 0 15px 35px rgba(93, 95, 239, 0.4);
 }
 
 /* Additional CSS Variables (for inline style usage) */
 :root {
-  --color-text-dark: #1E1E1E;
-  --color-text-light: #6D6B7C;
-  --gradient-purple-start: #5D5FEF;
-  --gradient-purple-end: #8159DF;
-  --gradient-purple: linear-gradient(104.73deg, #5D5FEF 17.44%, #8159DF 108.81%);
-  --gradient-purple-hover: linear-gradient(104.73deg, #4D4FDF 17.44%, #7149CF 108.81%);
-  --gradient-purple-reverse: linear-gradient(104.73deg, #8159DF 17.44%, #5D5FEF 108.81%);
-  --gradient-purple-light: linear-gradient(104.73deg, rgba(93, 95, 239, 0.1) 17.44%, rgba(129, 89, 223, 0.1) 108.81%);
-  --gradient-purple-lighter: linear-gradient(104.73deg, rgba(93, 95, 239, 0.05) 17.44%, rgba(129, 89, 223, 0.05) 108.81%);
+  --color-text-dark: #1e1e1e;
+  --color-text-light: #6d6b7c;
+  --gradient-purple-start: #5d5fef;
+  --gradient-purple-end: #8159df;
+  --gradient-purple: linear-gradient(
+    104.73deg,
+    #5d5fef 17.44%,
+    #8159df 108.81%
+  );
+  --gradient-purple-hover: linear-gradient(
+    104.73deg,
+    #4d4fdf 17.44%,
+    #7149cf 108.81%
+  );
+  --gradient-purple-reverse: linear-gradient(
+    104.73deg,
+    #8159df 17.44%,
+    #5d5fef 108.81%
+  );
+  --gradient-purple-light: linear-gradient(
+    104.73deg,
+    rgba(93, 95, 239, 0.1) 17.44%,
+    rgba(129, 89, 223, 0.1) 108.81%
+  );
+  --gradient-purple-lighter: linear-gradient(
+    104.73deg,
+    rgba(93, 95, 239, 0.05) 17.44%,
+    rgba(129, 89, 223, 0.05) 108.81%
+  );
   --shadow-purple: 0 10px 25px rgba(93, 95, 239, 0.3);
   --shadow-purple-lg: 0 15px 35px rgba(93, 95, 239, 0.4);
-  --text-dark: #1E1E1E;
-  --text-light: #6D6B7C;
-  --carousel-bg:#2B2742;
+  --text-dark: #1e1e1e;
+  --text-light: #6d6b7c;
+  --carousel-bg: #2b2742;
 }
 
 /* Custom Utility Classes */
 @layer utilities {
-
   .text-text-dark {
     color: var(--text-dark);
   }
-  
+
   .text-text-light {
     color: var(--text-light);
   }
-  
+
   .bg-gradient-purple {
     background: var(--gradient-purple);
   }
-  
+
   .bg-gradient-purple-hover {
     background: var(--gradient-purple-hover);
   }
-  
+
   .bg-gradient-purple-reverse {
     background: var(--gradient-purple-reverse);
   }
-  
+
   .bg-gradient-purple-light {
     background: var(--gradient-purple-light);
   }
-  
+
   .bg-gradient-purple-lighter {
     background: var(--gradient-purple-lighter);
   }
-  
+
   .text-gradient-purple {
     background: var(--gradient-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .border-gradient-purple {
     border: 2px solid transparent;
-    background: 
+    background:
       linear-gradient(white, white) padding-box,
       var(--gradient-purple) border-box;
   }
-  
+
+  .focus-border-gradient-purple:focus-visible {
+    outline: none;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--gradient-purple) border-box;
+  }
+
+  .focus-border-gradient-purple:focus {
+    outline: none;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--gradient-purple) border-box;
+  }
+
   .shadow-purple-glow {
     box-shadow: var(--shadow-purple);
   }
-  
+
   .shadow-purple-glow-lg {
     box-shadow: var(--shadow-purple-lg);
   }
@@ -240,12 +294,12 @@
     background: var(--gradient-purple);
     font-size: small;
   }
-  
+
   /* .btn-gradient-purple:hover {
     opacity: 0.9;
     box-shadow: var(--shadow-purple);
   } */
-  
+
   .btn-outline-purple {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -256,21 +310,21 @@
     border-radius: 0.5rem;
     transition: all 0.2s;
     border: 2px solid transparent;
-    background: 
+    background:
       linear-gradient(white, white) padding-box,
       var(--gradient-purple) border-box;
     color: var(--gradient-purple-start);
   }
-  
+
   .card-gradient-purple {
     border-radius: 0.5rem;
     padding: 1.5rem;
     border: 2px solid transparent;
-    background: 
+    background:
       linear-gradient(white, white) padding-box,
       var(--gradient-purple) border-box;
   }
-  
+
   .card-gradient-purple-bg {
     border-radius: 0.5rem;
     padding: 1.5rem;

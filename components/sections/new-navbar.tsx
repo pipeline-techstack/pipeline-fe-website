@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Logo from "../common/logo";
+import Link from "next/link";
 
 function NavbarNew() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,10 +47,12 @@ function NavbarNew() {
             <button className="font-medium text-black hover:text-gray-600 text-sm transition-colors">
               Sign In
             </button>
-            <button className="flex items-center gap-1 btn-gradient-purple">
-              Talk to Us
-              <span>➝</span>
-            </button>
+            <Link href={"/demo"}>
+              <button className="btn-gradient-purple flex items-center gap-1 cursor-pointer">
+                Talk to Us
+                <span>➝</span>
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,69 +98,81 @@ function NavbarNew() {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-gray-100 border-t">
-            <div className="flex flex-col gap-4">
+        <div
+          className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${
+            isMenuOpen ? "visible" : "invisible"
+          }`}
+        >
+          {/* Backdrop */}
+          <div
+            className={`absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 ${
+              isMenuOpen ? "opacity-100" : "opacity-0"
+            }`}
+            onClick={() => setIsMenuOpen(false)}
+          />
+
+          {/* Drawer */}
+          <div
+            className={`absolute top-0 right-0 h-full w-[80%] max-w-sm bg-white shadow-xl p-6 transform transition-transform duration-300 ease-out
+      ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
+    `}
+          >
+            <div className="flex flex-col gap-5">
               <a
                 href="#how-it-works"
-                className="py-2 font-medium text-black hover:text-gray-600 text-sm transition-colors"
+                className="text-black hover:text-gray-600 transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 How It Works
               </a>
+
               <a
                 href="#intelligence"
-                className="py-2 font-medium text-black hover:text-gray-600 text-sm transition-colors"
+                className="text-black hover:text-gray-600 transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Intelligence
               </a>
+
               <a
                 href="#industries"
-                className="py-2 font-medium text-black hover:text-gray-600 text-sm transition-colors"
+                className="text-black hover:text-gray-600 transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Industries
               </a>
-              <a
+
+              {/* <a
                 href="#pricing"
-                className="py-2 font-medium text-black hover:text-gray-600 text-sm transition-colors"
+                className="text-black hover:text-gray-600 transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
-              </a>
-              <div className="flex flex-col gap-3 pt-2">
+              </a> */}
+
+              <div className="border-t pt-5 flex gap-3">
+                <Link href={"/"} className="w-full">
                 <button
-                  className="py-2 font-medium text-black hover:text-gray-600 text-sm text-left transition-colors"
+                  className="btn-gradient-purple flex items-center justify-center gap-2 w-[100%]"
                   onClick={() => setIsMenuOpen(false)}
-                >
+                  >
                   Sign In
                 </button>
+                  </Link>
+
+                <Link href={"/demo"} className="w-full">
                 <button
-                  className="flex justify-center items-center gap-2 btn-gradient-purple"
+                  className="btn-gradient-purple flex items-center justify-center gap-1 w-[100%]"
                   onClick={() => setIsMenuOpen(false)}
-                >
-                  Talk to Us
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      d="M6 12L10 8L6 4"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  Talk to Us
+                 <span>➝</span>
                 </button>
+                  </Link>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
