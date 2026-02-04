@@ -6,7 +6,7 @@ import SectionContainer from "../common/section-wrapper2";
 
 const IndustriesSection = () => {
   return (
-    <div className="bg-[#FAFAFA] pb-10 sm:pb-12 lg:pb-16">
+    <div className="bg-[#FAFAFA] pb-12 sm:pb-16 lg:pb-20">
       <SectionContainer className="bg-[#FAFAFA]" fullWidth>
         <HeaderOrIntro
           title={{

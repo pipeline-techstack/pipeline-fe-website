@@ -15,7 +15,7 @@ const FeatureCard: React.FC<FeatureCardClickProps> = ({
   return (
     <div
       onClick={onClick}
-      className="flex flex-col justify-center gap-4 bg-[#2B2846] p-6 border border-white/5 rounded-2xl w-sm min-w-sm min-h-[400px]"
+      className="flex flex-col justify-center gap-4 bg-[#2B2846] p-6 border border-white/5 rounded-2xl w-xs sm:w-sm min-w-xs sm:min-w-sm min-h-[400px]"
     >
       <GlassIcon icon={icon} />
 

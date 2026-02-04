@@ -6,17 +6,25 @@ import StatsSection from "@/components/sections/new-status-section";
 import Footer from "@/components/sections/footer";
 import FeaturesSection from "@/components/sections/new-feature-card-section";
 
-
 export default function Home() {
   return (
     <>
-      <NavbarNew/>
-      <NewHero/>
-      <StatsSection/>
-      <IndustriesSection />
-      <HowItWorksSection/>
-      <FeaturesSection/>
-      <Footer/>
+      <NavbarNew />
+      <div id="hero">
+        <NewHero />
+        <StatsSection />
+      </div>
+
+      <div id="industries">
+        <IndustriesSection />
+      </div>
+      <div id="how-it-works">
+        <HowItWorksSection />
+      </div>
+      <div id="intelligence">
+        <FeaturesSection />
+      </div>
+      <Footer />
     </>
   );
 }

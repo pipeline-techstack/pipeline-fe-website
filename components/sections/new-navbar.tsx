@@ -1,63 +1,52 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
-import logo from "../../assets/new/logo.png";
+import Logo from "../common/logo";
 
 function NavbarNew() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="w-full bg-white mx-auto sticky top-0 z-50">
-      <div className="max-w-[67rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18">
+    <nav className="top-0 z-50 sticky bg-white mx-auto w-full">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-[67rem]">
+        <div className="flex justify-between items-center h-18">
           {/* Logo and Brand */}
-          <div className="flex items-center gap-2">
-            <div className="w-full h-full relative">
-              <Image
-                src={logo}
-                alt="Pipeline Logo"
-                width={135}
-                height={135}
-                className="object-contain"
-              />
-            </div>
-            {/* <span className="text-xl font-semibold text-black">Pipeline</span> */}
-          </div>
+
+          <Logo height={130} width={130} />
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-4 text-black">
             <a
               href="#how-it-works"
-              className=" hover:text-gray-600 transition-colors text-sm font-medium"
+              className="font-medium hover:text-gray-600 text-sm transition-colors"
             >
               How It Works
             </a>
             <a
               href="#intelligence"
-              className=" hover:text-gray-600 transition-colors text-sm font-medium"
+              className="font-medium hover:text-gray-600 text-sm transition-colors"
             >
               Intelligence
             </a>
             <a
               href="#industries"
-              className=" hover:text-gray-600 transition-colors text-sm font-medium"
+              className="font-medium hover:text-gray-600 text-sm transition-colors"
             >
               Industries
             </a>
-            <a
+            {/* <a
               href="#pricing"
-              className=" hover:text-gray-600 transition-colors text-sm font-medium"
+              className="font-medium hover:text-gray-600 text-sm transition-colors"
             >
               Pricing
-            </a>
+            </a> */}
           </div>
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-6">
-            <button className="text-black hover:text-gray-600 transition-colors text-sm font-medium">
+            <button className="font-medium text-black hover:text-gray-600 text-sm transition-colors">
               Sign In
             </button>
-            <button className="btn-gradient-purple flex items-center gap-1">
+            <button className="flex items-center gap-1 btn-gradient-purple">
               Talk to Us
               <span>➝</span>
             </button>
@@ -65,7 +54,7 @@ function NavbarNew() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden hover:bg-gray-100 p-2 rounded-lg transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -107,45 +96,45 @@ function NavbarNew() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100">
+          <div className="md:hidden py-4 border-gray-100 border-t">
             <div className="flex flex-col gap-4">
               <a
                 href="#how-it-works"
-                className="text-black hover:text-gray-600 transition-colors text-sm font-medium py-2"
+                className="py-2 font-medium text-black hover:text-gray-600 text-sm transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 How It Works
               </a>
               <a
                 href="#intelligence"
-                className="text-black hover:text-gray-600 transition-colors text-sm font-medium py-2"
+                className="py-2 font-medium text-black hover:text-gray-600 text-sm transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Intelligence
               </a>
               <a
                 href="#industries"
-                className="text-black hover:text-gray-600 transition-colors text-sm font-medium py-2"
+                className="py-2 font-medium text-black hover:text-gray-600 text-sm transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Industries
               </a>
               <a
                 href="#pricing"
-                className="text-black hover:text-gray-600 transition-colors text-sm font-medium py-2"
+                className="py-2 font-medium text-black hover:text-gray-600 text-sm transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
               </a>
               <div className="flex flex-col gap-3 pt-2">
                 <button
-                  className="text-black hover:text-gray-600 transition-colors text-sm font-medium py-2 text-left"
+                  className="py-2 font-medium text-black hover:text-gray-600 text-sm text-left transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Sign In
                 </button>
                 <button
-                  className="btn-gradient-purple flex items-center justify-center gap-2"
+                  className="flex justify-center items-center gap-2 btn-gradient-purple"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Talk to Us

@@ -19,6 +19,9 @@ import card5 from "../../../assets/industrites/card5.png";
 import card6 from "../../../assets/industrites/card6.png";
 import GlassIcon from "../glasseffect/glass-icon";
 import { Button } from "@/components/ui/button";
+import { useRef } from "react";
+import { useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const cards = [
   {
@@ -80,6 +83,8 @@ const VISIBLE_CARDS = 4;
 const CardCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const prevBtnRef = useRef<HTMLButtonElement | null>(null);
+  const [cardOffset, setCardOffset] = useState(0);
 
   const prevSlide = () => {
     if (activeIndex > 0) {
@@ -98,24 +103,41 @@ const CardCarousel = () => {
     setExpandedIndex(index);
   };
 
+  useEffect(() => {
+    const calculateOffset = () => {
+      if (!prevBtnRef.current) return;
+
+      const rect = prevBtnRef.current.getBoundingClientRect();
+      setCardOffset(rect.left);
+    };
+
+    calculateOffset();
+    window.addEventListener("resize", calculateOffset);
+
+    return () => window.removeEventListener("resize", calculateOffset);
+  }, []);
+
   const visibleCards = cards.slice(activeIndex, activeIndex + VISIBLE_CARDS);
+  const isMobile = useIsMobile();
+  const disabled = isMobile ? cards.length - 1 : cards.length / 2;
 
   return (
     <div className="">
       {/* Header + Nav */}
-      <div className="flex justify-between items-center mb-6 pl-60">
-        <div className="flex justify-between gap-3 pr-60 w-full">
-          <Button onClick={prevSlide} disabled={activeIndex === 0}>
+      <div className="flex justify-between items-center mx-auto mb-6 pl-4 sm:pl-6 lg:pl-8 max-w-[67rem]">
+        <div className="flex justify-between gap-3 w-full">
+          <Button
+            onClick={prevSlide}
+            disabled={activeIndex === 0}
+            ref={prevBtnRef}
+          >
             <GlassIcon
               icon={<ArrowLeft size={16} />}
               className="rounded-full"
             />
           </Button>
 
-          <Button
-            onClick={nextSlide}
-            disabled={activeIndex === cards.length / 2}
-          >
+          <Button onClick={nextSlide} disabled={activeIndex === disabled}>
             <GlassIcon icon={<ArrowRight size={16} />} />
           </Button>
         </div>
@@ -123,41 +145,40 @@ const CardCarousel = () => {
 
       {/* Card */}
       <div
-        className={`transition-[padding] duration-700 ease-in-out ${
-          activeIndex === 0 ? "pl-60" : "pl-0"
+        style={{ marginLeft: cardOffset }}
+        className={`transition-all duration-500 ease-out ${
+          activeIndex === 0 ? "pl-2 sm:pl-4 lg:pl-6" : "pl-0"
         }`}
       >
-        <div className="flex gap-6 overflow-hidden">
+        <div className={`flex gap-6 overflow-hidden `}>
           {visibleCards.map((card, i) => {
             const globalIndex = (activeIndex + i) % cards.length;
             const isExpanded = expandedIndex === globalIndex;
 
-            return (
-              <div
-                key={`card-${globalIndex}`}
-                className={`flex-1 transition-all duration-500 ease-in-out transform ${
-                  isExpanded
-                    ? "scale-100 opacity-100 translate-y-0"
-                    : "scale-[0.96] opacity-100 translate-y-2 hover:scale-[0.98]"
-                }`}
-              >
-                {isExpanded ? (
+            if (!isMobile && isExpanded) {
+              return (
+                <div key={`expanded-${globalIndex}`}>
                   <ExpandedFeatureCard
                     icon={card.icon}
                     title={card.title}
                     description={card.description}
                     image={card.image}
                   />
-                ) : (
-                  <FeatureCard
-                    icon={card.icon}
-                    title={card.title}
-                    description={card.description}
-                    summary={card.summary}
-                    onClick={() => handleCardClick(globalIndex)}
-                  />
-                )}
-              </div>
+                </div>
+              );
+            }
+
+            return (
+              <FeatureCard
+                key={`card-${globalIndex}`}
+                icon={card.icon}
+                title={card.title}
+                description={card.description}
+                summary={card.summary}
+                onClick={
+                  !isMobile ? () => handleCardClick(globalIndex) : undefined
+                }
+              />
             );
           })}
         </div>

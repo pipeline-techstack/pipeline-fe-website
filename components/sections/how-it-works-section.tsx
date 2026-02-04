@@ -55,7 +55,7 @@ const HowItWorksSection = () => {
 
   return (
     <SectionContainer className="mx-auto">
-      <div className="relative my-40">
+      <div className="relative my-12 sm:my-16 lg:my-20">
         {/* Header */}
         <HeaderOrIntro
           title={{ text: "How Pipeline Works", highlight: "Works" }}
@@ -69,21 +69,21 @@ const HowItWorksSection = () => {
 
         {/* ================= GRID BACKGROUND LAYER ================= */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-25 top-30 w-[80%] h-[30%]">
+          <div className="top-30 right-25 absolute w-[80%] h-[30%]">
             <Image
               src={gridImg}
               alt=""
               fill
-              className="object-cover opacity-100"
+              className="opacity-100 object-cover"
               priority
             />
           </div>
         </div>
 
         {/* ================= FLOW CANVAS ================= */}
-        <div className="relative h-[350px] z-10">
+        <div className="z-10 relative h-[350px]">
           {/* Curved Line */}
-          <div className="absolute inset-0 pointer-events-none max-w-[85%]">
+          <div className="absolute inset-0 max-w-[85%] pointer-events-none">
             <Image src={line} alt="" fill className="object-contain" priority />
           </div>
 
@@ -105,24 +105,24 @@ const HowItWorksSection = () => {
               {/* Text + Number */}
               <div className="relative">
                 {/* Big Faded Number */}
-                <div className="absolute -top-14 left-30">
-                  <div className="w-[110px] h-[110px] relative">
+                <div className="-top-14 left-30 absolute">
+                  <div className="relative w-[110px] h-[110px]">
                     <Image
                       src={step.image}
                       alt=""
                       fill
-                      className="object-contain opacity-100"
+                      className="opacity-100 object-contain"
                     />
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-md font-extrabold text-text-dark mb-2 relative z-10">
+                <h3 className="z-10 relative mb-2 font-extrabold text-md text-text-dark">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-text-light relative z-10 text-[12px] max-w-[78%]">
+                <p className="z-10 relative max-w-[78%] text-[12px] text-text-light">
                   {step.description}
                 </p>
               </div>

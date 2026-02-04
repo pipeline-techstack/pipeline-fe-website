@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/new/logo.png";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface LogoProps {
   width?: number;
@@ -10,14 +10,20 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({
-  width = 50,
-  height = 50,
+  width = 130,
+  height = 130,
   className = "",
 }) => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/#hero");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div
       className={`text-center cursor-pointer ${className}`}
-      onClick={() => redirect("/")}
+      onClick={handleClick}
     >
       <Image
         src={logo}
