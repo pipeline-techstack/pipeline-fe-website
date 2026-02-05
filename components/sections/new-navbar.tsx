@@ -44,11 +44,14 @@ function NavbarNew() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-6">
-            <button className="font-medium text-black hover:text-gray-600 text-sm transition-colors">
-              Sign In
-            </button>
+            <Link href={"https://sales.addpipeline.ai/login"} target="_blank">
+              <button className="font-medium text-black hover:text-gray-600 text-sm transition-colors">
+                Sign In
+              </button>
+            </Link>
+
             <Link href={"/demo"}>
-              <button className="btn-gradient-purple flex items-center gap-1 cursor-pointer">
+              <button className="flex items-center gap-1 cursor-pointer btn-gradient-purple">
                 Talk to Us
                 <span>➝</span>
               </button>
@@ -120,7 +123,7 @@ function NavbarNew() {
             <div className="flex flex-col gap-5">
               <a
                 href="#how-it-works"
-                className="text-black hover:text-gray-600 transition-colors text-sm font-medium"
+                className="font-medium text-black hover:text-gray-600 text-sm transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 How It Works
@@ -128,7 +131,7 @@ function NavbarNew() {
 
               <a
                 href="#intelligence"
-                className="text-black hover:text-gray-600 transition-colors text-sm font-medium"
+                className="font-medium text-black hover:text-gray-600 text-sm transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Intelligence
@@ -136,7 +139,7 @@ function NavbarNew() {
 
               <a
                 href="#industries"
-                className="text-black hover:text-gray-600 transition-colors text-sm font-medium"
+                className="font-medium text-black hover:text-gray-600 text-sm transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Industries
@@ -144,31 +147,31 @@ function NavbarNew() {
 
               {/* <a
                 href="#pricing"
-                className="text-black hover:text-gray-600 transition-colors text-sm font-medium"
+                className="font-medium text-black hover:text-gray-600 text-sm transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
               </a> */}
 
-              <div className="border-t pt-5 flex gap-3">
-                <Link href={"/"} className="w-full">
-                <button
-                  className="btn-gradient-purple flex items-center justify-center gap-2 w-[100%]"
-                  onClick={() => setIsMenuOpen(false)}
+              <div className="flex gap-3 pt-5 border-t">
+                <Link href={"https://sales.addpipeline.ai/login"} target="_blank" className="w-full">
+                  <button
+                    className="flex justify-center items-center gap-2 w-[100%] btn-gradient-purple"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                  Sign In
-                </button>
-                  </Link>
+                    Sign In
+                  </button>
+                </Link>
 
                 <Link href={"/demo"} className="w-full">
-                <button
-                  className="btn-gradient-purple flex items-center justify-center gap-1 w-[100%]"
-                  onClick={() => setIsMenuOpen(false)}
+                  <button
+                    className="flex justify-center items-center gap-1 w-[100%] btn-gradient-purple"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                  Talk to Us
-                 <span>➝</span>
-                </button>
-                  </Link>
+                    Talk to Us
+                    <span>➝</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

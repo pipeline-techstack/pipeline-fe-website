@@ -7,13 +7,15 @@ import logo from "../../assets/new/logo.png";
 import demo1 from "../../assets/new/demo-icon1.png";
 import demo2 from "../../assets/new/demo-icon2.png";
 import demo3 from "../../assets/new/demo-icon3.png";
+// import SectionContainer from "@/components/common/section-wrapper2";
 
 export default function DemoPage() {
   return (
     <>
-      <div className="w-full min-h-screen bg-white">
+      {/* <SectionContainer> */}
+      <div className="bg-white w-full min-h-screen">
         {/* Top Bar (Logo + Website Button) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-4 sm:py-6 flex items-center justify-between">
+        <div className="flex justify-between items-center mx-auto px-4 sm:px-8 lg:px-12 py-4 sm:py-6 max-w-7xl">
           {/* Logo */}
           <div className="flex items-center gap-2">
             <Image
@@ -21,44 +23,44 @@ export default function DemoPage() {
               alt="Pipeline Logo"
               width={135}
               height={135}
-              className="object-contain w-[110px] sm:w-[135px]"
+              className="w-[110px] sm:w-[135px] object-contain"
             />
           </div>
 
           {/* Website Button */}
           <Link
             href="/"
-            className="bg-[#6F5EF7] hover:bg-[#5d4fe6] text-white text-xs sm:text-sm font-medium px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors"
+            className="bg-[#6F5EF7] hover:bg-[#5d4fe6] px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg font-medium text-white text-xs sm:text-sm transition-colors"
           >
             Website →
           </Link>
         </div>
 
         {/* Hero */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-11 pt-8 sm:pt-10 pb-16 sm:pb-24">
+        <div className="relative mx-auto px-4 sm:px-8 lg:px-11 pt-8 sm:pt-10 pb-16 sm:pb-24 max-w-7xl">
           {/* Text Content */}
           <div className="max-w-3xl">
-            <p className="text-xs sm:text-sm font-medium text-gray-700 mb-3 sm:mb-4">
+            <p className="mb-3 sm:mb-4 font-medium text-gray-700 text-xs sm:text-sm">
               Revenue Intelligence Platform
             </p>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+            <h1 className="font-extrabold text-gray-900 text-3xl sm:text-5xl lg:text-6xl leading-tight">
               Understand what&rsquo;s driving the number, and where to focus
               next
             </h1>
           </div>
 
           {/* Right Floating Icons (Desktop Only) */}
-          <div className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 flex-col gap-5">
-            <div className="w-12 h-12 flex items-center justify-center">
+          <div className="hidden top-1/2 right-4 absolute lg:flex flex-col gap-5 -translate-y-1/2">
+            <div className="flex justify-center items-center w-12 h-12">
               <Image src={demo2} alt="" width={50} height={50} />
             </div>
 
-            <div className="w-12 h-12 flex items-center justify-center">
+            <div className="flex justify-center items-center w-12 h-12">
               <Image src={demo3} alt="" width={50} height={50} />
             </div>
 
-            <div className="w-12 h-12 flex items-center justify-center">
+            <div className="flex justify-center items-center w-12 h-12">
               <Image src={demo1} alt="" width={50} height={50} />
             </div>
           </div>
@@ -66,18 +68,18 @@ export default function DemoPage() {
 
         {/* Contact Section */}
         <div className="relative bg-[#fafafa] py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-start">
+          <div className="items-start gap-10 sm:gap-16 grid grid-cols-1 lg:grid-cols-2 mx-auto px-4 sm:px-8 lg:px-12 max-w-7xl">
             {/* Left Content */}
-            <div className="text-center lg:text-left">
-              <p className="text-sm text-gray-600 mb-3">Contact Info</p>
+            <div className="lg:text-left text-center">
+              <p className="mb-3 text-gray-600 text-sm">Contact Info</p>
 
-              <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-10">
+              <h2 className="mb-8 sm:mb-10 font-bold text-gray-900 text-2xl sm:text-4xl">
                 We are always happy <br className="hidden sm:block" /> to assist
                 you
               </h2>
 
               {/* Image */}
-              <div className="max-w-md mx-auto lg:mx-0 relative lg:right-5">
+              <div className="lg:right-5 relative mx-auto lg:mx-0 max-w-md">
                 <Image
                   src={demoimg}
                   alt=""
@@ -87,7 +89,7 @@ export default function DemoPage() {
             </div>
 
             {/* Right Form Card */}
-            <div className="bg-white shadow-xl rounded-2xl p-5 sm:p-8 lg:p-6 w-full max-w-lg mx-auto">
+            <div className="bg-white shadow-xl mx-auto p-5 sm:p-8 lg:p-6 rounded-2xl w-full max-w-lg">
               <GetDemoForm />
             </div>
           </div>
@@ -95,6 +97,7 @@ export default function DemoPage() {
       </div>
 
       <Footer />
+      {/* </SectionContainer> */}
     </>
   );
 }

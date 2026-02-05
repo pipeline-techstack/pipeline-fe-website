@@ -145,7 +145,7 @@ const CardCarousel = () => {
 
       {/* Card */}
       <div
-        style={{ marginLeft: cardOffset }}
+          style={activeIndex === 0 ? { marginLeft: cardOffset } : undefined}
         className={`transition-all duration-500 ease-out ${
           activeIndex === 0 ? "pl-2 sm:pl-4 lg:pl-6" : "pl-0"
         }`}
