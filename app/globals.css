@@ -287,12 +287,12 @@
     padding-top: 13px;
     padding-bottom: 13px;
     color: #fff;
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
     font-weight: 500;
     border-radius: 12px;
     transition: all 0.2s;
     background: var(--gradient-purple);
-    font-size: small;
+    font-size: 12px;
   }
 
   /* .btn-gradient-purple:hover {
@@ -341,7 +341,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-16px);
   }
 }
 
@@ -373,7 +373,7 @@
 }
 
 .hero-fade {
-  animation: fadeSlideLeft 0.8s ease-out forwards;
+  animation: fadeSlideLeft 1.5s ease-out forwards;
 }
 
 @keyframes fadeFromLeft {

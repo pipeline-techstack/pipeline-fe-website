@@ -40,12 +40,12 @@ export default function DemoPage() {
           {/* Hero */}
           <div className="relative mx-auto pt-8 sm:pt-10 pb-16 sm:pb-24">
             {/* Text Content */}
-            <div className="max-w-3xl">
+            <div className="max-w-lg">
               <p className="mb-3 sm:mb-4 font-medium text-gray-700 text-xs sm:text-sm">
                 Revenue Intelligence Platform
               </p>
 
-              <h1 className="font-extrabold text-gray-900 text-3xl sm:text-5xl lg:text-6xl leading-tight">
+              <h1 className="font-extrabold text-gray-900 text-3xl sm:text-5xl lg:text-4xl leading-tight">
                 Understand what&rsquo;s driving the number, and where to focus
                 next
               </h1>

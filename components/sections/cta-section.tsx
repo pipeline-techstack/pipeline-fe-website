@@ -45,7 +45,7 @@ function CTA() {
             {/* Description */}
             <p
               className="
-            text-sm sm:text-md
+            text-sm sm:text-[16px]
             text-white/90
             mb-6 sm:mb-10 lg:mb-5
             leading-relaxed

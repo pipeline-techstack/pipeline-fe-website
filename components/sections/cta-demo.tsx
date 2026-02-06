@@ -15,7 +15,7 @@ function CTADemo() {
           className="
             text-white 
             font-semibold 
-            text-sm sm:text-base lg:text-2xl
+            text-sm sm:text-base lg:text-[36px]
             mb-1
           "
         >
@@ -27,7 +27,7 @@ function CTADemo() {
           className="
             text-[#ECECEC]
             text-[0.5rem] 
-            sm:text-xs
+            sm:text-[16px]
           "
         >
           Built for teams accountable for revenue outcomes, not vanity metrics.

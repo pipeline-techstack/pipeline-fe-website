@@ -9,7 +9,7 @@ import SectionContainer from "../common/section-wrapper2";
 
 function NewHero() {
   return (
-    <section className="relative overflow-hidden bg-white border-b border-[#C4C4C4]/50 pb-5">
+    <section className="relative overflow-hidden bg-white border-b border-[#C4C4C4]/50 ">
       {/* Grid Background */}
       <div
         className="
@@ -61,9 +61,9 @@ function NewHero() {
 
       {/* ✅ Content */}
       <SectionContainer fullWidth className="relative pt-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
           {/* Left Content */}
-          <div className="space-y-5 text-center lg:text-left hero-fade">
+          <div className="space-y-5 text-center lg:text-left hero-fade ">
             <p className="text-text-dark text-sm lg:text-base font-medium">
               Revenue Intelligence Platform
             </p>
@@ -128,7 +128,7 @@ function NewHero() {
                 src={heroImg}
                 alt="Team collaboration - Pipeline Revenue Intelligence"
                 fill
-                className="object-cover scale-90 -translate-y-6"
+                className="object-cover scale-90 -translate-y-9"
                 priority
               />
 
