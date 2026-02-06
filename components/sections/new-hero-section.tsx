@@ -44,18 +44,18 @@ function NewHero() {
       />
 
       {/* Subtle Blur */}
-      <div className="absolute inset-0 backdrop-blur-[0.5px]" />
+      {/* <div className="absolute inset-0 backdrop-blur-[0.5px]" /> */}
 
       {/* Decorative Elements (desktop only already) */}
-      <div className="absolute top-[10%] right-[12%] hidden lg:block pointer-events-none">
+      <div className="absolute top-[10%] right-[12%] hidden lg:block pointer-events-none float-slow">
         <Image src={circleMd} alt="" width={25} height={25} />
       </div>
 
-      <div className="absolute bottom-[20%] right-[3%] hidden lg:block pointer-events-none">
+      <div className="absolute bottom-[20%] right-[3%] hidden lg:block pointer-events-none float-medium">
         <Image src={circleSm} alt="" width={20} height={20} />
       </div>
 
-      <div className="absolute top-[25%] left-[50%] hidden lg:block pointer-events-none">
+      <div className="absolute top-[25%] left-[50%] hidden lg:block pointer-events-none float-fast">
         <div className="w-3 h-3 rounded-full bg-gradient-purple opacity-90" />
       </div>
 
@@ -63,7 +63,7 @@ function NewHero() {
       <SectionContainer fullWidth className="relative pt-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
-          <div className="space-y-5 text-center lg:text-left">
+          <div className="space-y-5 text-center lg:text-left hero-fade">
             <p className="text-text-dark text-sm lg:text-base font-medium">
               Revenue Intelligence Platform
             </p>

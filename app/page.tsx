@@ -5,6 +5,7 @@ import NavbarNew from "@/components/sections/new-navbar";
 import StatsSection from "@/components/sections/new-status-section";
 import Footer from "@/components/sections/footer";
 import FeaturesSection from "@/components/sections/new-feature-card-section";
+import CTA from "@/components/sections/cta-section";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <div id="intelligence">
         <FeaturesSection />
       </div>
+      <CTA/>
       <Footer />
     </>
   );

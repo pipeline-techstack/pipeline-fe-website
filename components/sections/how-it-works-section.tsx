@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 // import HeaderOrIntro from '../common/header-intro';
 import SectionContainer from "../common/section-wrapper2";
 import Image from "next/image";
@@ -58,6 +58,23 @@ const HowItWorksSection = () => {
       icon:fouricon
     },
   ];
+ const lineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          lineRef.current?.classList.add("active");
+          observer.disconnect(); // run once
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (lineRef.current) observer.observe(lineRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <SectionContainer className="mx-auto">
@@ -140,7 +157,7 @@ const HowItWorksSection = () => {
           {/* ================= FLOW CANVAS ================= */}
           <div className="relative h-[350px] z-10">
             {/* Curved Line */}
-            <div className="absolute inset-0 pointer-events-none max-w-[85%]">
+            <div  ref={lineRef} className="absolute inset-0 pointer-events-none max-w-[85%] line-reveal">
               <Image
                 src={line}
                 alt=""
@@ -168,8 +185,8 @@ const HowItWorksSection = () => {
                 {/* Text + Number */}
                 <div className="relative">
                   {/* Big Faded Number */}
-                  <div className="absolute -top-14 left-30">
-                    <div className="w-[110px] h-[110px] relative">
+                  <div className="absolute -top-14 left-30 ">
+                    <div className="w-[110px] h-[110px] relative fade-top">
                       <Image
                         src={step.image}
                         alt=""
@@ -180,12 +197,12 @@ const HowItWorksSection = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-md font-extrabold text-text-dark mb-2 relative z-10">
+                  <h3 className="text-md font-extrabold text-text-dark mb-2 relative z-10 fade-left reveal-delay">
                     {step.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-text-light relative z-10 text-[12px] max-w-[78%]">
+                  <p className="text-text-light relative z-10 text-[12px] max-w-[78%] fade-left reveal-delay">
                     {step.description}
                   </p>
                 </div>
