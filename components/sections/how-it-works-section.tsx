@@ -202,7 +202,7 @@ const HowItWorksSection = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-text-light relative z-10 text-[12px] max-w-[78%] fade-left reveal-delay">
+                  <p className="text-text-light relative z-10 text-[14px] max-w-[78%] fade-left reveal-delay">
                     {step.description}
                   </p>
                 </div>

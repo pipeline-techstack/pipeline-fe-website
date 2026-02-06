@@ -45,7 +45,7 @@ const StatsSection = () => {
               </div>
 
               {/* Label */}
-              <p className="font-normal text-text-light text-base sm:text-lg">
+              <p className="font-normal text-text-light text-base sm:text-base">
                 {stat.label}
               </p>
             </div>
