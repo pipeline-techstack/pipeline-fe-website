@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -51,7 +51,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #4B5BA9;
+  --primary: #0035D9;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: #C6D7FE8A;
   --secondary-foreground: oklch(0.205 0 0);
@@ -122,14 +122,301 @@
 }
 
 /* hide the default search icon inside the dropdown */
-.react-tel-input .search .search-emoji {
+/* .react-tel-input .search .search-emoji {
   display: none !important;
-}
+} */
 
-.react-tel-input .form-control {
-  /* enough for flag + spacing */
+/* .react-tel-input .form-control {
   padding-left: 48px !important; 
   border-radius: 12px !important;
   border: 2px solid #e5e7eb !important;
   height: 48px !important;
+}  */
+
+@import "tailwindcss";
+
+/* Pipeline Brand Colors - CSS Variables */
+@theme {
+  --color-purple-gradient-start: #5d5fef;
+  --color-purple-gradient-end: #8159df;
+
+  --background-gradient-purple: linear-gradient(
+    104.73deg,
+    #5d5fef 17.44%,
+    #8159df 108.81%
+  );
+  --background-gradient-purple-hover: linear-gradient(
+    104.73deg,
+    #4d4fdf 17.44%,
+    #7149cf 108.81%
+  );
+  --background-gradient-purple-reverse: linear-gradient(
+    104.73deg,
+    #8159df 17.44%,
+    #5d5fef 108.81%
+  );
+  --background-gradient-purple-light: linear-gradient(
+    104.73deg,
+    rgba(93, 95, 239, 0.1) 17.44%,
+    rgba(129, 89, 223, 0.1) 108.81%
+  );
+  --background-gradient-purple-lighter: linear-gradient(
+    104.73deg,
+    rgba(93, 95, 239, 0.05) 17.44%,
+    rgba(129, 89, 223, 0.05) 108.81%
+  );
+
+  --shadow-purple-glow: 0 10px 25px rgba(93, 95, 239, 0.3);
+  --shadow-purple-glow-lg: 0 15px 35px rgba(93, 95, 239, 0.4);
+}
+
+/* Additional CSS Variables (for inline style usage) */
+:root {
+  --color-text-dark: #1e1e1e;
+  --color-text-light: #6d6b7c;
+  --gradient-purple-start: #5d5fef;
+  --gradient-purple-end: #8159df;
+  --gradient-purple: linear-gradient(
+    104.73deg,
+    #5d5fef 17.44%,
+    #8159df 108.81%
+  );
+  --gradient-purple-hover: linear-gradient(
+    104.73deg,
+    #4d4fdf 17.44%,
+    #7149cf 108.81%
+  );
+  --gradient-purple-reverse: linear-gradient(
+    104.73deg,
+    #8159df 17.44%,
+    #5d5fef 108.81%
+  );
+  --gradient-purple-light: linear-gradient(
+    104.73deg,
+    rgba(93, 95, 239, 0.1) 17.44%,
+    rgba(129, 89, 223, 0.1) 108.81%
+  );
+  --gradient-purple-lighter: linear-gradient(
+    104.73deg,
+    rgba(93, 95, 239, 0.05) 17.44%,
+    rgba(129, 89, 223, 0.05) 108.81%
+  );
+  --shadow-purple: 0 10px 25px rgba(93, 95, 239, 0.3);
+  --shadow-purple-lg: 0 15px 35px rgba(93, 95, 239, 0.4);
+  --text-dark: #1e1e1e;
+  --text-light: #6d6b7c;
+  --carousel-bg: #2b2742;
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+  .text-text-dark {
+    color: var(--text-dark);
+  }
+
+  .text-text-light {
+    color: var(--text-light);
+  }
+
+  .bg-gradient-purple {
+    background: var(--gradient-purple);
+  }
+
+  .bg-gradient-purple-hover {
+    background: var(--gradient-purple-hover);
+  }
+
+  .bg-gradient-purple-reverse {
+    background: var(--gradient-purple-reverse);
+  }
+
+  .bg-gradient-purple-light {
+    background: var(--gradient-purple-light);
+  }
+
+  .bg-gradient-purple-lighter {
+    background: var(--gradient-purple-lighter);
+  }
+
+  .text-gradient-purple {
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient-purple {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--gradient-purple) border-box;
+  }
+
+  .focus-border-gradient-purple:focus-visible {
+    outline: none;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--gradient-purple) border-box;
+  }
+
+  .focus-border-gradient-purple:focus {
+    outline: none;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--gradient-purple) border-box;
+  }
+
+  .shadow-purple-glow {
+    box-shadow: var(--shadow-purple);
+  }
+
+  .shadow-purple-glow-lg {
+    box-shadow: var(--shadow-purple-lg);
+  }
+}
+
+/* Component Patterns */
+@layer components {
+  .btn-gradient-purple {
+    height: 45px;
+    width: 120px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    color: #fff;
+    /* font-size: 0.875rem; */
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.2s;
+    background: var(--gradient-purple);
+    font-size: 12px;
+  }
+
+  /* .btn-gradient-purple:hover {
+    opacity: 0.9;
+    box-shadow: var(--shadow-purple);
+  } */
+
+  .btn-outline-purple {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--gradient-purple) border-box;
+    color: var(--gradient-purple-start);
+  }
+
+  .card-gradient-purple {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--gradient-purple) border-box;
+  }
+
+  .card-gradient-purple-bg {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background: var(--gradient-purple-light);
+  }
+}
+
+/* ------------------ */
+/* Floating bubble motion */
+/* ------------------ */
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+.float-slow {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: floatSoft 5s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
+/* ------------------ */
+/* Hero text fade + slide */
+/* ------------------ */
+
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-fade {
+  animation: fadeSlideLeft 1.5s ease-out forwards;
+}
+
+@keyframes fadeFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-left {
+  animation: fadeFromLeft 0.7s ease-out forwards;
+}
+
+@keyframes fadeFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-top {
+  animation: fadeFromTop 0.7s ease-out forwards;
+}
+
+/* Reveal line animation */
+.line-reveal {
+  width: 0%;
+  transition: width 1s ease-out;
+}
+
+.line-reveal.active {
+  width: 100%;
+}
+
+/* Optional delay utility */
+.reveal-delay {
+  animation-delay: 0.2s;
 }

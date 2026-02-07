@@ -1,57 +1,129 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
-import { Linkedin } from "lucide-react";
-import footerLogo from "../../assets/footer-logo.png";
+import logo from "../../assets/new/logo.png"; // Adjust path as needed
+import SectionContainer from "../common/section-wrapper2";
 
 const Footer = () => {
+  const footerLinks = {
+    product: [
+      { label: "How It Works", href: "#how-it-works" },
+      { label: "Intelligence", href: "#intelligence" },
+      { label: "Pricing", href: "#pricing" },
+    ],
+    company: [
+      { label: "About", href: "#about" },
+      { label: "Careers", href: "#careers" },
+      { label: "Contact", href: "/demo" },
+    ],
+    resources: [
+      { label: "Documentation", href: "#documentation" },
+      { label: "Blog", href: "#blog" },
+      { label: "Support", href: "#support" },
+    ],
+  };
+
+  const year = new Date().getFullYear();
   return (
-
-    <footer className="bg-[#0A0721] px-4 sm:px-6 md:px-10 xl:px-20 py-10 sm:py-12 text-white">
-      <div className="flex flex-col md:flex-row flex-wrap justify-between items-center md:items-start gap-y-10 gap-x-8">
-        {/* Logo + Description */}
-        <div className="flex-1 min-w-[220px] flex flex-col items-center md:items-start text-center md:text-left mb-6 md:mb-0">
-
-          <div className="mb-4">
-            <Image
-              src={footerLogo}
-              alt="Pipeline Logo"
-              width={150}
-              height={40}
-              className="w-auto h-10"
-            />
-          </div>
-          <p className="max-w-xs text-white/80 text-sm leading-relaxed">
-            Pipeline transforms real-time buyer signals into perfectly-timed,
-            personalized outreach.
-          </p>
-        </div>
-
-        {/* Social Icons */}
-
-        <div className="flex-1 min-w-[180px] flex flex-col items-center md:items-end text-center md:text-right">
-          <p className="mb-3 font-medium text-white text-base">Follow us on</p>
-          <div className="flex gap-4 justify-center md:justify-end">
-            <a
-              href="https://www.linkedin.com/company/add-pipeline-ai/"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition transform hover:scale-105"
-            >
-              <div className="bg-[#606BCE] hover:bg-[#7a83e1] p-2 rounded-full">
-                <Linkedin className="w-5 h-5 text-white" />
+    <>
+      <footer className="bg-[#F8FAFC] py-12 sm:py-16 lg:py-5 w-full">
+        <SectionContainer>
+          {/* Main Footer Content */}
+          <div className="flex flex-col lg:flex-row justify-between gap-10 mb-10">
+            {/* Brand Column */}
+            <div className="lg:max-w-sm">
+              <div className="flex items-center gap-2 mb-4">
+                <Image
+                  src={logo}
+                  alt="Pipeline Logo"
+                  width={130}
+                  height={40}
+                  className="object-contain"
+                />
               </div>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      {/* Copyright Bar */}
-      <div className="bg-[#292742] mt-10 py-4 rounded-lg text-white/80 text-xs sm:text-sm text-center">
-        © {new Date().getFullYear()} Pipeline. All rights reserved.
-      </div>
-    </footer>
+              <p className="text-sm max-w-full lg:max-w-[70%] text-text-light leading-relaxed">
+                Revenue intelligence for CROs and RevOps teams
+              </p>
+            </div>
+
+            {/* Divider (mobile only) */}
+            <div className="h-px w-full bg-gray-200 lg:hidden" />
+
+            {/* Links Grid */}
+            <div className="grid grid-cols-3 gap-6 sm:gap-12 lg:gap-16">
+              {/* Product */}
+              <div>
+                <h3 className="mb-4 font-semibold text-[#6366F1] text-base uppercase tracking-wider">
+                  PRODUCT
+                </h3>
+                <ul className="space-y-3">
+                  {footerLinks.product.map((link, index) => (
+                    <li key={index}>
+                      <a
+                        href={link.href}
+                        className="text-sm text-text-light hover:text-text-dark transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Company */}
+              <div>
+                <h3 className="mb-4 font-semibold text-[#6366F1] text-base uppercase tracking-wider">
+                  COMPANY
+                </h3>
+                <ul className="space-y-3">
+                  {footerLinks.company.map((link, index) => (
+                    <li key={index}>
+                      <a
+                        href={link.href}
+                        className="text-sm text-text-light hover:text-text-dark transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Resources */}
+              <div>
+                <h3 className="mb-4 font-semibold text-[#6366F1] text-base uppercase tracking-wider">
+                  RESOURCES
+                </h3>
+                <ul className="space-y-3">
+                  {footerLinks.resources.map((link, index) => (
+                    <li key={index}>
+                      <a
+                        href={link.href}
+                        className="text-sm text-text-light hover:text-text-dark transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px w-full bg-gray-200" />
+
+          {/* Copyright */}
+          <div className="pt-6">
+            <p className="text-[16px] text-text-light text-center">
+              © Copyright {year}, All Rights Reserved
+            </p>
+          </div>
+        </SectionContainer>
+      </footer>
+    </>
   );
 };
 

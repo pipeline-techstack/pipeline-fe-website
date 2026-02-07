@@ -1,59 +1,105 @@
 import GetDemoForm from "@/components/custom/get-demo-form";
-import Navbar from "@/components/custom/navbar";
+import demoimg from "../../assets/new/demo-img.png";
+import Image from "next/image";
+import Footer from "@/components/sections/footer";
+import Link from "next/link";
+import logo from "../../assets/new/logo.png";
+import demo1 from "../../assets/new/demo-icon1.png";
+import demo2 from "../../assets/new/demo-icon2.png";
+import demo3 from "../../assets/new/demo-icon3.png";
+import SectionContainer from "@/components/common/section-wrapper2";
+import CTADemo from "@/components/sections/cta-demo";
 
 export default function DemoPage() {
   return (
-    <div className="flex flex-col bg-gradient-to-br from-[#eaf6ff] via-[#edf6fe] to-[#d4e8ff] w-full min-h-screen">
-      {/* Navbar */}
-      <div className="px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6">
-        <Navbar />
-      </div>
-
-      {/* Demo Section */}
-      <div className="flex flex-1 items-center px-4 md:px-8 py-8">
-        <div className="gap-12 lg:gap-16 grid grid-cols-1 lg:grid-cols-2 mx-auto w-full max-w-7xl">
-          {/* Left Content */}
-          <div className="flex flex-col justify-evenly space-y-2 text-indigo-950 lg:text-left">
-            <div>
-              <h1 className="font-extrabold text-gray-900 text-4xl lg:text-4xl md:text-5xl leading-tight">
-                Book a meeting with a GTM expert
-              </h1>
-              <p className="lg:mx-0 max-w-xl text-gray-700 text-base md:text-lg">
-                Pipeline helps you identify and connect with your highest-value
-                prospects — instantly.
-              </p>
-              <p className="text-gray-700 text-base">
-                Ready to grow? Let’s talk 👉
-              </p>
-            </div>
-
-            {/* Glass panel & video */}
-            <div className="relative bg-white/20 shadow-xl backdrop-blur-xl p-1.5 xs:p-2 sm:p-3 md:p-4 border border-primary/10 rounded-3xl w-full max-w-lg sm:max-w-2xl md:max-w-3xl lg:max-w-4xl overflow-hidden">
-              <video
-                src="/videos/long-demo.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="rounded-2xl w-full h-auto object-contain aspect-video"
-                controls
+    <>
+      <div className="bg-white w-full min-h-screen">
+        <SectionContainer>
+          {/* Top Bar (Logo + Website Button) */}
+          <div className="flex justify-between items-center mx-auto py-4 sm:py-6">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <Image
+                src={logo}
+                alt="Pipeline Logo"
+                width={135}
+                height={135}
+                className="w-[110px] sm:w-[135px] object-contain"
               />
             </div>
+
+            {/* Website Button */}
+            <Link
+              href="/"
+              className="bg-[#6F5EF7] hover:bg-[#5d4fe6] px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg font-medium text-white text-xs sm:text-sm transition-colors"
+            >
+              Website →
+            </Link>
           </div>
 
-          {/* Right Form Card */}
-          <div className="bg-white shadow-xl p-6 md:p-10 rounded-2xl w-full">
-            <h2 className="mb-6 font-semibold text-primary text-xl">
-              Get your personalized demo
-            </h2>
-            <p className="mb-4 text-gray-600 text-sm">
-              Tell us a bit about yourself, and someone from our team will reach
-              out shortly.
-            </p>
-            <GetDemoForm />
+          {/* Hero */}
+          <div className="relative mx-auto pt-8 sm:pt-10 pb-16 sm:pb-24">
+            {/* Text Content */}
+            <div className="max-w-lg">
+              <p className="mb-3 sm:mb-4 font-medium text-gray-700 text-xs sm:text-sm">
+                Revenue Intelligence Platform
+              </p>
+
+              <h1 className="font-extrabold text-gray-900 text-3xl sm:text-5xl lg:text-4xl leading-tight">
+                Understand what&rsquo;s driving the number, and where to focus
+                next
+              </h1>
+            </div>
+
+            {/* Right Floating Icons (Desktop Only) */}
+            <div className="hidden top-1/2 right-4 absolute lg:flex flex-col gap-5 -translate-y-1/2">
+              <div className="flex justify-center items-center w-12 h-12">
+                <Image src={demo2} alt="" width={50} height={50} />
+              </div>
+
+              <div className="flex justify-center items-center w-12 h-12">
+                <Image src={demo3} alt="" width={50} height={50} />
+              </div>
+
+              <div className="flex justify-center items-center w-12 h-12">
+                <Image src={demo1} alt="" width={50} height={50} />
+              </div>
+            </div>
           </div>
+        </SectionContainer>
+        {/* Contact Section */}
+        <div className="relative bg-[#fafafa] py-16 sm:py-24">
+          <SectionContainer>
+            <div className="items-start gap-10 sm:gap-16 grid grid-cols-1 lg:grid-cols-2 mx-auto ">
+              {/* Left Content */}
+              <div className="lg:text-left text-center">
+                <p className="mb-3 text-gray-600 text-sm">Contact Info</p>
+
+                <h2 className="mb-8 sm:mb-10 font-bold text-gray-900 text-2xl sm:text-4xl">
+                  We are always happy <br className="hidden sm:block" /> to
+                  assist you
+                </h2>
+
+                {/* Image */}
+                <div className="lg:right-5 relative mx-auto lg:mx-0 max-w-md">
+                  <Image
+                    src={demoimg}
+                    alt=""
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Right Form Card */}
+              <div className="bg-white shadow-xl mx-auto p-5 sm:p-8 lg:p-6 rounded-2xl w-full max-w-lg">
+                <GetDemoForm />
+              </div>
+            </div>
+          </SectionContainer>
         </div>
       </div>
-    </div>
+      <CTADemo/>
+      <Footer />
+    </>
   );
 }

@@ -1,13 +1,12 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import logo from "../../assets/logo.png";
 import { FormField as FormFieldComponent } from "../../components/form/form-field";
 import { FormField, useFormValidation } from "@/hooks/use-form-validation";
 import { PhoneField } from "@/components/form/phone-field";
 import { FormStatus } from "@/components/form/form-status";
 import { SubmitButton } from "@/components/form/submit-button";
+import Logo from "@/components/common/logo";
 
 interface SubscribeFormData extends FormField {
   fullname: string;
@@ -72,21 +71,13 @@ export default function SubscribeForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-      <div className="bg-white rounded-xl shadow-lg p-10 w-full max-w-xl">
+    <div className="flex justify-center items-center bg-gray-100 p-6 min-h-screen">
+      <div className="bg-white shadow-lg p-10 rounded-xl w-full max-w-xl">
         {/* Logo */}
-        <div className="text-center mb-4">
-          <Image
-            src={logo}
-            alt="Pipeline Logo"
-            width={200}
-            height={160}
-            className="mx-auto mb-2"
-          />
-        </div>
+       <Logo />
 
         {/* Notification Text */}
-        <div className="text-center mb-8">
+        <div className="mb-8 text-center">
           <p className="text-gray-700 text-lg leading-relaxed">
             You will receive a notification regarding what you signed up for.
           </p>
@@ -127,12 +118,12 @@ export default function SubscribeForm() {
 
           {/* Communication Preferences */}
           <div className="space-y-4">
-            <h3 className="text-gray-900 font-medium text-base">
+            <h3 className="font-medium text-gray-900 text-base">
               Communication Preferences
             </h3>
 
             {/* Account Updates Consent */}
-            <div className="border border-gray-200 rounded-lg p-4 min-h-[80px]">
+            <div className="p-4 border border-gray-200 rounded-lg min-h-[80px]">
               <div className="flex items-start">
                 <input
                   type="checkbox"
@@ -142,26 +133,26 @@ export default function SubscribeForm() {
                   onChange={(e) =>
                     handleChange("consent", e.target.checked ? "yes" : "")
                   }
-                  className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
+                  className="flex-shrink-0 bg-white mt-0.5 border-gray-300 rounded focus:outline-none w-5 h-5 accent-primary"
                 />
-                <div className="ml-3 flex-1">
+                <div className="flex-1 ml-3">
                   <label
                     htmlFor="accountConsent"
-                    className="text-gray-900 text-sm font-medium cursor-pointer"
+                    className="font-medium text-gray-900 text-sm cursor-pointer"
                   >
                     I consent to receive account updates via SMS{" "}
                     <span className="text-red-500">*</span>
                   </label>
                   <details className="mt-2">
-                    <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
+                    <summary className="text-primary text-sm hover:underline cursor-pointer list-none">
                       <span className="inline-flex items-center">
-                        <svg className="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="inline mr-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                         View details
                       </span>
                     </summary>
-                    <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
+                    <p className="mt-3 pl-4 border-gray-200 border-l-2 text-gray-600 text-xs leading-relaxed">
                       By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
                       SMS text message from Signal House, LLC regarding account issues and outages (customer care), (our message frequency
                       may vary). Message & data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
@@ -169,7 +160,7 @@ export default function SubscribeForm() {
                         href="https://addpipeline.ai/privacy-policy"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline text-primary/80 hover:text-primary/100"
+                        className="text-primary/80 hover:text-primary/100 underline"
                       >
                         Privacy Policy
                       </a>{" "}
@@ -182,7 +173,7 @@ export default function SubscribeForm() {
             </div>
 
             {/* Marketing Offers Consent */}
-            <div className="border border-gray-200 rounded-lg p-4 min-h-[80px]">
+            <div className="p-4 border border-gray-200 rounded-lg min-h-[80px]">
               <div className="flex items-start">
                 <input
                   type="checkbox"
@@ -192,26 +183,26 @@ export default function SubscribeForm() {
                   onChange={(e) =>
                     handleChange("marketingConsent", e.target.checked ? "yes" : "")
                   }
-                  className="h-5 w-5 mt-0.5 bg-white border-gray-300 rounded focus:outline-none accent-primary flex-shrink-0"
+                  className="flex-shrink-0 bg-white mt-0.5 border-gray-300 rounded focus:outline-none w-5 h-5 accent-primary"
                 />
-                <div className="ml-3 flex-1">
+                <div className="flex-1 ml-3">
                   <label
                     htmlFor="marketingConsent"
-                    className="text-gray-900 text-sm font-medium cursor-pointer"
+                    className="font-medium text-gray-900 text-sm cursor-pointer"
                   >
                     I consent to receive marketing offers via SMS{" "}
                     <span className="text-red-500">*</span>
                   </label>
                   <details className="mt-2">
-                    <summary className="text-primary text-sm cursor-pointer hover:underline list-none">
+                    <summary className="text-primary text-sm hover:underline cursor-pointer list-none">
                       <span className="inline-flex items-center">
-                        <svg className="w-3 h-3 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="inline mr-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                         View details
                       </span>
                     </summary>
-                    <p className="mt-3 text-gray-600 text-xs leading-relaxed pl-4 border-l-2 border-gray-200">
+                    <p className="mt-3 pl-4 border-gray-200 border-l-2 text-gray-600 text-xs leading-relaxed">
                       By providing a telephone number, clicking this button, and submitting the form, you are consenting to be contacted by
                       SMS text message from Signal House, LLC regarding new offers (marketing), (our message frequency may vary). Message &
                       data rates apply. Reply STOP to unsubscribe from further messaging. Reply HELP for more information. See our{" "}
@@ -219,7 +210,7 @@ export default function SubscribeForm() {
                         href="https://addpipeline.ai/privacy-policy"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline text-primary/80 hover:text-primary/100"
+                        className="text-primary/80 hover:text-primary/100 underline"
                       >
                         Privacy Policy
                       </a>{" "}
@@ -232,10 +223,10 @@ export default function SubscribeForm() {
             </div>
 
             {errors.marketingConsent && (
-              <p className="text-red-500 text-xs mt-2">{errors.marketingConsent}</p>
+              <p className="mt-2 text-red-500 text-xs">{errors.marketingConsent}</p>
             )}
             {errors.consent && (
-              <p className="text-red-500 text-sm mt-2">{errors.consent}</p>
+              <p className="mt-2 text-red-500 text-sm">{errors.consent}</p>
             )}
           </div>
 

@@ -19,7 +19,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = ({
     <Button 
       type="submit" 
       disabled={loading} 
-      className={`bg-primary disabled:opacity-50 shadow-lg hover:shadow-xl rounded-xl w-full h-12 font-semibold text-white disabled:cursor-not-allowed ${className}`}
+      className={`bg-gradient-purple text-white disabled:opacity-50 shadow-lg hover:shadow-xl rounded-xl w-full h-12 font-semibold disabled:cursor-not-allowed ${className}`}
     >
       {loading && <Loader2 className="mr-2 w-4 h-4 animate-spin" />}
       {loading ? loadingText : children}

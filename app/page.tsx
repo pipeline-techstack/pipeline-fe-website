@@ -1,34 +1,32 @@
-// import DemoFeatures from "@/components/sections/demo-features";
-import EffectiveSection from "@/components/sections/effective";
-import Faq from "@/components/sections/faq";
-import Growth from "@/components/sections/growth";
-import Header from "@/components/sections/header";
-import MarqueSection from "@/components/sections/marque";
-import Skydeck from "@/components/sections/skydeck";
-import Solutions from "@/components/sections/solutions";
-import WorkflowComparison from "@/components/sections/workflow-comparison";
+import IndustriesSection from "@/components/sections/industries";
+import HowItWorksSection from "@/components/sections/how-it-works-section";
+import NewHero from "@/components/sections/new-hero-section";
+import NavbarNew from "@/components/sections/new-navbar";
+import StatsSection from "@/components/sections/new-status-section";
 import Footer from "@/components/sections/footer";
+import FeaturesSection from "@/components/sections/new-feature-card-section";
+import CTA from "@/components/sections/cta-section";
 
 export default function Home() {
   return (
-    <div className="overflow-y-auto">
-      <Header />
-      <div className="bg-gray-50 px-6 md:px-12 xl:px-24 py-12">
-        <MarqueSection />
+    <>
+      <NavbarNew />
+      <div id="hero">
+        <NewHero />
+        <StatsSection />
       </div>
 
-      <div className="flex flex-col gap-12 md:gap-40 xl:gap-48 bg-gray-50 px-3 md:px-20 xl:px-48 py-12">
-        <Solutions />
-        <Growth />
-        <EffectiveSection />
-        <WorkflowComparison />
-        <Skydeck />
-        <Faq />
-        {/* <DemoFeatures /> */}
+      <div id="industries">
+        <IndustriesSection />
       </div>
-      <div className="bg-gray-50 pt-12 md:pt-40 xl:pt-48">
-        <Footer />
+      <div id="how-it-works">
+        <HowItWorksSection />
       </div>
-    </div>
+      <div id="intelligence">
+        <FeaturesSection />
+      </div>
+      <CTA/>
+      <Footer />
+    </>
   );
 }
