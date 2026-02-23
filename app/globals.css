@@ -172,9 +172,14 @@
 
 /* Additional CSS Variables (for inline style usage) */
 :root {
+  --gradient-card-dark: linear-gradient(
+  146.97deg,
+  #2b2742 19.7%,
+  #6d63a8 166.69%
+);
   --color-text-dark: #1e1e1e;
   --color-text-light: #6d6b7c;
-  --gradient-purple-start: #5d5fef;
+  --gradient-purple-start: #5d5fef; 
   --gradient-purple-end: #8159df;
   --gradient-purple: linear-gradient(
     104.73deg,
@@ -210,6 +215,15 @@
 
 /* Custom Utility Classes */
 @layer utilities {
+  .bg-gradient-card-dark {
+  background: var(--gradient-card-dark);
+}
+  .card-gradient-dark {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: var(--gradient-card-dark);
+    color: white;
+  }
   .text-text-dark {
     color: var(--text-dark);
   }
