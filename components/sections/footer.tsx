@@ -1,29 +1,14 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import logo from "../../assets/new/logo.png"; // Adjust path as needed
 import SectionContainer from "../common/section-wrapper2";
+import { FooterProps } from "@/lib/types";
 
-const Footer = () => {
-  const footerLinks = {
-    product: [
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Intelligence", href: "#intelligence" },
-      { label: "Pricing", href: "#pricing" },
-    ],
-    company: [
-      { label: "About", href: "#about" },
-      { label: "Careers", href: "#careers" },
-      { label: "Contact", href: "/demo" },
-    ],
-    resources: [
-      { label: "Documentation", href: "#documentation" },
-      { label: "Blog", href: "#blog" },
-      { label: "Support", href: "#support" },
-    ],
-  };
-
+const Footer = ({
+  tagline,
+  footerLinks
+}:FooterProps) => {
   const year = new Date().getFullYear();
   return (
     <>
@@ -44,7 +29,7 @@ const Footer = () => {
               </div>
 
               <p className="text-sm max-w-full lg:max-w-[70%] text-text-light leading-relaxed">
-                Revenue intelligence for CROs and RevOps teams
+                {tagline}
               </p>
             </div>
 

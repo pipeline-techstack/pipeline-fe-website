@@ -94,3 +94,25 @@ export type VisibilityProps = {
   autoInterval?: number; 
   img: StaticImageData;
 };
+
+// footer types
+type ArrayofLinks = {
+  label: string;
+  href: string;
+}
+export type FooterProps = {
+  tagline: string;
+  footerLinks: {
+    product: ArrayofLinks[],
+    company: ArrayofLinks[],
+    resources: ArrayofLinks[]
+  }
+}
+
+// cta types
+
+export type CTAProps = {
+  tagline: string;
+  heading: string;
+  subheading: string;
+}

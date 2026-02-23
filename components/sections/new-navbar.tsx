@@ -52,19 +52,30 @@ function NavbarNew({ navigationLinks }: NavbarNewProps) {
                     </button>
 
                     {isOpen && (
-                      <div className="absolute left-0 mt-3 bg-white shadow-xl rounded-xl p-4 w-72 z-50">
-                        <div className="flex flex-col gap-3">
-                          {link.dropdown.map((item, i) => (
-                            <Link
-                              key={i}
-                              href={item.href}
-                              onClick={() => setOpenDropdown(null)}
-                            >
-                              <div className="border rounded-xl px-4 py-3 hover:bg-gray-50 transition cursor-pointer text-sm font-medium">
+                      <div
+                        className={`
+    absolute left-0 mt-3 w-72 z-50
+    transition-all duration-200 ease-out origin-top
+    ${
+      isOpen
+        ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+        : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+    }
+  `}
+                      >
+                        <div className="bg-white shadow-xl rounded-xl p-4">
+                          <div className="flex flex-col">
+                            {link.dropdown.map((item, i) => (
+                              <Link
+                                key={i}
+                                href={item.href}
+                                onClick={() => setOpenDropdown(null)}
+                                className="border-b last:border-b-0 px-2 py-3 hover:bg-gray-50 transition-colors text-sm font-medium"
+                              >
                                 {item.label}
-                              </div>
-                            </Link>
-                          ))}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     )}

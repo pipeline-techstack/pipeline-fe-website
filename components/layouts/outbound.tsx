@@ -53,81 +53,81 @@ function Outbound() {
         />
       </div>
 
-        <div id="impact">
-      <TrustedIndustriesSection
-        badgeText="PROVEN AT SCALE"
-        heading="Trusted by Scaling B2B"
-        subheading="Enabling structured LinkedIn outbound for high-growth B2B teams"
-        industries={[
-          {
-            title: "Technology & Software",
-            icon: icon1,
-          },
-          {
-            title: "Manufacturing & Industrials",
-            icon: icon2,
-          },
-          {
-            title: "Healthcare & MedTech",
-            icon: icon3,
-          },
-          {
-            title: "Financial Services & FinTech",
-            icon: icon4,
-          },
-          {
-            title: "Professional Services",
-            icon: icon5,
-          },
-          {
-            title: "Marketing Services",
-            icon: icon6,
-          },
-        ]}
-      />
+      <div id="impact">
+        <TrustedIndustriesSection
+          badgeText="PROVEN AT SCALE"
+          heading="Trusted by Scaling B2B"
+          subheading="Enabling structured LinkedIn outbound for high-growth B2B teams"
+          industries={[
+            {
+              title: "Technology & Software",
+              icon: icon1,
+            },
+            {
+              title: "Manufacturing & Industrials",
+              icon: icon2,
+            },
+            {
+              title: "Healthcare & MedTech",
+              icon: icon3,
+            },
+            {
+              title: "Financial Services & FinTech",
+              icon: icon4,
+            },
+            {
+              title: "Professional Services",
+              icon: icon5,
+            },
+            {
+              title: "Marketing Services",
+              icon: icon6,
+            },
+          ]}
+        />
       </div>
 
-        <div id="approach">
-      <HowItWorksSection
-        heading="How It "
-        subheading="From ICP Targeting to High-Intent Conversations — In Three Focused Steps"
-        steps={[
-          {
-            title: "Define Your Ideal Customer Profile",
-            description: "We map your ICP based on:",
-            bullets: [
-              "Industry",
-              "Company size",
-              "Geography",
-              "Role and decision-making authority",
-              "Service or product relevance",
-            ],
-            img: img1,
-          },
-          {
-            title: "AI-Powered Personalization",
-            description: "Each message is customized using:",
-            bullets: [
-              "Company information",
-              "Role relevance",
-              "Industry context",
-              "Value proposition alignment",
-            ],
-            img: img2,
-          },
-          {
-            title: "Real-Time Warm Lead Alerts",
-            description: "When a prospect:",
-            bullets: [
-              "Expresses interest",
-              "Asks for more information",
-              "Requests a meeting",
-            ],
-            img: img3,
-          },
-        ]}
-      />
-</div>
+      <div id="approach">
+        <HowItWorksSection
+          heading="How It "
+          subheading="From ICP Targeting to High-Intent Conversations — In Three Focused Steps"
+          steps={[
+            {
+              title: "Define Your Ideal Customer Profile",
+              description: "We map your ICP based on:",
+              bullets: [
+                "Industry",
+                "Company size",
+                "Geography",
+                "Role and decision-making authority",
+                "Service or product relevance",
+              ],
+              img: img1,
+            },
+            {
+              title: "AI-Powered Personalization",
+              description: "Each message is customized using:",
+              bullets: [
+                "Company information",
+                "Role relevance",
+                "Industry context",
+                "Value proposition alignment",
+              ],
+              img: img2,
+            },
+            {
+              title: "Real-Time Warm Lead Alerts",
+              description: "When a prospect:",
+              bullets: [
+                "Expresses interest",
+                "Asks for more information",
+                "Requests a meeting",
+              ],
+              img: img3,
+            },
+          ]}
+        />
+      </div>
 
       <VisibilityPerformanceSection
         heading="Full Visibility. Measurable Performance."
@@ -162,60 +162,84 @@ function Outbound() {
       />
 
       <div id="platform">
-      <PlatformPerformanceSection
-        heading="Platfrom "
-        stats={[
-          {
-            value: "165,000+",
-            label: "LinkedIn outreach actions every month",
-          },
-          {
-            value: "1,500+",
-            label: "Meetings delivered per month",
-          },
-        ]}
-        achievements={[
-          "Tens of thousands of ICP-matched prospects engaged",
-          "Thousands of qualified business conversations",
-        ]}
-      />
+        <PlatformPerformanceSection
+          heading="Platfrom "
+          stats={[
+            {
+              value: "165,000+",
+              label: "LinkedIn outreach actions every month",
+            },
+            {
+              value: "1,500+",
+              label: "Meetings delivered per month",
+            },
+          ]}
+          achievements={[
+            "Tens of thousands of ICP-matched prospects engaged",
+            "Thousands of qualified business conversations",
+          ]}
+        />
       </div>
 
       <div id="outcome">
-      <OutcomeSection
-        heading="Outcome"
-        outcomes={[
-          {
-            percentage: "20-35%",
-            title: "Connection Acceptance Rate",
-            description: "Of targeted prospects accept connection requests.",
-            icon: outicon1,
-          },
-          {
-            percentage: "15-30%",
-            title: "Reply Rate",
-            description: "Of accepted connections respond to outreach.",
-            icon: outicon2,
-          },
-          {
-            percentage: "25-40%",
-            title: "Qualified Conversation Rate",
-            description:
-              "Of replies turn into relevant business conversations.",
-            icon: outicon3,
-          },
-          {
-            percentage: "40-60%",
-            title: "Meeting Conversion Rate",
-            description:
-              "Of qualified conversations convert into booked meetings.",
-            icon: outicon4,
-          },
-        ]}
-      />
+        <OutcomeSection
+          heading="Outcome"
+          outcomes={[
+            {
+              percentage: "20-35%",
+              title: "Connection Acceptance Rate",
+              description: "Of targeted prospects accept connection requests.",
+              icon: outicon1,
+            },
+            {
+              percentage: "15-30%",
+              title: "Reply Rate",
+              description: "Of accepted connections respond to outreach.",
+              icon: outicon2,
+            },
+            {
+              percentage: "25-40%",
+              title: "Qualified Conversation Rate",
+              description:
+                "Of replies turn into relevant business conversations.",
+              icon: outicon3,
+            },
+            {
+              percentage: "40-60%",
+              title: "Meeting Conversion Rate",
+              description:
+                "Of qualified conversations convert into booked meetings.",
+              icon: outicon4,
+            },
+          ]}
+        />
       </div>
-      <CTA />
-      <Footer />
+      <CTA
+        tagline="See Pipeline in Action →"
+        subheading="Start generating high-intent conversations with the right decision-makers, consistently and measurably."
+        heading="Turn LinkedIn Into Your Most Predictable Pipeline Channel"
+      />
+
+      <Footer
+        tagline="Precision Outbound for Growth-Stage B2B Teams"
+        footerLinks={{
+          product: [
+            { label: "How It Works", href: "#approach" },
+            { label: "Platform", href: "#platform" },
+            { label: "Impact", href: "#impact" },
+          ],
+          company: [
+            { label: "Solution", href: "#solution" },
+            { label: "Outcome", href: "#outcome" },
+            { label: "Contact", href: "/demo" },
+          ],
+          resources: [
+            { label: "Documentation", href: "#documentation" },
+            { label: "Blog", href: "#blog" },
+            { label: "Support", href: "#support" },
+          ],
+        }}
+      />
     </>
   );
 }
