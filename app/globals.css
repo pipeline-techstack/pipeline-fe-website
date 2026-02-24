@@ -387,7 +387,7 @@
 }
 
 .hero-fade {
-  animation: fadeSlideLeft 0.8s ease-out forwards;
+  animation: fadeSlideLeft 1.5s ease-out forwards;
 }
 
 @keyframes fadeFromLeft {
