@@ -6,7 +6,7 @@ export default function Page({
   searchParams: { page?: string };
 }) {
   const page = searchParams.page ?? "outbound";
-
+  // console.log("page ", page);
   const data =
     page === "revenue"
       ? {
