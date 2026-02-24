@@ -1,12 +1,16 @@
 import DemoPage from "./demo-page-component";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) {
-  const page = searchParams.page ?? "outbound";
-  // console.log("page ", page);
+  const resolvedParams = await searchParams;
+
+  const page = resolvedParams?.page ?? "outbound";
+
+  // console.log("page:", page);
+
   const data =
     page === "revenue"
       ? {
