@@ -5,7 +5,7 @@ import SectionContainer from "../common/section-wrapper2";
 import Image from "next/image";
 import { CTAProps } from "@/lib/types";
 
-function CTA({ tagline, subheading, heading }: CTAProps) {
+function CTA({ tagline, subheading, heading, link }: CTAProps) {
   return (
     <section className="bg-[#F8FAFC] py-16 sm:py-20 lg:py-15 w-full">
       <SectionContainer>
@@ -58,7 +58,7 @@ function CTA({ tagline, subheading, heading }: CTAProps) {
             </p>
 
             {/* CTA Button */}
-            <Link href={"/demo"}>
+            <Link href={link}>
               <button
                 className="
             bg-white text-text-dark

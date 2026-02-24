@@ -40,6 +40,7 @@ function Outbound() {
             ],
           },
         ]}
+        demolink="/demo?page=outbound"
       />
 
       <div id="hero">
@@ -50,6 +51,7 @@ function Outbound() {
           button_text="Book a strategy call"
           img={heroimg}
           imgclassname="scale-100"
+          button_link="/demo?page=outbound"
         />
       </div>
 
@@ -218,27 +220,11 @@ function Outbound() {
         tagline="See Pipeline in Action →"
         subheading="Start generating high-intent conversations with the right decision-makers, consistently and measurably."
         heading="Turn LinkedIn Into Your Most Predictable Pipeline Channel"
+        link="/demo?page=outbound"
       />
 
       <Footer
-        tagline="Precision Outbound for Growth-Stage B2B Teams"
-        footerLinks={{
-          product: [
-            { label: "How It Works", href: "#approach" },
-            { label: "Platform", href: "#platform" },
-            { label: "Impact", href: "#impact" },
-          ],
-          company: [
-            { label: "Solution", href: "#solution" },
-            { label: "Outcome", href: "#outcome" },
-            { label: "Contact", href: "/demo" },
-          ],
-          resources: [
-            { label: "Documentation", href: "#documentation" },
-            { label: "Blog", href: "#blog" },
-            { label: "Support", href: "#support" },
-          ],
-        }}
+       page="outbound"
       />
     </>
   );

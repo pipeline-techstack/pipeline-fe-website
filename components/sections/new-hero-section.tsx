@@ -7,6 +7,7 @@ import gridImg from "../../assets/new/grid.png";
 import Image from "next/image";
 import SectionContainer from "../common/section-wrapper2";
 import { HeroProps } from "@/lib/types";
+import Link from "next/link";
 
 function NewHero(props : HeroProps) {
   return (
@@ -96,7 +97,8 @@ function NewHero(props : HeroProps) {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-              <button
+              <Link
+                href={props.button_link}
                 className="group relative px-4 py-3.5 text-white rounded-xl transition-all"
                 style={{
                   background:
@@ -104,7 +106,7 @@ function NewHero(props : HeroProps) {
                 }}
               >
                 <p className="relative z-10">{props.button_text}</p>
-              </button>
+              </Link>
             </div>
           </div>
 

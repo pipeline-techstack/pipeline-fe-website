@@ -12,6 +12,7 @@ type NavLink = {
 
 export type NavbarNewProps = {
   navigationLinks: NavLink[];
+  demolink: string;
 };
 
 // hero types
@@ -23,6 +24,7 @@ export type HeroProps = {
   button_text: string;
   img: StaticImageData;
   imgclassname?: string;
+  button_link:string;
 };
 
 // industry types
@@ -113,6 +115,22 @@ export type FooterProps = {
 
 export type CTAProps = {
   tagline: string;
+  heading: string;
+  subheading: string;
+  link: string;
+}
+
+// demo types
+
+export type DemoProps = {
+  cta: string;
+  headline: string;
+  page: string;
+}
+
+// CTA Demo types
+
+export type CTADemoProps={
   heading: string;
   subheading: string;
 }

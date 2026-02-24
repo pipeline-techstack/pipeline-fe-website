@@ -4,12 +4,58 @@ import Image from "next/image";
 import logo from "../../assets/new/logo.png"; // Adjust path as needed
 import SectionContainer from "../common/section-wrapper2";
 import { FooterProps } from "@/lib/types";
+import { useEffect, useState } from "react";
 
-const Footer = ({
-  tagline,
-  footerLinks
-}:FooterProps) => {
+const Footer = ({ page }: { page: string }) => {
   const year = new Date().getFullYear();
+  const [data, setData] = useState<FooterProps>();
+
+  useEffect(() => {
+    if (page === "revenue") {
+      setData({
+        tagline: "Revenue intelligence for CROs and RevOps teams",
+        footerLinks: {
+          product: [
+            { label: "How It Works", href: "#how-it-works" },
+            { label: "Intelligence", href: "#intelligence" },
+            { label: "Pricing", href: "#pricing" },
+          ],
+          company: [
+            { label: "About", href: "#about" },
+            { label: "Careers", href: "#careers" },
+            { label: "Contact", href: "/demo?page=revenue" },
+          ],
+          resources: [
+            { label: "Documentation", href: "#documentation" },
+            { label: "Blog", href: "#blog" },
+            { label: "Support", href: "#support" },
+          ],
+        },
+      });
+    } else {
+      setData({
+        tagline: "Precision Outbound for Growth-Stage B2B Teams",
+        footerLinks: {
+          product: [
+            { label: "How It Works", href: "#approach" },
+            { label: "Platform", href: "#platform" },
+            { label: "Impact", href: "#impact" },
+          ],
+          company: [
+            { label: "Solution", href: "#solution" },
+            { label: "Outcome", href: "#outcome" },
+            { label: "Contact", href: "/demo?page=outbound" },
+          ],
+          resources: [
+            { label: "Documentation", href: "#documentation" },
+            { label: "Blog", href: "#blog" },
+            { label: "Support", href: "#support" },
+          ],
+        },
+      });
+    }
+  }, [page]);
+
   return (
     <>
       <footer className="bg-[#F8FAFC] py-12 sm:py-16 lg:py-5 w-full">
@@ -29,7 +75,7 @@ const Footer = ({
               </div>
 
               <p className="text-sm max-w-full lg:max-w-[70%] text-text-light leading-relaxed">
-                {tagline}
+                {data?.tagline}
               </p>
             </div>
 
@@ -44,7 +90,7 @@ const Footer = ({
                   PRODUCT
                 </h3>
                 <ul className="space-y-3">
-                  {footerLinks.product.map((link, index) => (
+                  {data?.footerLinks.product.map((link, index) => (
                     <li key={index}>
                       <a
                         href={link.href}
@@ -63,7 +109,7 @@ const Footer = ({
                   COMPANY
                 </h3>
                 <ul className="space-y-3">
-                  {footerLinks.company.map((link, index) => (
+                  {data?.footerLinks.company.map((link, index) => (
                     <li key={index}>
                       <a
                         href={link.href}
@@ -82,7 +128,7 @@ const Footer = ({
                   RESOURCES
                 </h3>
                 <ul className="space-y-3">
-                  {footerLinks.resources.map((link, index) => (
+                  {data?.footerLinks.resources.map((link, index) => (
                     <li key={index}>
                       <a
                         href={link.href}

@@ -5,7 +5,7 @@ import Logo from "../common/logo";
 import Link from "next/link";
 import { NavbarNewProps } from "@/lib/types";
 
-function NavbarNew({ navigationLinks }: NavbarNewProps) {
+function NavbarNew({ navigationLinks, demolink }: NavbarNewProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -53,15 +53,13 @@ function NavbarNew({ navigationLinks }: NavbarNewProps) {
 
                     {isOpen && (
                       <div
-                        className={`
-    absolute left-0 mt-3 w-72 z-50
-    transition-all duration-200 ease-out origin-top
-    ${
-      isOpen
-        ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
-        : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-    }
-  `}
+                        className={`absolute left-0 mt-3 w-72 z-50 transition-all duration-200 ease-out origin-top
+                        ${
+                          isOpen
+                            ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                            : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                        }
+                      `}
                       >
                         <div className="bg-white shadow-xl rounded-xl p-4">
                           <div className="flex flex-col">
@@ -103,7 +101,7 @@ function NavbarNew({ navigationLinks }: NavbarNewProps) {
               </button>
             </Link>
 
-            <Link href={"/demo"}>
+            <Link href={demolink}>
               <button className="flex items-center gap-1 cursor-pointer btn-gradient-purple">
                 Talk to Us
                 <span>➝</span>

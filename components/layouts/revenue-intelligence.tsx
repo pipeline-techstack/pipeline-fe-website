@@ -24,6 +24,7 @@ function RevenueIntelligence() {
             ],
           },
         ]}
+        demolink="/demo?page=revenue"
       />
       <div id="hero">
         <NewHero
@@ -32,6 +33,7 @@ function RevenueIntelligence() {
           subtitle="Pipeline connects to your CRM, analyzes revenue data, and delivers clear signals, shared context, and focused next steps into the tools your revenue teams already use."
           button_text="See How It Works"
           img={heroImg}
+          button_link="/demo?page=revenue"
         />
         <StatsSection />
       </div>
@@ -49,26 +51,10 @@ function RevenueIntelligence() {
         tagline="See How Pipeline Fits Into Your RevOps Stack"
         heading="Stay Ahead as Revenue Evolves"
         subheading="Pipeline helps CROs and RevOps teams understand what's changing beneath the numbers and decide where to focus next, by turning CRM data into clear, actionable intelligence."
+        link="/demo?page=revenue"
       />
       <Footer
-        tagline="Revenue intelligence for CROs and RevOps teams"
-        footerLinks={{
-          product: [
-            { label: "How It Works", href: "#how-it-works" },
-            { label: "Intelligence", href: "#intelligence" },
-            { label: "Pricing", href: "#pricing" },
-          ],
-          company: [
-            { label: "About", href: "#about" },
-            { label: "Careers", href: "#careers" },
-            { label: "Contact", href: "/demo" },
-          ],
-          resources: [
-            { label: "Documentation", href: "#documentation" },
-            { label: "Blog", href: "#blog" },
-            { label: "Support", href: "#support" },
-          ],
-        }}
+       page="revenue"
       />
     </>
   );
