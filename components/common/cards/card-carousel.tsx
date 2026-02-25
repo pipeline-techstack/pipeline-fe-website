@@ -29,7 +29,7 @@ const cards = [
     title: "Weekly Forecast Calls",
     description: "Clear signals and context for confident forecast discussions",
     summary:
-      "Pipeline surfaces reliable, real-time signals and surrounding context so forecast conversations are grounded in facts, not assumptions. Every discussion is anchored in what is actually happening across accounts and pipelines.",
+      "Pipeline surfaces reliable, real-time signals and surrounding context so forecast conversations are grounded in facts. Every discussion is anchored in what is actually happening across accounts and pipelines.",
     image: card1, // Add your image path here
   },
   {
@@ -46,7 +46,7 @@ const cards = [
     title: "Revenue Planning",
     description: "Accurate evaluation of capacity, quotas, and incentives",
     summary:
-      "Pipeline helps leaders assess team capacity, quota coverage, and incentive alignment based on live engagement and performance signals, ensuring planning decisions reflect reality, not outdated snapshots.",
+      "Pipeline helps leaders assess team capacity, quota coverage, and incentive alignment based on live engagement and performance signals, ensuring planning decisions reflect reality.",
     image: card3,
   },
   {

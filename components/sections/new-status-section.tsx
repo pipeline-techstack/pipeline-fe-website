@@ -23,7 +23,7 @@ const StatsSection = () => {
     },
     {
       value: 10,
-      text: "+hrs",
+      text: "+ hrs",
       label: "Saved Weekly per Team",
     },
   ];

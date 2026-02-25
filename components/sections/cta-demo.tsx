@@ -1,6 +1,29 @@
-import React from "react";
+"use client";
 
-function CTADemo() {
+import { CTADemoProps } from "@/lib/types";
+import { useEffect, useState } from "react";
+
+function CTADemo({ page }: { page: string }) {
+  const [data, setData] = useState<CTADemoProps>({
+    heading: "",
+    subheading: "",
+  });
+  useEffect(() => {
+    if (page === "revenue") {
+      setData({
+        heading: "Designed for CRO and RevOps Teams",
+        subheading:
+          "Built for teams accountable for revenue outcomes.",
+      });
+    } else {
+      setData({
+        heading: "Turn LinkedIn Into Your Most Predictable Pipeline Channel",
+        subheading:
+          "Start generating high-intent conversations with the right decision-makers, consistently and measurably.",
+      });
+    }
+  }, [page]);
+
   return (
     <section
       className="
@@ -19,7 +42,7 @@ function CTADemo() {
             mb-1
           "
         >
-          Designed for CRO and RevOps Teams
+          {data.heading}
         </h3>
 
         {/* Subtext */}
@@ -30,7 +53,7 @@ function CTADemo() {
             sm:text-[16px]
           "
         >
-          Built for teams accountable for revenue outcomes, not vanity metrics.
+          {data.subheading}
         </p>
       </div>
     </section>

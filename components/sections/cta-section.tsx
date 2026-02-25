@@ -3,8 +3,9 @@ import ellipse from "../../assets/new/Ellipse.png";
 import Link from "next/link";
 import SectionContainer from "../common/section-wrapper2";
 import Image from "next/image";
+import { CTAProps } from "@/lib/types";
 
-function CTA() {
+function CTA({ tagline, subheading, heading, link }: CTAProps) {
   return (
     <section className="bg-[#F8FAFC] py-16 sm:py-20 lg:py-15 w-full">
       <SectionContainer>
@@ -29,7 +30,7 @@ function CTA() {
           </div>
 
           {/* Content */}
-          <div className="z-10 relative mx-auto max-w-4xl text-center">
+          <div className="z-10 relative mx-auto max-w-2xl text-center">
             {/* Heading */}
             <h2
               className="
@@ -39,7 +40,7 @@ function CTA() {
             leading-tight
           "
             >
-              Stay Ahead as Revenue Evolves
+              {heading}
             </h2>
 
             {/* Description */}
@@ -53,13 +54,11 @@ function CTA() {
             mx-auto
           "
             >
-              Pipeline helps CROs and RevOps teams understand what&rsquo;s
-              changing beneath the numbers and decide where to focus next, by
-              turning CRM data into clear, actionable intelligence.
+              {subheading}
             </p>
 
             {/* CTA Button */}
-            <Link href={"/demo"}>
+            <Link href={link}>
               <button
                 className="
             bg-white text-text-dark
@@ -72,7 +71,7 @@ function CTA() {
             transition-all duration-300
           "
               >
-                See How Pipeline Fits Into Your RevOps Stack
+                {tagline}
               </button>
             </Link>
           </div>

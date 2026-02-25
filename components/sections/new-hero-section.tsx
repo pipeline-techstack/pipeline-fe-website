@@ -2,12 +2,14 @@
 
 import circleMd from "../../assets/new/circle-sm.png";
 import circleSm from "../../assets/new/circle-sm2.png";
-import heroImg from "../../assets/new/hero-img.png";
+
 import gridImg from "../../assets/new/grid.png";
 import Image from "next/image";
 import SectionContainer from "../common/section-wrapper2";
+import { HeroProps } from "@/lib/types";
+import Link from "next/link";
 
-function NewHero() {
+function NewHero(props : HeroProps) {
   return (
     <section className="relative overflow-hidden bg-white border-b border-[#C4C4C4]/50 ">
       {/* Grid Background */}
@@ -65,7 +67,7 @@ function NewHero() {
           {/* Left Content */}
           <div className="space-y-5 text-center lg:text-left hero-fade ">
             <p className="text-text-dark text-sm lg:text-base font-medium">
-              Revenue Intelligence Platform
+              {props.cta}
             </p>
 
             <h1
@@ -78,8 +80,7 @@ function NewHero() {
             leading-tight
           "
             >
-              Understand what&rsquo;s driving the number, and where to focus
-              next
+              {props.title}
             </h1>
 
             <p
@@ -92,21 +93,20 @@ function NewHero() {
             mx-auto lg:mx-0
           "
             >
-              Pipeline connects to your CRM, analyzes revenue data, and delivers
-              clear signals, shared context, and focused next steps into the
-              tools your revenue teams already use.
+              {props.subtitle}
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-              <button
+              <Link
+                href={props.button_link}
                 className="group relative px-4 py-3.5 text-white rounded-xl transition-all"
                 style={{
                   background:
                     "linear-gradient(104.73deg, #5D5FEF 17.44%, #8159DF 108.81%)",
                 }}
               >
-                <p className="relative z-10">See How It Works</p>
-              </button>
+                <p className="relative z-10">{props.button_text}</p>
+              </Link>
             </div>
           </div>
 
@@ -125,10 +125,10 @@ function NewHero() {
           "
             >
               <Image
-                src={heroImg}
+                src={props.img}
                 alt="Team collaboration - Pipeline Revenue Intelligence"
                 fill
-                className="object-cover scale-90 -translate-y-9"
+                className={`object-cover scale-90 -translate-y-9 ${props.imgclassname}`}
                 priority
               />
 
