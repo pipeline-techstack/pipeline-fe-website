@@ -28,7 +28,7 @@ const Footer = ({ page }: { page: string }) => {
           resources: [
             { label: "Documentation", href: "#documentation" },
             { label: "Blog", href: "#blog" },
-            { label: "Support", href: "#support" },
+            { label: "Privacy Policy", href: "/privacy" },
           ],
         },
       });
@@ -49,7 +49,7 @@ const Footer = ({ page }: { page: string }) => {
           resources: [
             { label: "Documentation", href: "#documentation" },
             { label: "Blog", href: "#blog" },
-            { label: "Support", href: "#support" },
+            { label: "Privacy Policy", href: "/privacy" },
           ],
         },
       });
